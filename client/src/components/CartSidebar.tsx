@@ -25,6 +25,9 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const [customerName, setCustomerName] = useState('');
   const [observations, setObservations] = useState('');
   const [shippingValue, setShippingValue] = useState(5.00); // Valor inicial do frete
+  const [isShippingEnabled, setIsShippingEnabled] = useState(true); // true = ligado, false = desligado
+  // Se o frete estiver habilitado, usa o valor. Se não, usa 0.
+const currentShipping = isShippingEnabled ? shippingValue : 0;
 
   const handleWhatsAppOrder = () => {
     if (items.length === 0) {
@@ -50,11 +53,13 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
     });
 // 1. Defina o valor do frete (aqui você pode integrar com o estado do componente depois)
     const valorFrete = shippingValue;
-    const totalComFrete = getTotalPrice() + valorFrete;
+    const totalComFrete = getTotalPrice() + currentShipping;
 
     // 2. Monte a mensagem detalhada
     message += `\n*Subtotal:* R$ ${getTotalPrice().toFixed(2).replace('.', ',')}`;
-    message += `\n*Frete:* R$ ${valorFrete.toFixed(2).replace('.', ',')}`;
+    if (isShippingEnabled) {
+      message += `\n*Frete:* R$ ${currentShipping.toFixed(2).replace('.', ',')}`;
+    }
     message += `\n*Total Final: R$ ${totalComFrete.toFixed(2).replace('.', ',')}*`;
 
     if (observations.trim()) {
@@ -139,8 +144,13 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
 
         <div style="text-align: right; margin-top: 20px;">
   <p>Subtotal: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}</p>
-  <p>Frete: R$ 5,00</p>
-  <p style="font-size: 1.2em; font-weight: bold;">Total: R$ ${(getTotalPrice() + shippingValue).toFixed(2).replace('.', ',')}</p>
+  
+  {/* Esta linha abaixo decide se mostra o frete ou se deixa vazio '' */}
+  ${isShippingEnabled ? `<p>Frete: R$ ${currentShipping.toFixed(2).replace('.', ',')}</p>` : ''}
+  
+  <p style="font-size: 1.2em; font-weight: bold; color: #4A3933;">
+    Total: R$ ${(getTotalPrice() + currentShipping).toFixed(2).replace('.', ',')}
+  </p>
 </div>
 
         ${observations.trim() ? `
@@ -290,21 +300,23 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
             </div>
 
             {/* Frete Informativo */}
-            <div className="bg-muted/30 rounded-2xl p-4 mb-3 border border-dashed border-border">
+             {isShippingEnabled && (
+              <div className="bg-muted/30 rounded-2xl p-4 mb-3 border border-dashed border-border">
               <div className="flex justify-between items-center text-sm">
-                <span className="text-muted-foreground">Frete (Entrega)</span>
-                <span className="font-medium text-foreground">
-                  R$ {shippingValue.toFixed(2).replace('.', ',')}
-                </span>
+              <span className="text-muted-foreground">Frete (Entrega)</span>
+               <span className="font-medium text-foreground">
+                R$ {currentShipping.toFixed(2).replace('.', ',')}
+              </span>
               </div>
-            </div>
+           </div>
+         )}
 
             {/* Total Atualizado */}
             <div className="bg-accent/10 rounded-2xl p-4 mb-6">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-display font-semibold text-foreground">Total</span>
                 <span className="text-2xl font-mono font-bold text-accent">
-                  R$ {(getTotalPrice() + shippingValue).toFixed(2).replace('.', ',')}
+                  R$ {(getTotalPrice() + currentShipping).toFixed(2).replace('.', ',')}
                 </span>
               </div>
             </div>
