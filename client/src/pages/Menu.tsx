@@ -18,7 +18,7 @@ export default function Menu() {
 
   // CORREÇÃO: Função handleCategoryClick adicionada ao clique das badges abaixo
   const handleCategoryClick = (categoryId: string) => {
-    if (categoryId === 'paes-especiais' || categoryId === 'saudaveis') { 
+    if (categoryId === 'paes-especiais' || categoryId === 'paes') { 
       // Verifique se o ID no seu products.ts é exatamente este
       alert('🥖 Lembrete: Pães especiais sob encomenda (24h de antecedência).');
     }
