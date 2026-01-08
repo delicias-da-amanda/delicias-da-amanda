@@ -71,107 +71,75 @@ const currentShipping = isShippingEnabled ? shippingValue : 0;
   };
 
   const handlePrint = () => {
-    if (items.length === 0) {
-      toast.error('Seu carrinho está vazio!');
-      return;
-    }
+    if (items.length === 0) return toast.error('Seu carrinho está vazio!');
+    if (!customerName.trim()) return toast.error('Por favor, informe seu nome!');
 
-    if (!customerName.trim()) {
-      toast.error('Por favor, informe seu nome!');
-      return;
-    }
+    const entregaTexto = isShippingEnabled ? "ENTREGA" : "RETIRADA NO LOCAL";
+    const totalFinal = getTotalPrice() + currentShipping;
 
-    // Create print content
-    let printContent = `
-      <!DOCTYPE html>
+    const printHTML = `
       <html>
-      <head>
-        <title>Pedido - Delícias da Amanda</title>
-        <style>
-          body { font-family: Arial, sans-serif; padding: 40px; max-width: 800px; margin: 0 auto; }
-          h1 { color: #4A3933; border-bottom: 2px solid #8B9474; padding-bottom: 10px; }
-          .header { text-align: center; margin-bottom: 30px; }
-          .info { margin: 20px 0; }
-          .info strong { color: #4A3933; }
-          table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-          th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-          th { background-color: #8B9474; color: white; }
-          .total { font-size: 1.2em; font-weight: bold; text-align: right; margin-top: 20px; color: #4A3933; }
-          .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #8B9474; }
-          .footer p { color: #8B9474; font-style: italic; }
-        </style>
-      </head>
-      <body>
-        <div class="header">
-          <h1>🍞 Delícias da Amanda</h1>
-          <p>Comprovante de Pedido</p>
-        </div>
-        
-        <div class="info">
-          <p><strong>Cliente:</strong> ${customerName}</p>
-          <p><strong>Data:</strong> ${new Date().toLocaleDateString('pt-BR')} às ${new Date().toLocaleTimeString('pt-BR')}</p>
-        </div>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Produto</th>
-              <th>Quantidade</th>
-              <th>Preço Unit.</th>
-              <th>Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${items.map(item => {
-              const itemName = item.selectedOption 
-                ? `${item.product.name} (${item.selectedOption.name})`
-                : item.product.name;
-              const price = item.selectedOption?.price || item.product.price;
-              return `
-                <tr>
-                  <td>${itemName}</td>
-                  <td>${item.quantity}</td>
-                  <td>R$ ${price.toFixed(2).replace('.', ',')}</td>
-                  <td>R$ ${(price * item.quantity).toFixed(2).replace('.', ',')}</td>
-                </tr>
-              `;
-            }).join('')}
-          </tbody>
-        </table>
-
-        <div style="text-align: right; margin-top: 20px;">
-  <p>Subtotal: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}</p>
-  
-  {/* Esta linha abaixo decide se mostra o frete ou se deixa vazio '' */}
-  ${isShippingEnabled ? `<p>Frete: R$ ${currentShipping.toFixed(2).replace('.', ',')}</p>` : ''}
-  
-  <p style="font-size: 1.2em; font-weight: bold; color: #4A3933;">
-    Total: R$ ${(getTotalPrice() + currentShipping).toFixed(2).replace('.', ',')}
-  </p>
-</div>
-
-        ${observations.trim() ? `
-          <div class="info">
-            <p><strong>Observações:</strong></p>
-            <p>${observations}</p>
+        <head>
+          <title>Pedido - Delícias da Amanda</title>
+          <style>
+            body { font-family: sans-serif; padding: 20px; color: #4A3933; }
+            .header { text-align: center; border-bottom: 2px solid #8B9474; margin-bottom: 20px; }
+            table { width: 100%; border-collapse: collapse; }
+            th, td { text-align: left; padding: 10px; border-bottom: 1px solid #eee; }
+            th { background: #8B9474; color: white; }
+            .total-section { text-align: right; margin-top: 20px; }
+            .footer { text-align: center; margin-top: 30px; font-style: italic; color: #8B9474; }
+          </style>
+        </head>
+        <body>
+          <div class="header">
+            <h1>🍞 Delícias da Amanda</h1>
+            <p>Comprovante de Pedido - ${entregaTexto}</p>
           </div>
-        ` : ''}
-
-        <div class="footer">
-          <p>🌟 Delícias da Amanda agradece pela preferência!</p>
-        </div>
-      </body>
+          <p><strong>Cliente:</strong> ${customerName}</p>
+          <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
+          <table>
+            <thead>
+              <tr><th>Produto</th><th>Qtd</th><th>Total</th></tr>
+            </thead>
+            <tbody>
+              ${items.map(item => `
+                <tr>
+                  <td>${item.product.name} ${item.selectedOption ? `(${item.selectedOption.name})` : ''}</td>
+                  <td>${item.quantity}</td>
+                  <td>R$ ${( (item.selectedOption?.price || item.product.price) * item.quantity).toFixed(2).replace('.', ',')}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+          <div class="total-section">
+            <p>Subtotal: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}</p>
+            ${isShippingEnabled ? `<p>Frete: R$ ${currentShipping.toFixed(2).replace('.', ',')}</p>` : ''}
+            <h3>Total: R$ ${totalFinal.toFixed(2).replace('.', ',')}</h3>
+          </div>
+          ${observations ? `<p><strong>Obs:</strong> ${observations}</p>` : ''}
+          <div class="footer"><p>🌟 Agradecemos a preferência!</p></div>
+        </body>
       </html>
     `;
 
-    const printWindow = window.open('', '_blank');
-    if (printWindow) {
-      printWindow.document.write(printContent);
-      printWindow.document.close();
-      printWindow.focus();
+    // CRIA O IFRAME OCULTO (Solução para Celular)
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    const pri = iframe.contentWindow;
+
+    if (pri) {
+      pri.document.open();
+      pri.document.write(printHTML);
+      pri.document.close();
+      
       setTimeout(() => {
-        printWindow.print();
-      }, 250);
+        pri.focus();
+        pri.print();
+        // Remove o rastro do iframe depois de imprimir
+        setTimeout(() => document.body.removeChild(iframe), 1000);
+      }, 500);
     }
   };
 
