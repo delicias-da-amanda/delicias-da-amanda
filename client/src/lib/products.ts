@@ -119,15 +119,15 @@ export const products: Product[] = [
     id: 'overnight-200ml',
     name: 'Overnight 200ml',
     description: 'Leve, cremoso e delicioso!',
-    price: 9,
+    price: 10,
     category: 'saudaveis',
     image: '/images/overnight.jpg',
     hasOptions: true,
     options: [
-      { name: 'Maracuja (geleia), Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 9 },
-      { name: 'Morango, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 9 },
-      { name: 'Uva, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 9 },
-      { name: 'Manga, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 9 }
+      { name: 'Maracuja (geleia), Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
+      { name: 'Morango, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
+      { name: 'Uva, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
+      { name: 'Manga, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 }
     ],
     availableDays: ['terca', 'quarta', 'quinta', 'sabado']
   },
@@ -143,7 +143,7 @@ export const products: Product[] = [
   },
   {
     id: 'salada-fit',
-    name: '🥗 Salada de Fit',
+    name: '🥗 Salada Fit',
     description: 'Leve, saborosa e super saudável.!',
     price: 10,
     category: 'saudaveis',
