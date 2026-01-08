@@ -36,7 +36,7 @@ export const products: Product[] = [
     id: 'biscoito-amanteigado',
     name: 'Biscoito Amanteigado (Sequilhos)',
     description: 'Sequilhos crocantes e amanteigados, feitos artesanalmente',
-    price: 6.00,
+    price: 0, // Price varies by option
     category: 'biscoitos',
     image: '/images/biscoito-amanteigado.jpg',
     hasOptions: true,
