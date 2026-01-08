@@ -20,7 +20,7 @@ export default function Menu() {
   const handleCategoryClick = (categoryId: string) => {
     if (categoryId === 'paes-especiais' || categoryId === 'paes') { 
       // Verifique se o ID no seu products.ts é exatamente este
-      alert('🥖 Lembrete: Pães especiais sob encomenda (24h de antecedência).');
+      alert('"🥖 Atenção: Os produtos desta categoria são feitos sob medida para você. Não esqueça de realizar sua encomenda com antecedência!".');
     }
     setSelectedCategory(categoryId);
   };
