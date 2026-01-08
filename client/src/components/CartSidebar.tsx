@@ -29,21 +29,22 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   // Se o frete estiver habilitado, usa o valor. Se não, usa 0.
 const currentShipping = isShippingEnabled ? shippingValue : 0;
 
+  const currentShipping = isShippingEnabled ? shippingValue : 0;
+
+  // COLE AQUI A VERSÃO ESTRUTURADA:
   const handleWhatsAppOrder = () => {
-    if (items.length === 0) {
-      toast.error('Seu carrinho está vazio!');
-      return;
-    }
+    if (items.length === 0) return toast.error('Seu carrinho está vazio!');
+    if (!customerName.trim()) return toast.error('Por favor, informe seu nome!');
 
-    if (!customerName.trim()) {
-      toast.error('Por favor, informe seu nome!');
-      return;
-    }
+    const entregaTexto = isShippingEnabled ? "ENTREGA" : "RETIRADA NO LOCAL";
+    const totalPedido = getTotalPrice() + currentShipping;
 
-    let message = `Olá! Gostaria de fazer o seguinte pedido:\n\n`;
-    message += `*Cliente:* ${customerName}\n\n`;
-    message += `*Itens:*\n`;
+    let message = `*🍞 NOVO PEDIDO - DELÍCIAS DA AMANDA*\n`; // Troquei o ícone para pão combinando com seu negócio
+    message += `------------------------------------------\n\n`;
+    message += `👤 *Cliente:* ${customerName}\n`;
+    message += `🛵 *Método:* ${entregaTexto}\n\n`;
     
+    message += `📦 *ITENS DO PEDIDO:*\n`;
     items.forEach(item => {
       const itemName = item.selectedOption 
         ? `${item.product.name} (${item.selectedOption.name})`
@@ -51,24 +52,20 @@ const currentShipping = isShippingEnabled ? shippingValue : 0;
       const price = item.selectedOption?.price || item.product.price;
       message += `• ${item.quantity}x ${itemName} - R$ ${(price * item.quantity).toFixed(2).replace('.', ',')}\n`;
     });
-// 1. Defina o valor do frete (aqui você pode integrar com o estado do componente depois)
-    const valorFrete = shippingValue;
-    const totalComFrete = getTotalPrice() + currentShipping;
 
-    // 2. Monte a mensagem detalhada
-    message += `\n*Subtotal:* R$ ${getTotalPrice().toFixed(2).replace('.', ',')}`;
+    message += `\n------------------------------------------\n`;
+    message += `💰 *Subtotal:* R$ ${getTotalPrice().toFixed(2).replace('.', ',')}\n`;
     if (isShippingEnabled) {
-      message += `\n*Frete:* R$ ${currentShipping.toFixed(2).replace('.', ',')}`;
+      message += `🚚 *Frete:* R$ ${currentShipping.toFixed(2).replace('.', ',')}\n`;
     }
-    message += `\n*Total Final: R$ ${totalComFrete.toFixed(2).replace('.', ',')}*`;
+    message += `✅ *TOTAL FINAL: R$ ${totalPedido.toFixed(2).replace('.', ',')}*\n`;
+    message += `------------------------------------------\n`;
 
     if (observations.trim()) {
-      message += `\n\n*Observações:* ${observations}`;
+      message += `\n📝 *Observações:* ${observations}`;
     }
 
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/5511986511287?text=${encodedMessage}`;
-    
+    const whatsappUrl = `https://wa.me/5511986511287?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     toast.success('Redirecionando para WhatsApp...');
   };
