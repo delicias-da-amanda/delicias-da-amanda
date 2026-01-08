@@ -139,7 +139,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
 
         <div style="text-align: right; margin-top: 20px;">
   <p>Subtotal: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}</p>
-  <p>Frete: R$ 15,00</p>
+  <p>Frete: R$ 5,00</p>
   <p style="font-size: 1.2em; font-weight: bold;">Total: R$ ${(getTotalPrice() + shippingValue).toFixed(2).replace('.', ',')}</p>
 </div>
 
