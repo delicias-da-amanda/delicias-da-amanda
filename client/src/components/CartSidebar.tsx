@@ -24,7 +24,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
   const [customerName, setCustomerName] = useState('');
   const [observations, setObservations] = useState('');
-  const [shippingValue, setShippingValue] = useState(15.00); // Valor inicial do frete
+  const [shippingValue, setShippingValue] = useState(5.00); // Valor inicial do frete
 
   const handleWhatsAppOrder = () => {
     if (items.length === 0) {
