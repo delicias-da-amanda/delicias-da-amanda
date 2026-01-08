@@ -21,9 +21,10 @@ function Router() {
   const [cartOpen, setCartOpen] = useState(false);
   // 2. Pegue os itens do carrinho aqui
   const { items } = useCart();
+  console.log("Itens no carrinho:", items.length); 
 
   return (
-   <>
+    <>
       <Header onCartClick={() => setCartOpen(true)} />
       <main>
         <Switch>
