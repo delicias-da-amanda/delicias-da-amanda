@@ -50,7 +50,7 @@ export default function Contact() {
     {
       icon: <Mail className="h-6 w-6" />,
       title: 'E-mail',
-      details: ['contato@deliciasdaamanda.com.br', 'Respondemos em até 24h']
+      details: ['deliciasdaamanda1989@gmail.com', 'Respondemos em até 24h']
     }
   ];
 
