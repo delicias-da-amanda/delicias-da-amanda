@@ -113,8 +113,8 @@ const currentShipping = isShippingEnabled ? shippingValue : 0;
             </tbody>
           </table>
           <div class="total-section">
-            <p>Subtotal: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}</p>
-            ${isShippingEnabled ? `<p>Frete: R$ ${currentShipping.toFixed(2).replace('.', ',')}</p>` : ''}
+           <p>Subtotal: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}</p>
+  ${isShippingEnabled ? `<p>Frete: R$ ${currentShipping.toFixed(2).replace('.', ',')}</p>` : ''}
             <h3>Total: R$ ${totalFinal.toFixed(2).replace('.', ',')}</h3>
           </div>
           ${observations ? `<p><strong>Obs:</strong> ${observations}</p>` : ''}
