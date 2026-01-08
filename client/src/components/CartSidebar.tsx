@@ -1,0 +1,315 @@
+/* 
+Design: Organic Minimalism
+- Slide-in from right with backdrop blur
+- Generous spacing and rounded elements
+- Smooth transitions
+*/
+
+import { useCart } from '@/contexts/CartContext';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
+import { Separator } from '@/components/ui/separator';
+import { X, Plus, Minus, ShoppingBag, MessageCircle, Printer } from 'lucide-react';
+import { useState } from 'react';
+import { toast } from 'sonner';
+
+interface CartSidebarProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+export default function CartSidebar({ open, onClose }: CartSidebarProps) {
+  const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
+  const [customerName, setCustomerName] = useState('');
+  const [observations, setObservations] = useState('');
+
+  const handleWhatsAppOrder = () => {
+    if (items.length === 0) {
+      toast.error('Seu carrinho está vazio!');
+      return;
+    }
+
+    if (!customerName.trim()) {
+      toast.error('Por favor, informe seu nome!');
+      return;
+    }
+
+    let message = `Olá! Gostaria de fazer o seguinte pedido:\n\n`;
+    message += `*Cliente:* ${customerName}\n\n`;
+    message += `*Itens:*\n`;
+    
+    items.forEach(item => {
+      const itemName = item.selectedOption 
+        ? `${item.product.name} (${item.selectedOption.name})`
+        : item.product.name;
+      const price = item.selectedOption?.price || item.product.price;
+      message += `• ${item.quantity}x ${itemName} - R$ ${(price * item.quantity).toFixed(2).replace('.', ',')}\n`;
+    });
+
+    message += `\n*Total: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}*`;
+
+    if (observations.trim()) {
+      message += `\n\n*Observações:* ${observations}`;
+    }
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/5511986511287?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+    toast.success('Redirecionando para WhatsApp...');
+  };
+
+  const handlePrint = () => {
+    if (items.length === 0) {
+      toast.error('Seu carrinho está vazio!');
+      return;
+    }
+
+    if (!customerName.trim()) {
+      toast.error('Por favor, informe seu nome!');
+      return;
+    }
+
+    // Create print content
+    let printContent = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Pedido - Delícias da Amanda</title>
+        <style>
+          body { font-family: Arial, sans-serif; padding: 40px; max-width: 800px; margin: 0 auto; }
+          h1 { color: #4A3933; border-bottom: 2px solid #8B9474; padding-bottom: 10px; }
+          .header { text-align: center; margin-bottom: 30px; }
+          .info { margin: 20px 0; }
+          .info strong { color: #4A3933; }
+          table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+          th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+          th { background-color: #8B9474; color: white; }
+          .total { font-size: 1.2em; font-weight: bold; text-align: right; margin-top: 20px; color: #4A3933; }
+          .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #8B9474; }
+          .footer p { color: #8B9474; font-style: italic; }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1>🍞 Delícias da Amanda</h1>
+          <p>Comprovante de Pedido</p>
+        </div>
+        
+        <div class="info">
+          <p><strong>Cliente:</strong> ${customerName}</p>
+          <p><strong>Data:</strong> ${new Date().toLocaleDateString('pt-BR')} às ${new Date().toLocaleTimeString('pt-BR')}</p>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Preço Unit.</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${items.map(item => {
+              const itemName = item.selectedOption 
+                ? `${item.product.name} (${item.selectedOption.name})`
+                : item.product.name;
+              const price = item.selectedOption?.price || item.product.price;
+              return `
+                <tr>
+                  <td>${itemName}</td>
+                  <td>${item.quantity}</td>
+                  <td>R$ ${price.toFixed(2).replace('.', ',')}</td>
+                  <td>R$ ${(price * item.quantity).toFixed(2).replace('.', ',')}</td>
+                </tr>
+              `;
+            }).join('')}
+          </tbody>
+        </table>
+
+        <div class="total">
+          Total: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}
+        </div>
+
+        ${observations.trim() ? `
+          <div class="info">
+            <p><strong>Observações:</strong></p>
+            <p>${observations}</p>
+          </div>
+        ` : ''}
+
+        <div class="footer">
+          <p>🌟 Delícias da Amanda agradece pela preferência!</p>
+        </div>
+      </body>
+      </html>
+    `;
+
+    const printWindow = window.open('', '_blank');
+    if (printWindow) {
+      printWindow.document.write(printContent);
+      printWindow.document.close();
+      printWindow.focus();
+      setTimeout(() => {
+        printWindow.print();
+      }, 250);
+    }
+  };
+
+  return (
+    <Sheet open={open} onOpenChange={onClose}>
+      <SheetContent className="w-full sm:max-w-lg overflow-y-auto">
+        <SheetHeader>
+          <SheetTitle className="text-2xl font-display">Seu Carrinho</SheetTitle>
+          <SheetDescription>
+            {items.length === 0 ? 'Seu carrinho está vazio' : `${items.length} ${items.length === 1 ? 'item' : 'itens'} no carrinho`}
+          </SheetDescription>
+        </SheetHeader>
+
+        {items.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-16 text-center">
+            <ShoppingBag className="h-24 w-24 text-muted-foreground/30 mb-4" />
+            <p className="text-muted-foreground">Adicione produtos ao seu carrinho</p>
+          </div>
+        ) : (
+          <>
+            {/* Cart Items */}
+            <div className="space-y-4 my-6">
+              {items.map(item => {
+                const itemName = item.selectedOption 
+                  ? `${item.product.name}`
+                  : item.product.name;
+                const optionName = item.selectedOption?.name;
+                const price = item.selectedOption?.price || item.product.price;
+
+                return (
+                  <div key={item.uniqueId} className="flex gap-4 p-4 rounded-2xl border-2 border-border bg-card">
+                    <img
+                      src={item.product.image}
+                      alt={itemName}
+                      className="w-20 h-20 object-cover rounded-xl"
+                    />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-medium text-foreground text-sm line-clamp-1">{itemName}</h4>
+                      {optionName && (
+                        <p className="text-xs text-muted-foreground mt-1">{optionName}</p>
+                      )}
+                      <p className="text-sm font-mono text-accent mt-1">
+                        R$ {price.toFixed(2).replace('.', ',')}
+                      </p>
+                      
+                      {/* Quantity Controls */}
+                      <div className="flex items-center gap-2 mt-2">
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="h-7 w-7 rounded-full"
+                          onClick={() => updateQuantity(item.uniqueId, item.quantity - 1)}
+                        >
+                          <Minus className="h-3 w-3" />
+                        </Button>
+                        <span className="text-sm font-medium w-8 text-center">{item.quantity}</span>
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="h-7 w-7 rounded-full"
+                          onClick={() => updateQuantity(item.uniqueId, item.quantity + 1)}
+                        >
+                          <Plus className="h-3 w-3" />
+                        </Button>
+                      </div>
+                    </div>
+                    
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-8 w-8 rounded-full shrink-0"
+                      onClick={() => removeFromCart(item.uniqueId)}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                );
+              })}
+            </div>
+
+            <Separator className="my-6" />
+
+            {/* Customer Info */}
+            <div className="space-y-4 mb-6">
+              <div>
+                <label className="text-sm font-medium text-foreground mb-2 block">
+                  Seu Nome *
+                </label>
+                <Input
+                  placeholder="Digite seu nome"
+                  value={customerName}
+                  onChange={(e) => setCustomerName(e.target.value)}
+                  className="rounded-xl"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm font-medium text-foreground mb-2 block">
+                  Observações
+                </label>
+                <Textarea
+                  placeholder="Ex: sem cebola, entregar às 15h..."
+                  value={observations}
+                  onChange={(e) => setObservations(e.target.value)}
+                  className="rounded-xl min-h-[80px]"
+                />
+              </div>
+            </div>
+
+            {/* Total */}
+            <div className="bg-accent/10 rounded-2xl p-4 mb-6">
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-display font-semibold text-foreground">Total</span>
+                <span className="text-2xl font-mono font-bold text-accent">
+                  R$ {getTotalPrice().toFixed(2).replace('.', ',')}
+                </span>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="space-y-3">
+              <Button
+                onClick={handleWhatsAppOrder}
+                className="w-full rounded-full h-12 font-medium"
+                size="lg"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Finalizar no WhatsApp
+              </Button>
+
+              <Button
+                onClick={handlePrint}
+                variant="outline"
+                className="w-full rounded-full h-12 font-medium"
+                size="lg"
+              >
+                <Printer className="mr-2 h-5 w-5" />
+                Imprimir Pedido
+              </Button>
+
+              <Button
+                onClick={() => {
+                  clearCart();
+                  toast.success('Carrinho limpo!');
+                }}
+                variant="ghost"
+                className="w-full rounded-full h-10 text-sm"
+              >
+                Limpar Carrinho
+              </Button>
+            </div>
+          </>
+        )}
+      </SheetContent>
+    </Sheet>
+  );
+}
