@@ -63,7 +63,7 @@ export const products: Product[] = [
     id: 'lanche-natural',
     name: 'Lanche Natural',
     description: 'Lanche saudável e saboroso',
-    price: 9.00,
+    price: 0, // Price varies by option
     category: 'lanches',
     image: '/images/lanche-natural.jpg',
     hasOptions: true,
@@ -119,7 +119,7 @@ export const products: Product[] = [
     id: 'overnight-200ml',
     name: 'Overnight 200ml',
     description: 'Leve, cremoso e delicioso!',
-    price: 10,
+    price: 0, // Price varies by option
     category: 'saudaveis',
     image: '/images/overnight.jpg',
     hasOptions: true,
@@ -155,7 +155,7 @@ export const products: Product[] = [
     id: 'marmita-tradicional',
     name: '🥗 Marmita Fitness Tradicional - Equilíbrio entre proteínas, carboidratos e legumes.',
     description: 'Arroz integral ou branco. Frango grelhado / carne magra / peixe / ovos. Legumes cozidos ou salteados. 👉 Ideal para quem quer alimentação saudável no dia a dia.',
-    price: 18,
+    price: 0, // Price varies by option
     category: 'saudaveis',
     image: '/images/marmita-trad.jpg',
     hasOptions: true,
@@ -171,7 +171,7 @@ export const products: Product[] = [
     id: 'marmita-low',
     name: '🥩 Marmita Low Carb - Pouco ou nenhum carboidrato.',
     description: 'Carnes (frango, carne bovina, peixe ou ovos). Legumes (abobrinha, brócolis, couve-flor). Gordura boa (azeite). 👉 Indicada para quem busca emagrecimento.',
-    price: 18,
+    price: 0, // Price varies by option
     category: 'saudaveis',
     image: '/images/marmita-low.jpg',
     hasOptions: true,
@@ -187,7 +187,7 @@ export const products: Product[] = [
     id: 'marmita-proteica',
     name: '🍗 Marmita Proteica - Alta em proteínas, indicada para quem treina.',
     description: 'Frango, carne vermelha magra ou peixe. Pouco carboidrato. Legumes. 👉 Muito usada por quem faz musculação.',
-    price: 18,
+    price: 0, // Price varies by option
     category: 'saudaveis',
     image: '/images/marmita-prot.jpg',
     hasOptions: true,
@@ -232,10 +232,14 @@ export const products: Product[] = [
     id: 'marmita-economica',
     name: '🍠 Marmita Fit Econômica - Opção acessível e nutritiva.',
     description: 'Arroz e Feijão. Frango ou ovos. Salada simples.',
-    price: 18,
+    price: 0, // Price varies by option
     category: 'saudaveis',
     image: '/images/marmita-econ.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+      { name: 'Frango Grelhado', price: 18 },
+      { name: 'Ovos cozidos', price: 16 },
+    ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
 
@@ -245,7 +249,7 @@ export const products: Product[] = [
     id: 'refrigerante-200ml',
     name: 'Refrigerante 200ml',
     description: 'Refrigerante gelado para acompanhar seu lanche',
-    price: 3.50,
+    price: 0, // Price varies by option
     category: 'bebidas',
     image: '/images/refri.jpg',
     hasOptions: true,
