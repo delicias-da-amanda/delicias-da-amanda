@@ -11,7 +11,7 @@ export interface Product {
   id: string;
   name: string;
   description: string;
-  price: number;
+  price: 0, // Price varies by option
   category: 'biscoitos' | 'lanches' | 'paes' | 'bebidas' | 'saudaveis';
   image: string;
   hasOptions: boolean;
