@@ -41,7 +41,7 @@ function Router() {
       <CartSidebar open={cartOpen} onClose={() => setCartOpen(false)} />
 
       {/* --- BOTÃO FLUTUANTE ADICIONADO AQUI --- */}
-      {items.length > 0 && (
+      {true && (
         <button
           onClick={() => setCartOpen(true)}
           className="fixed bottom-24 right-6 z-40 flex items-center gap-3 bg-accent text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group"
