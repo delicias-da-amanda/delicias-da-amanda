@@ -35,7 +35,7 @@ export default function Home() {
       rating: 5
     },
     {
-      text: 'Sequilhos perfeitos, crocantes e saborosos. Recomendo muito!',
+      text: 'Sequilhos perfeitos, saborosos e que derretem na boca. Recomendo muito!',
       rating: 5
     },
     {
