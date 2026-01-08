@@ -1,9 +1,4 @@
 "use client";
-/* Design: Organic Minimalism
-- Category filters with rounded badges
-- Day-of-week filter for product availability
-- Masonry-style grid with generous spacing
-*/
 
 import { useState, useMemo, useEffect } from 'react';
 import { products, categories, DAYS_OF_WEEK, DAYS_LABELS, DayOfWeek } from '@/lib/products';
@@ -21,20 +16,26 @@ export default function Menu() {
     setShowAviso(true);
   }, []);
 
+  // CORREÇÃO: Função handleCategoryClick adicionada ao clique das badges abaixo
   const handleCategoryClick = (categoryId: string) => {
-    if (categoryId === 'paes-especiais') {
+    if (categoryId === 'paes-especiais' || categoryId === 'saudaveis') { 
+      // Verifique se o ID no seu products.ts é exatamente este
       alert('🥖 Lembrete: Pães especiais sob encomenda (24h de antecedência).');
     }
     setSelectedCategory(categoryId);
   };
 
-  // Get current day of week
+  // CORREÇÃO: Ajuste do mapeamento do dia da semana (JavaScript: 0=Dom, 1=Seg...)
   const getCurrentDay = (): DayOfWeek => {
-    const days: DayOfWeek[] = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
-    return days[new Date().getDay()];
+    const days: DayOfWeek[] = ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
+    const todayIndex = new Date().getDay();
+    const today = days[todayIndex];
+    
+    // Se hoje for domingo e não houver produtos, você pode tratar aqui. 
+    // Por enquanto, retorna o dia real.
+    return today as DayOfWeek;
   };
 
-  // Filter products based on category and day
   const filteredProducts = useMemo(() => {
     return products.filter(product => {
       const categoryMatch = selectedCategory === 'all' || product.category === selectedCategory;
@@ -72,13 +73,16 @@ export default function Menu() {
             >
               Todos os dias
             </Button>
+            
+            {/* Botão Hoje */}
             <Button
               variant={selectedDay === getCurrentDay() ? 'default' : 'outline'}
               className="rounded-full"
               onClick={() => setSelectedDay(getCurrentDay())}
             >
-              Hoje ({DAYS_LABELS[getCurrentDay()]})
+              Hoje ({DAYS_LABELS[getCurrentDay()] || 'Fechado'})
             </Button>
+
             {DAYS_OF_WEEK.map(day => (
               <Button
                 key={day}
@@ -107,7 +111,7 @@ export default function Menu() {
                 key={category.id}
                 variant={selectedCategory === category.id ? 'default' : 'outline'}
                 className="text-base px-6 py-3 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300"
-                onClick={() => setSelectedCategory(category.id)}
+                onClick={() => handleCategoryClick(category.id)} // CORREÇÃO: Agora chama a função de aviso
               >
                 <span className="mr-2">{category.icon}</span>
                 {category.name}
@@ -159,13 +163,14 @@ export default function Menu() {
             Use o filtro de dias para ver o que está disponível hoje ou em outros dias!
           </p>
         </div>
-        {/* NOVO: Modal de Aviso Importante */}
+
+        {/* Modal de Aviso Importante */}
         {showAviso && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-300">
-            <div className="bg-white p-8 rounded-3xl max-w-md w-full shadow-2xl text-center space-y-4 border-2 border-accent/20">
+          <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div className="bg-white p-8 rounded-3xl max-w-md w-full shadow-2xl text-center space-y-4 border-2 border-accent/20 animate-in zoom-in-95 duration-300">
               <h3 className="text-2xl font-display font-bold text-foreground">🕒 Aviso Importante</h3>
               <div className="text-left text-muted-foreground space-y-2 bg-accent/5 p-4 rounded-xl">
-                <p>Para garantirmos pães sempre fresquinhos e recém-assados, orientamos pedidos com antecedência:</p>
+                <p>Para garantirmos pães sempre fresquinhos, orientamos pedidos com antecedência:</p>
                 <p>🥖 <strong>Tarde:</strong> pedidos até 11h do mesmo dia.</p>
                 <p>🥖 <strong>Manhã:</strong> pedidos no dia anterior.</p>
               </div>
