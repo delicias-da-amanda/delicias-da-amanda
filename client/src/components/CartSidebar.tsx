@@ -24,6 +24,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
   const [customerName, setCustomerName] = useState('');
   const [observations, setObservations] = useState('');
+  const [shippingValue, setShippingValue] = useState(15.00); // Valor inicial do frete
 
   const handleWhatsAppOrder = () => {
     if (items.length === 0) {
@@ -47,8 +48,14 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
       const price = item.selectedOption?.price || item.product.price;
       message += `• ${item.quantity}x ${itemName} - R$ ${(price * item.quantity).toFixed(2).replace('.', ',')}\n`;
     });
+// 1. Defina o valor do frete (aqui você pode integrar com o estado do componente depois)
+    const valorFrete = shippingValue;
+    const totalComFrete = getTotalPrice() + valorFrete;
 
-    message += `\n*Total: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}*`;
+    // 2. Monte a mensagem detalhada
+    message += `\n*Subtotal:* R$ ${getTotalPrice().toFixed(2).replace('.', ',')}`;
+    message += `\n*Frete:* R$ ${valorFrete.toFixed(2).replace('.', ',')}`;
+    message += `\n*Total Final: R$ ${totalComFrete.toFixed(2).replace('.', ',')}*`;
 
     if (observations.trim()) {
       message += `\n\n*Observações:* ${observations}`;
@@ -130,9 +137,11 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
           </tbody>
         </table>
 
-        <div class="total">
-          Total: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}
-        </div>
+        <div style="text-align: right; margin-top: 20px;">
+  <p>Subtotal: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}</p>
+  <p>Frete: R$ 15,00</p>
+  <p style="font-size: 1.2em; font-weight: bold;">Total: R$ ${(getTotalPrice() + shippingValue).toFixed(2).replace('.', ',')}</p>
+</div>
 
         ${observations.trim() ? `
           <div class="info">
@@ -252,6 +261,21 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
                 />
               </div>
 
+              {/* ADICIONE AQUI: Cálculo de Frete */}
+              <div className="mb-6 p-4 rounded-2xl border-2 border-dashed border-accent/20">
+                <label className="text-sm font-medium text-foreground mb-2 block">
+                  Calcular Frete
+                  </label>
+              <div className="flex gap-2">
+                  <Input 
+                    placeholder="Seu CEP" 
+                    className="rounded-xl flex-1"
+               /* Aqui você conectará a lógica de estado do CEP */
+                />
+                 <Button variant="outline" className="rounded-xl">Calcular</Button>
+              </div>
+            </div>
+
               <div>
                 <label className="text-sm font-medium text-foreground mb-2 block">
                   Observações
@@ -265,12 +289,22 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
               </div>
             </div>
 
-            {/* Total */}
+            {/* Frete Informativo */}
+            <div className="bg-muted/30 rounded-2xl p-4 mb-3 border border-dashed border-border">
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-muted-foreground">Frete (Entrega)</span>
+                <span className="font-medium text-foreground">
+                  R$ {shippingValue.toFixed(2).replace('.', ',')}
+                </span>
+              </div>
+            </div>
+
+            {/* Total Atualizado */}
             <div className="bg-accent/10 rounded-2xl p-4 mb-6">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-display font-semibold text-foreground">Total</span>
                 <span className="text-2xl font-mono font-bold text-accent">
-                  R$ {getTotalPrice().toFixed(2).replace('.', ',')}
+                  R$ {(getTotalPrice() + shippingValue).toFixed(2).replace('.', ',')}
                 </span>
               </div>
             </div>
