@@ -157,45 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 md:py-32 texture-overlay">
-        <div className="container">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-foreground">
-              O que nossos clientes dizem
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Depoimentos reais de quem já experimentou nossas delícias
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card 
-                key={index} 
-                className="rounded-3xl border-2 border-border bg-card animate-in fade-in slide-in-from-bottom-4 duration-700"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <CardContent className="p-8">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-primary fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed mb-6 italic">
-                    "{testimonial.text}"
-                  </p>
-                  <p className="font-display font-semibold text-foreground">
-                    {testimonial.name}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
+    {/* CTA Section */}
       <section className="py-20 md:py-32 bg-accent text-accent-foreground">
         <div className="container text-center">
           <div className="max-w-3xl mx-auto space-y-8">
