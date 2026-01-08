@@ -78,6 +78,12 @@ export default function About() {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Princípios que guiam cada etapa do nosso trabalho
+
+              ❤️ Afeto em Cada Detalhe: Preservamos o amor pela culinária caseira para criar sabores que aquecem o coração e resgatam memórias.
+
+              🥖 Essência Artesanal: Somos fiéis às nossas raízes, unindo ingredientes selecionados ao cuidado do preparo manual.
+
+              🏠 Conexão e Acolhimento: Acreditamos no poder da comida para fortalecer laços e fazer cada cliente se sentir em casa.
             </p>
           </div>
 
