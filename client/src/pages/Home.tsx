@@ -31,17 +31,14 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: 'Maria Silva',
       text: 'Os pães recheados são simplesmente maravilhosos! Viraram tradição no café da manhã da família.',
       rating: 5
     },
     {
-      name: 'João Santos',
       text: 'Sequilhos perfeitos, crocantes e saborosos. Recomendo muito!',
       rating: 5
     },
     {
-      name: 'Ana Costa',
       text: 'Lanches deliciosos e atendimento impecável. Sempre peço pelo WhatsApp!',
       rating: 5
     }
