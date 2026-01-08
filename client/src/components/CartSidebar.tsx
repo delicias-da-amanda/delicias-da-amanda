@@ -25,7 +25,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const [customerName, setCustomerName] = useState('');
   const [observations, setObservations] = useState('');
   const [shippingValue, setShippingValue] = useState(5.00); // Valor inicial do frete
-  const [isShippingEnabled, setIsShippingEnabled] = useState(true); // true = ligado, false = desligado
+  const [isShippingEnabled, setIsShippingEnabled] = useState(false); // true = ligado, false = desligado
   // Se o frete estiver habilitado, usa o valor. Se não, usa 0.
 const currentShipping = isShippingEnabled ? shippingValue : 0;
 
