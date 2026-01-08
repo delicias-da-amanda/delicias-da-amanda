@@ -42,18 +42,54 @@ function Router() {
       <CartSidebar open={cartOpen} onClose={() => setCartOpen(false)} />
 
       {/* --- BOTÃO FLUTUANTE ADICIONADO AQUI --- */}
-      {true && (
+     {/* --- BOTÃO FLUTUANTE COM ESTILO FORÇADO --- */}
+      {items.length > 0 && (
         <button
           onClick={() => setCartOpen(true)}
-          className="fixed bottom-24 right-6 z-40 flex items-center gap-3 bg-accent text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group"
+          style={{ 
+            position: 'fixed', 
+            bottom: '100px', // Altura para não bater no WhatsApp
+            right: '24px', 
+            zIndex: 9999, // Camada máxima para ficar na frente de tudo
+            backgroundColor: '#8B9474', // Verde oliva do seu tema
+            color: 'white',
+            padding: '16px 24px',
+            borderRadius: '50px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            border: 'none',
+            cursor: 'pointer',
+            boxShadow: '0 10px 25px rgba(0,0,0,0.3)',
+            transition: 'transform 0.2s'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
-          <div className="relative">
-            <ShoppingBag className="h-6 w-6" />
-            <span className="absolute -top-2 -right-2 bg-white text-accent text-[10px] font-bold h-5 w-5 rounded-full flex items-center justify-center shadow-sm">
+          <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+            <ShoppingBag size={24} />
+            <span style={{ 
+              position: 'absolute',
+              top: '-10px',
+              right: '-10px',
+              backgroundColor: '#ef4444', // Vermelho para destacar
+              color: 'white',
+              fontSize: '12px',
+              width: '20px',
+              height: '20px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontWeight: 'bold',
+              border: '2px solid white'
+            }}>
               {items.length}
             </span>
           </div>
-          <span className="font-medium pr-2 hidden sm:block">Ver Sacola</span>
+          <span style={{ fontWeight: '600' }} className="hidden sm:inline">
+            Ver Sacola
+          </span>
         </button>
       )}
 
