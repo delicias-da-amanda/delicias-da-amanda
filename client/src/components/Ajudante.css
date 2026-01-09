@@ -1,11 +1,12 @@
 .ajudante-container {
     position: fixed;
     bottom: 20px;
-    left: 20px; /* Mudamos de 'right' para 'left' para não bater no WhatsApp */
-    z-index: 1000;
-    display: flex;
+    left: 20px;
+    z-index: 99999 !important; /* Aumentamos muito o nível de prioridade */
+    display: flex !important; /* Força o aparecimento */
     flex-direction: column;
     align-items: center;
+    background-color: rgba(255, 0, 0, 0.1); /* Temporário: cria um fundo vermelho claro para você ver onde ela está */
 }
 
 .imagem-ajudante {
