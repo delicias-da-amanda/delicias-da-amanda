@@ -29,32 +29,31 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-display font-semibold mb-4">Links Rápidos</h4>
-            <ul className="space-y-3">
-              <li>
-                {/* 2. USAR <Link href="..."> em vez de <a> */}
-                <Link href="/" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
-                  Início
-                </Link>
-              </li>
-              <li>
-                <Link href="/cardapio" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
-                  Cardápio
-                </Link>
-              </li>
-              <li>
-                <Link href="/sobre" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
-                  Sobre Nós
-                </Link>
-              </li>
-              <li>
-                <Link href="/contato" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
-                  Contato
-                </Link>
-              </li>
-            </ul>
-          </div>
+<div>
+  <h4 className="text-lg font-display font-semibold mb-4">Links Rápidos</h4>
+  <ul className="space-y-3">
+    <li>
+      <Link href="/" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
+        Início
+      </Link>
+    </li>
+    <li>
+      <Link href="/cardapio" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
+        Cardápio
+      </Link>
+    </li>
+    <li>
+      <Link href="/sobre" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
+        Sobre Nós
+      </Link>
+    </li>
+    <li>
+      <Link href="/contato" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
+        Contato
+      </Link>
+    </li>
+  </ul>
+</div>
 
           {/* Contact & Social - AQUI MANTÉM <a> PORQUE SÃO LINKS EXTERNOS */}
           <div>
