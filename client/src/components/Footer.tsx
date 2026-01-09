@@ -1,10 +1,11 @@
-/* 
-Design: Organic Minimalism
+/* Design: Organic Minimalism
 - Soft olive green background with cream text
 - Generous spacing and organic shapes
 */
 
 import { Instagram, MessageCircle, MapPin } from 'lucide-react';
+// 1. IMPORTANTE: Importar o Link do wouter
+import { Link } from "wouter";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -32,34 +33,35 @@ export default function Footer() {
             <h4 className="text-lg font-display font-semibold mb-4">Links Rápidos</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/" className="text-sm hover:opacity-70 transition-opacity duration-300">
+                {/* 2. USAR <Link href="..."> em vez de <a> */}
+                <Link href="/" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
                   Início
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/cardapio" className="text-sm hover:opacity-70 transition-opacity duration-300">
+                <Link href="/cardapio" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
                   Cardápio
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/sobre" className="text-sm hover:opacity-70 transition-opacity duration-300">
+                <Link href="/sobre" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
                   Sobre Nós
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contato" className="text-sm hover:opacity-70 transition-opacity duration-300">
+                <Link href="/contato" className="text-sm hover:opacity-70 transition-opacity duration-300 cursor-pointer">
                   Contato
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact & Social */}
+          {/* Contact & Social - AQUI MANTÉM <a> PORQUE SÃO LINKS EXTERNOS */}
           <div>
             <h4 className="text-lg font-display font-semibold mb-4">Fale Conosco</h4>
             <div className="space-y-4">
               <a 
-                href="https://wa.me/551111986511287" 
+                href="https://wa.me/5511986511287" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm hover:opacity-70 transition-opacity duration-300"
