@@ -11,8 +11,6 @@ import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Ajudante from "@/components/Ajudante";
-import "@/components/Ajudante.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CartSidebar from "./components/CartSidebar";
@@ -92,9 +90,6 @@ function Router() {
       )}
 
       <FloatingWhatsApp />
-
-      {/* ADICIONE AQUI: A sua nova ajudante chef */}
-      <Ajudante />
     </>
   );
 }
