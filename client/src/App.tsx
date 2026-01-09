@@ -19,39 +19,35 @@ import { useState } from "react";
 
 function Router() {
   const [cartOpen, setCartOpen] = useState(false);
-  // 2. Pegue os itens do carrinho aqui
   const { items } = useCart();
-  console.log("Itens no carrinho:", items.length); 
 
   return (
     <>
       <Header onCartClick={() => setCartOpen(true)} />
       <main>
         <Switch>
-          <Route path={"/"} component={Home} />
-          <Route path={"/cardapio"} component={Menu} />
-          <Route path={"/sobre"} component={About} />
-          <Route path={"/contato"} component={Contact} />
-          <Route path={"/404"} component={NotFound} />
+          <Route path="/" component={Home} />
+          <Route path="/cardapio" component={Menu} />
+          <Route path="/sobre" component={About} />
+          <Route path="/contato" component={Contact} />
           <Route component={NotFound} />
         </Switch>
       </main>
       <Footer />
-      <CartSidebar open={cartOpen} onClose={() => setCartOpen(false)} />
       
+      {/* Componente de Carrinho (Apenas uma vez) */}
       <CartSidebar open={cartOpen} onClose={() => setCartOpen(false)} />
 
-      {/* --- BOTÃO FLUTUANTE ADICIONADO AQUI --- */}
-     {/* --- BOTÃO FLUTUANTE COM ESTILO FORÇADO --- */}
+      {/* BOTÃO FLUTUANTE DA SACOLA */}
       {items.length > 0 && (
         <button
           onClick={() => setCartOpen(true)}
           style={{ 
             position: 'fixed', 
-            bottom: '100px', // Altura para não bater no WhatsApp
+            bottom: '100px', 
             right: '24px', 
-            zIndex: 9999, // Camada máxima para ficar na frente de tudo
-            backgroundColor: '#8B9474', // Verde oliva do seu tema
+            zIndex: 999, 
+            backgroundColor: '#8B9474', 
             color: 'white',
             padding: '16px 24px',
             borderRadius: '50px',
@@ -72,7 +68,7 @@ function Router() {
               position: 'absolute',
               top: '-10px',
               right: '-10px',
-              backgroundColor: '#ef4444', // Vermelho para destacar
+              backgroundColor: '#ef4444',
               color: 'white',
               fontSize: '12px',
               width: '20px',
