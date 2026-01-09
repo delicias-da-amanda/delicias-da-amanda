@@ -24,51 +24,38 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
   const [customerName, setCustomerName] = useState('');
   const [observations, setObservations] = useState('');
-  const [shippingValue, setShippingValue] = useState(5.00); // Valor inicial do frete
-  const [isShippingEnabled, setIsShippingEnabled] = useState(false); // true = ligado, false = desligado
-  // Se o frete estiver habilitado, usa o valor. Se não, usa 0.
-const currentShipping = isShippingEnabled ? shippingValue : 0;
-
+  
   const currentShipping = isShippingEnabled ? shippingValue : 0;
 
   // COLE AQUI A VERSÃO ESTRUTURADA:
-  const handleWhatsAppOrder = () => {
-    if (items.length === 0) return toast.error('Seu carrinho está vazio!');
-    if (!customerName.trim()) return toast.error('Por favor, informe seu nome!');
+ const handleWhatsAppOrder = () => {
+  if (items.length === 0) return toast.error('Seu carrinho está vazio!');
+  if (!customerName.trim()) return toast.error('Por favor, informe seu nome!');
 
-    const entregaTexto = isShippingEnabled ? "ENTREGA" : "RETIRADA NO LOCAL";
-    const totalPedido = getTotalPrice() + currentShipping;
+  let message = `*🍞 NOVO PEDIDO - DELÍCIAS DA AMANDA*\n`;
+  message += `------------------------------------------\n\n`;
+  message += `👤 *Cliente:* ${customerName}\n\n`;
+  
+  message += `📦 *ITENS DO PEDIDO:*\n`;
+  items.forEach(item => {
+    const itemName = item.selectedOption 
+      ? `${item.product.name} (${item.selectedOption.name})`
+      : item.product.name;
+    const price = item.selectedOption?.price || item.product.price;
+    message += `• ${item.quantity}x ${itemName} - R$ ${(price * item.quantity).toFixed(2).replace('.', ',')}\n`;
+  });
 
-    let message = `*🍞 NOVO PEDIDO - DELÍCIAS DA AMANDA*\n`; // Troquei o ícone para pão combinando com seu negócio
-    message += `------------------------------------------\n\n`;
-    message += `👤 *Cliente:* ${customerName}\n`;
-    message += `🛵 *Método:* ${entregaTexto}\n\n`;
-    
-    message += `📦 *ITENS DO PEDIDO:*\n`;
-    items.forEach(item => {
-      const itemName = item.selectedOption 
-        ? `${item.product.name} (${item.selectedOption.name})`
-        : item.product.name;
-      const price = item.selectedOption?.price || item.product.price;
-      message += `• ${item.quantity}x ${itemName} - R$ ${(price * item.quantity).toFixed(2).replace('.', ',')}\n`;
-    });
+  message += `\n------------------------------------------\n`;
+  message += `✅ *TOTAL: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}*\n`;
+  message += `------------------------------------------\n`;
 
-    message += `\n------------------------------------------\n`;
-    message += `💰 *Subtotal:* R$ ${getTotalPrice().toFixed(2).replace('.', ',')}\n`;
-    if (isShippingEnabled) {
-      message += `🚚 *Frete:* R$ ${currentShipping.toFixed(2).replace('.', ',')}\n`;
-    }
-    message += `✅ *TOTAL FINAL: R$ ${totalPedido.toFixed(2).replace('.', ',')}*\n`;
-    message += `------------------------------------------\n`;
+  if (observations.trim()) {
+    message += `\n📝 *Observações:* ${observations}`;
+  }
 
-    if (observations.trim()) {
-      message += `\n📝 *Observações:* ${observations}`;
-    }
-
-    const whatsappUrl = `https://wa.me/5511986511287?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    toast.success('Redirecionando para WhatsApp...');
-  };
+  const whatsappUrl = `https://wa.me/5511986511287?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+};
 
   const handlePrint = () => {
     if (items.length === 0) return toast.error('Seu carrinho está vazio!');
@@ -276,48 +263,48 @@ const currentShipping = isShippingEnabled ? shippingValue : 0;
            </div>
          )}
 
-            {/* Total Atualizado */}
-            <div className="bg-accent/10 rounded-2xl p-4 mb-6">
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-display font-semibold text-foreground">Total</span>
-                <span className="text-2xl font-mono font-bold text-accent">
-                  R$ {(getTotalPrice() + currentShipping).toFixed(2).replace('.', ',')}
-                </span>
-              </div>
+            {/* Total Limpo (Sem Frete) */}
+          <div className="bg-accent/10 rounded-2xl p-4 mb-6 mt-6">
+            <div className="flex justify-between items-center">
+              <span className="text-lg font-display font-semibold text-foreground">Total do Pedido</span>
+              <span className="text-2xl font-mono font-bold text-accent">
+                R$ {getTotalPrice().toFixed(2).replace('.', ',')}
+              </span>
             </div>
+          </div>
 
-            {/* Action Buttons */}
-            <div className="space-y-3">
-              <Button
-                onClick={handleWhatsAppOrder}
-                className="w-full rounded-full h-12 font-medium"
-                size="lg"
-              >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Finalizar no WhatsApp
-              </Button>
+          {/* Action Buttons */}
+          <div className="space-y-3">
+            <Button
+              onClick={handleWhatsAppOrder}
+              className="w-full rounded-full h-12 font-medium"
+              size="lg"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Finalizar no WhatsApp
+            </Button>
 
-              <Button
-                onClick={handlePrint}
-                variant="outline"
-                className="w-full rounded-full h-12 font-medium"
-                size="lg"
-              >
-                <Printer className="mr-2 h-5 w-5" />
-                Imprimir Pedido
-              </Button>
+            <Button
+              onClick={handlePrint}
+              variant="outline"
+              className="w-full rounded-full h-12 font-medium"
+              size="lg"
+            >
+              <Printer className="mr-2 h-5 w-5" />
+              Imprimir Pedido
+            </Button>
 
-              <Button
-                onClick={() => {
-                  clearCart();
-                  toast.success('Carrinho limpo!');
-                }}
-                variant="ghost"
-                className="w-full rounded-full h-10 text-sm"
-              >
-                Limpar Carrinho
-              </Button>
-            </div>
+            <Button
+              onClick={() => {
+                clearCart();
+                toast.success('Carrinho limpo!');
+              }}
+              variant="ghost"
+              className="w-full rounded-full h-10 text-sm"
+            >
+              Limpar Carrinho
+            </Button>
+          </div>
           </>
         )}
       </SheetContent>
