@@ -99,37 +99,40 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Options Dialog */}
       <Dialog open={showOptions} onOpenChange={setShowOptions}>
-        <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#f8f8f7] p-0 rounded-[20px] flex flex-col">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-display">Escolha uma opção</DialogTitle>
-            <DialogDescription className="text-base">
-              Selecione a variação desejada de {product.name}
-            </DialogDescription>
-          </DialogHeader>
+  <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#f8f8f7] p-6 rounded-[20px] flex flex-col gap-6">
+    
+    <DialogHeader className="pt-2"> {/* Adicionamos um pequeno respiro no topo */}
+      <DialogTitle className="text-2xl font-display">Escolha uma opção</DialogTitle>
+      <DialogDescription className="text-base">
+        Selecione a variação desejada de {product.name}
+      </DialogDescription>
+    </DialogHeader>
 
-          <div className="space-y-3 mt-4">
-            {product.options?.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleOptionSelect(option)}
-                className="w-full flex items-center justify-between p-4 rounded-2xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all duration-300 group"
-              >
-                <div className="text-left">
-                  <p className="font-medium text-foreground">{option.name}</p>
-                  {option.price > 0 && (
-                    <p className="text-sm font-mono text-muted-foreground mt-1">
-                      R$ {option.price.toFixed(2).replace('.', ',')}
-                    </p>
-                  )}
-                </div>
-                <div className="w-8 h-8 rounded-full border-2 border-border group-hover:border-accent group-hover:bg-accent flex items-center justify-center transition-all duration-300">
-                  <Check className="h-4 w-4 text-accent-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              </button>
-            ))}
+    {/* Alteramos 'mt-4' para 'mt-2' e garantimos que o container tenha espaço inferior */}
+    <div className="space-y-3 mt-2 pb-4">
+      {product.options?.map((option, index) => (
+        <button
+          key={index}
+          onClick={() => handleOptionSelect(option)}
+          className="w-full flex items-center justify-between p-4 rounded-2xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all duration-300 group bg-white" 
+        >
+          {/* Adicionei 'bg-white' acima para destacar as opções do fundo cinza claro */}
+          <div className="text-left">
+            <p className="font-medium text-foreground">{option.name}</p>
+            {option.price > 0 && (
+              <p className="text-sm font-mono text-muted-foreground mt-1">
+                R$ {option.price.toFixed(2).replace('.', ',')}
+              </p>
+            )}
           </div>
-        </DialogContent>
-      </Dialog>
+          <div className="w-8 h-8 rounded-full border-2 border-border group-hover:border-accent group-hover:bg-accent flex items-center justify-center transition-all duration-300">
+            <Check className="h-4 w-4 text-accent-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </div>
+        </button>
+      ))}
+    </div>
+  </DialogContent>
+</Dialog>
     </>
   );
 }
