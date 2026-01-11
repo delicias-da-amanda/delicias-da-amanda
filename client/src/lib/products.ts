@@ -269,6 +269,6 @@ export const categories = [
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },
   { id: 'bebidas', name: 'Bebidas', icon: '🥤' },
-  { id: 'saudaveis', name: 'Delícias Saudáveis', icon: '🍧🍓🥥' }
+  { id: 'saudaveis', name: 'Delícias Saudáveis', icon: '🥥' },
   { id: 'marmitas', name: 'Marmitas Fit', icon: '🥗' }
 ];
