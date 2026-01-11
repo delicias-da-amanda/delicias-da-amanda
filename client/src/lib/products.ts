@@ -81,7 +81,7 @@ export const products: Product[] = [
     hasOptions: true,
     options: [
       { name: 'Calabresa', price: 16 },
-      { name: 'Calabresacom Requeijão Cremoso', price: 18 },
+      { name: 'Calabresa com Requeijão Cremoso', price: 18 },
       { name: 'Calabresa com Queijo e Requijão', price: 18 },
       { name: 'Calabresa, Frango e Requijão', price: 18 },
       { name: 'Calabresa com Presunto e Queijo', price: 18 }
