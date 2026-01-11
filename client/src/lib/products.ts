@@ -144,40 +144,22 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
-    id: 'marmita-proteica',
-    name: '🍗 Marmita Proteica - Alta em proteínas, indicada para quem treina.',
-    description: 'Frango, carne vermelha magra ou peixe. Pouco carboidrato. Legumes. 👉 Muito usada por quem faz musculação.',
-    price: 0, // Price varies by option
+    id: 'marmita-veget-vegan',
+    name: '🥗 Marmita Fitness Vegetariana ou Vegana- Sem carnes, rica em nutrientes.',
+    description: 'Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão). Ovos ou PTS (Proteina texturizada de soja).',
+    price: 0, 
     category: 'marmitas',
-    image: '/images/marmita-prot.jpg',
+    image: '/images/vegano-vege.jpg',
     hasOptions: true,
     options: [
-      { name: 'Frango Grelhado', price: 18 },
-      { name: 'Carne Magra (Patinho)', price: 20 },
-      { name: 'Peixe Grelhado', price: 18 },
-    ],
+      { name: 'Vegetariana 1: Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão)', price: 18 },
+      { name: 'Vegetariana 2: Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão) e Ovos Cozidos', price: 19 },
+      { name: 'Vegetariana 3: Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão) e PTS', price: 19 },
+      { name: 'Vegana 1: Leguminosa (lentilha ou grão-de-bico), legumes e verduras. Arroz integral ou macarrão integral', price: 18 },
+      { name: 'Vegana 2: Leguminosa (lentilha ou grão-de-bico), legumes e verduras. Arroz integral ou macarrão integral', price: 19 }
+    ], // Vírgula adicionada aqui
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'marmita-vegetariana',
-    name: '🥗 Marmita Fitness Vegetariana - Sem carnes, rica em nutrientes.',
-    description: 'Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão). Ovos ou Tofu. 👉 Ideal para quem não consome carne.',
-    price: 18,
-    category: 'marmitas',
-    image: '/images/marmita-veget.jpg',
-    hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'marmita-vegana',
-    name: '🌱 Marmita Vegana - 100% vegetal.',
-    description: 'leguminosa (lentilha ou grão-de-bico). Legumes e verduras. Arroz integral ou macarrão integral. 👉 Sem ingredientes de origem animal.',
-    price: 18,
-    category: 'marmitas',
-    image: '/images/marmita-vegana.jpg',
-    hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
+},
   {
     id: 'marmita-detox',
     name: '🧘 Marmita Detox - Focada em leveza e desintoxicação.',
