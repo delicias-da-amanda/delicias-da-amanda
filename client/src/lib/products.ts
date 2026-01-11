@@ -203,7 +203,7 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
 
-  // Delícias Saudáveis
+  // Sobremesas Saudáveis
 
   {
     id: 'overnight-200ml',
@@ -269,6 +269,6 @@ export const categories = [
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
   { id: 'marmitas', name: 'Marmitas Fit', icon: '🥗' },
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },
-  { id: 'saudaveis', name: 'Delícias Saudáveis', icon: '🥥' },
+  { id: 'saudaveis', name: 'Sobremesas Saudáveis', icon: '🥥' },
   { id: 'bebidas', name: 'Bebidas', icon: '🥤' }
 ];
