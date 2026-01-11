@@ -156,7 +156,7 @@ export const products: Product[] = [
       { name: 'Vegetariana 2: Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão) e Ovos Cozidos', price: 19 },
       { name: 'Vegetariana 3: Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão) e PTS', price: 19 },
       { name: 'Vegana 1: Leguminosa (lentilha ou grão-de-bico), legumes e verduras. Arroz integral ou macarrão integral', price: 18 },
-      { name: 'Vegana 2: Leguminosa (lentilha ou grão-de-bico), legumes e verduras. Arroz integral ou macarrão integral', price: 19 }
+      { name: 'Vegana 2: Leguminosa (lentilha ou grão-de-bico), legumes e verduras. Arroz integral ou macarrão integral e PTS', price: 19 }
     ], // Vírgula adicionada aqui
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
 },
