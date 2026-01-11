@@ -50,6 +50,20 @@ export const products: Product[] = [
   
   // Lanches
   {
+    id: 'lanche-natural',
+    name: 'Lanche Natural',
+    description: 'Lanche saudável e saboroso',
+    price: 0, // Price varies by option
+    category: 'lanches',
+    image: '/images/lanche-natural.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Atum', price: 9.00 },
+      { name: 'Frango', price: 9.00 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
     id: 'lanche-carne-louca',
     name: 'Lanche de Carne Louca',
     description: 'Delicioso lanche com carne desfiada temperada',
@@ -177,20 +191,6 @@ export const products: Product[] = [
       { name: 'Manga, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 }
     ],
     availableDays: ['terca', 'quarta', 'quinta', 'sabado']
-  },
-  {
-    id: 'lanche-natural',
-    name: 'Lanche Natural',
-    description: 'Lanche saudável e saboroso',
-    price: 0, // Price varies by option
-    category: 'saudaveis',
-    image: '/images/lanche-natural.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Atum', price: 9.00 },
-      { name: 'Frango', price: 9.00 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
     id: 'salada-de-frutas-200ml',
