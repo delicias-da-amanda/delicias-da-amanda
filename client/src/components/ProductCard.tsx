@@ -118,7 +118,16 @@ export default function ProductCard({ product }: ProductCardProps) {
         >
           {/* Adicionei 'bg-white' acima para destacar as opções do fundo cinza claro */}
           <div className="text-left">
-            <p className="font-medium text-foreground">{option.name}</p>
+            <p className="font-medium text-foreground">
+              {option.name.includes(':') ? (
+                <>
+                  <strong>{option.name.split(':')[0]}</strong>:
+                  {option.name.split(':')[1]}
+                </>
+              ) : (
+                option.name
+              )}
+            </p>
             {option.price > 0 && (
               <p className="text-sm font-mono text-muted-foreground mt-1">
                 R$ {option.price.toFixed(2).replace('.', ',')}
