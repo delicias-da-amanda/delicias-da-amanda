@@ -99,49 +99,7 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
 
-  // Delícias Saudáveis
-
-  {
-    id: 'overnight-200ml',
-    name: 'Overnight 200ml',
-    description: 'Leve, cremoso e delicioso!',
-    price: 0, // Price varies by option
-    category: 'saudaveis',
-    image: '/images/overnight.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Maracuja (geleia), Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
-      { name: 'Morango, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
-      { name: 'Manga, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 }
-    ],
-    availableDays: ['terca', 'quarta', 'quinta', 'sabado']
-  },
-  {
-    id: 'lanche-natural',
-    name: 'Lanche Natural',
-    description: 'Lanche saudável e saboroso',
-    price: 0, // Price varies by option
-    category: 'saudaveis',
-    image: '/images/lanche-natural.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Atum', price: 9.00 },
-      { name: 'Frango', price: 9.00 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'salada-de-frutas-200ml',
-    name: 'Salada de Frutas (Banana, Mamão, Morango, Manga Laranja e Maça)200ml',
-    description: 'Refrescante, leve e cheia de sabor!',
-    price: 10,
-    category: 'saudaveis',
-    image: '/images/salada-frutas.jpg',
-    hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-
-  // Delícias Saudáveis
+  // Marmitas Fit
 
   {
     id: 'salada-fit',
@@ -242,6 +200,48 @@ export const products: Product[] = [
       { name: 'Frango Grelhado', price: 18 },
       { name: 'Ovos cozidos', price: 16 },
     ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+
+  // Delícias Saudáveis
+
+  {
+    id: 'overnight-200ml',
+    name: 'Overnight 200ml',
+    description: 'Leve, cremoso e delicioso!',
+    price: 0, // Price varies by option
+    category: 'saudaveis',
+    image: '/images/overnight.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Maracuja (geleia), Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
+      { name: 'Morango, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
+      { name: 'Manga, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 }
+    ],
+    availableDays: ['terca', 'quarta', 'quinta', 'sabado']
+  },
+  {
+    id: 'lanche-natural',
+    name: 'Lanche Natural',
+    description: 'Lanche saudável e saboroso',
+    price: 0, // Price varies by option
+    category: 'saudaveis',
+    image: '/images/lanche-natural.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Atum', price: 9.00 },
+      { name: 'Frango', price: 9.00 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
+    id: 'salada-de-frutas-200ml',
+    name: 'Salada de Frutas (Banana, Mamão, Morango, Manga Laranja e Maça)200ml',
+    description: 'Refrescante, leve e cheia de sabor!',
+    price: 10,
+    category: 'saudaveis',
+    image: '/images/salada-frutas.jpg',
+    hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
 
