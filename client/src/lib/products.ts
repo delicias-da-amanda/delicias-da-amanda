@@ -106,7 +106,7 @@ export const products: Product[] = [
     name: '🥗 Salada Fit',
     description: 'Leve, saborosa e super saudável.!',
     price: 10,
-    category: 'saudaveis',
+    category: 'marmitas',
     image: '/images/salada-fit.jpg',
     hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
