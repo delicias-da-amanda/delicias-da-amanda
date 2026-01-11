@@ -27,7 +27,7 @@ export default function Menu() {
 
   // CORREÇÃO: Ajuste do mapeamento do dia da semana (JavaScript: 0=Dom, 1=Seg...)
   const getCurrentDay = (): DayOfWeek => {
-    const days: DayOfWeek[] = ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
+    const days: DayOfWeek[] = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
     const todayIndex = new Date().getDay();
     const today = days[todayIndex];
     
@@ -44,11 +44,14 @@ export default function Menu() {
     });
   }, [selectedCategory, selectedDay]);
 
-  const productsByCategory = useMemo(() => {
+const productsByCategory = useMemo(() => {
   const grouped: Record<string, typeof products> = {};
   
   filteredProducts.forEach(product => {
-    const categoryName = categories.find(c => c.id === product.category)?.name || "Outros";
+    // Busca o nome da categoria no array de categorias
+    const catInfo = categories.find(c => c.id === product.category);
+    const categoryName = catInfo ? catInfo.name : "Outros";
+    
     if (!grouped[categoryName]) {
       grouped[categoryName] = [];
     }
@@ -56,7 +59,7 @@ export default function Menu() {
   });
   
   return grouped;
-}, [filteredProducts]);
+}, [filteredProducts]); // REAÇÃO: Sempre que filteredProducts mudar, ele reagrupa
 
   return (
     <div className="min-h-screen py-12 md:py-20">
@@ -135,33 +138,45 @@ export default function Menu() {
         </div>
 
         {/* Products Grid */}
+        {/* Products Grid */}
         {filteredProducts.length > 0 ? (
-  <div className="space-y-16 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-    {selectedCategory === 'all' ? (
-      // Visão Agrupada por Categoria
-      Object.entries(productsByCategory).map(([categoryName, items]) => (
-        <div key={categoryName} className="space-y-6">
-          <div className="flex items-center gap-2 mb-6 bg-accent/10 p-1 px-4 rounded-full w-fit border border-accent/20">
-            <span className="text-accent font-bold uppercase text-xs tracking-widest">
-              {categoryName}
-            </span>
+          <div className="space-y-16 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+            {selectedCategory === 'all' ? (
+              // MAPEAR PELAS CATEGORIAS OFICIAIS (Garante a ordem do seu arquivo products.ts)
+              categories.map((cat) => {
+                // Filtra os produtos que pertencem a esta categoria específica dentro do loop
+                const itemsInCategory = filteredProducts.filter(p => p.category === cat.id);
+                
+                // Se não houver produtos desta categoria para o dia selecionado, não renderiza nada
+                if (itemsInCategory.length === 0) return null;
+
+                return (
+                  <div key={cat.id} className="space-y-6">
+                    {/* Título da Categoria Estilizado conforme sua imagem */}
+                    <div className="flex items-center gap-2 mb-6 bg-[#8B9474]/10 p-1 px-4 rounded-full w-fit border border-[#8B9474]/20">
+                      <span className="text-[#8B9474] font-bold uppercase text-xs tracking-widest">
+                        {cat.name}
+                      </span>
+                    </div>
+
+                    {/* Grid de produtos desta categoria específica */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {itemsInCategory.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              // VISÃO SIMPLES: Quando o usuário clica em uma categoria específica no menu superior
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            )}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {items.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      ))
-    ) : (
-      // Visão Simples (Quando clica em uma categoria específica)
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    )}
-  </div>
         ) : (
           <div className="text-center py-20">
             <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center mx-auto mb-6">
