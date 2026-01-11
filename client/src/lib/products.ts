@@ -160,30 +160,6 @@ export const products: Product[] = [
     ], // Vírgula adicionada aqui
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
 },
-  {
-    id: 'marmita-detox',
-    name: '🧘 Marmita Detox - Focada em leveza e desintoxicação.',
-    description: 'Legumes cozidos ou crus. Grãos leves. Pouco sal e gordura. 👉 Ideal para refeições leves.',
-    price: 18,
-    category: 'marmitas',
-    image: '/images/marmita-detox.jpg',
-    hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'marmita-economica',
-    name: '🍠 Marmita Fit Econômica - Opção acessível e nutritiva.',
-    description: 'Arroz e Feijão. Frango ou ovos. Salada simples.',
-    price: 0, // Price varies by option
-    category: 'marmitas',
-    image: '/images/marmita-econ.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Frango Grelhado', price: 18 },
-      { name: 'Ovos cozidos', price: 16 },
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
 
   // Sobremesas Saudáveis
 
