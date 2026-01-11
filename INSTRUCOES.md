@@ -19,7 +19,7 @@ Este é um cardápio digital completo e moderno para a **Delícias da Amanda**, 
 - Call-to-action para ver produtos ou pedir pelo WhatsApp
 
 ### 2. **Cardápio Completo**
-- **Filtro por Categoria**: Biscoitos Amanteigados (Sequilhos), Lanches, Pães Especiais, Bebidas
+- **Filtro por Categoria**: Biscoitos Amanteigados, Lanches, Pães Especiais, Bebidas
 - **Filtro por Dia da Semana**: Permite configurar quais produtos aparecem em cada dia
   - Botão "Todos os dias"
   - Botão "Hoje" (mostra automaticamente o dia atual)

@@ -31,10 +31,10 @@ export const DAYS_LABELS: Record<DayOfWeek, string> = {
 };
 
 export const products: Product[] = [
-  // Biscoitos Amanteigados (Sequilhos)
+  // Biscoitos Amanteigados
   {
     id: 'biscoito-amanteigado',
-    name: 'Biscoito Amanteigado (Sequilhos)',
+    name: 'Biscoito Amanteigado',
     description: 'Sequilhos crocantes e amanteigados, feitos artesanalmente',
     price: 0, // Price varies by option
     category: 'biscoitos',
@@ -263,7 +263,7 @@ export const products: Product[] = [
 ];
 
 export const categories = [
-  { id: 'biscoitos', name: 'Amanteigados (Sequilhos)', icon: '🍪' },
+  { id: 'biscoitos', name: 'Biscoitos Amanteigados (Sequilhos)', icon: '🍪' },
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },
   { id: 'bebidas', name: 'Bebidas', icon: '🥤' },
