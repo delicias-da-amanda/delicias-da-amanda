@@ -12,7 +12,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: 'biscoitos' | 'lanches' | 'paes' | 'bebidas' | 'saudaveis' | 'marmitas';
+  category: 'biscoitos' | 'lanches' | 'marmitas'| 'paes' | 'saudaveis' | 'bebidas';
   image: string;
   hasOptions: boolean;
   options?: ProductOption[];
@@ -267,8 +267,8 @@ export const products: Product[] = [
 export const categories = [
   { id: 'biscoitos', name: 'Biscoitos Amanteigados (Sequilhos)', icon: '🍪' },
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
+  { id: 'marmitas', name: 'Marmitas Fit', icon: '🥗' },
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },
-  { id: 'bebidas', name: 'Bebidas', icon: '🥤' },
   { id: 'saudaveis', name: 'Delícias Saudáveis', icon: '🥥' },
-  { id: 'marmitas', name: 'Marmitas Fit', icon: '🥗' }
+  { id: 'bebidas', name: 'Bebidas', icon: '🥤' }
 ];
