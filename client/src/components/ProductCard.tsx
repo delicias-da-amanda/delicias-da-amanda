@@ -99,7 +99,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Options Dialog */}
       <Dialog open={showOptions} onOpenChange={setShowOptions}>
-        <DialogContent className="rounded-3xl max-w-md">
+        <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#f8f8f7] p-0 rounded-[20px] flex flex-col">
           <DialogHeader>
             <DialogTitle className="text-2xl font-display">Escolha uma opção</DialogTitle>
             <DialogDescription className="text-base">
