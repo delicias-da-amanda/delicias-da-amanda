@@ -27,12 +27,15 @@ export default function Menu() {
 
   // CORREÇÃO: Ajuste do mapeamento do dia da semana (JavaScript: 0=Dom, 1=Seg...)
   const getCurrentDay = (): DayOfWeek => {
-    const days: DayOfWeek[] = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
-    const todayIndex = new Date().getDay();
+    // O JavaScript usa: 0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sab
+    const days: DayOfWeek[] = ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
+    const todayIndex = new Date().getDay(); // Pega o índice real (0-6)
     const today = days[todayIndex];
     
-    // Se hoje for domingo e não houver produtos, você pode tratar aqui. 
-    // Por enquanto, retorna o dia real.
+    // Se hoje for domingo e você não abre, ou se der erro, 
+    // podemos retornar 'segunda' como padrão ou manter o dia real
+    if (today === 'domingo') return 'segunda' as DayOfWeek; 
+
     return today as DayOfWeek;
   };
 
