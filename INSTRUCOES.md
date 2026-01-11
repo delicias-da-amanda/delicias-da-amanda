@@ -92,7 +92,7 @@ Este é um cardápio digital completo e moderno para a **Delícias da Amanda**, 
   name: 'Nome do Produto',
   description: 'Descrição curta do produto',
   price: 10.00,
-  category: 'biscoitos', // ou 'lanches', 'paes', 'bebidas'
+  category: 'biscoitos', // ou 'lanches', 'paes', 'bebidas', 'saudaveis', 'marmitas'
   image: '/images/foto-produto.jpg',
   hasOptions: false, // true se tiver opções
   options: [ // apenas se hasOptions for true

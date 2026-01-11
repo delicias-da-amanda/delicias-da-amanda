@@ -11,8 +11,8 @@ export interface Product {
   id: string;
   name: string;
   description: string;
-  price: 0, // Price varies by option
-  category: 'biscoitos' | 'lanches' | 'paes' | 'bebidas' | 'saudaveis';
+  price: number;
+  category: 'biscoitos' | 'lanches' | 'paes' | 'bebidas' | 'saudaveis' | 'marmitas';
   image: string;
   hasOptions: boolean;
   options?: ProductOption[];
@@ -31,7 +31,7 @@ export const DAYS_LABELS: Record<DayOfWeek, string> = {
 };
 
 export const products: Product[] = [
-  // Biscoitos Amanteigados
+  // Biscoitos Amanteigados (Sequilhos)
   {
     id: 'biscoito-amanteigado',
     name: 'Biscoito Amanteigado',
@@ -57,20 +57,6 @@ export const products: Product[] = [
     category: 'lanches',
     image: '/images/lanches-hero.jpg',
     hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'lanche-natural',
-    name: 'Lanche Natural',
-    description: 'Lanche saudável e saboroso',
-    price: 0, // Price varies by option
-    category: 'lanches',
-    image: '/images/lanche-natural.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Atum', price: 9.00 },
-      { name: 'Frango', price: 9.00 }
-    ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
@@ -126,14 +112,27 @@ export const products: Product[] = [
     options: [
       { name: 'Maracuja (geleia), Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
       { name: 'Morango, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
-      { name: 'Uva, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
       { name: 'Manga, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 }
     ],
     availableDays: ['terca', 'quarta', 'quinta', 'sabado']
   },
   {
+    id: 'lanche-natural',
+    name: 'Lanche Natural',
+    description: 'Lanche saudável e saboroso',
+    price: 0, // Price varies by option
+    category: 'saudaveis',
+    image: '/images/lanche-natural.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Atum', price: 9.00 },
+      { name: 'Frango', price: 9.00 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
     id: 'salada-de-frutas-200ml',
-    name: 'Salada de Frutas (Banana, Mamão, Morango, Manga Laranja, Uva e Maça)200ml',
+    name: 'Salada de Frutas (Banana, Mamão, Morango, Manga Laranja e Maça)200ml',
     description: 'Refrescante, leve e cheia de sabor!',
     price: 10,
     category: 'saudaveis',
@@ -141,6 +140,9 @@ export const products: Product[] = [
     hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
+
+  // Delícias Saudáveis
+
   {
     id: 'salada-fit',
     name: '🥗 Salada Fit',
@@ -156,7 +158,7 @@ export const products: Product[] = [
     name: '🥗 Marmita Fitness Tradicional - Equilíbrio entre proteínas, carboidratos e legumes.',
     description: 'Arroz integral ou branco. Frango grelhado / carne magra / peixe / ovos. Legumes cozidos ou salteados. 👉 Ideal para quem quer alimentação saudável no dia a dia.',
     price: 0, // Price varies by option
-    category: 'saudaveis',
+    category: 'marmitas',
     image: '/images/marmita-trad.jpg',
     hasOptions: true,
     options: [
@@ -172,7 +174,7 @@ export const products: Product[] = [
     name: '🥩 Marmita Low Carb - Pouco ou nenhum carboidrato.',
     description: 'Carnes (frango, carne bovina, peixe ou ovos). Legumes (abobrinha, brócolis, couve-flor). Gordura boa (azeite). 👉 Indicada para quem busca emagrecimento.',
     price: 0, // Price varies by option
-    category: 'saudaveis',
+    category: 'marmitas',
     image: '/images/marmita-low.jpg',
     hasOptions: true,
     options: [
@@ -188,7 +190,7 @@ export const products: Product[] = [
     name: '🍗 Marmita Proteica - Alta em proteínas, indicada para quem treina.',
     description: 'Frango, carne vermelha magra ou peixe. Pouco carboidrato. Legumes. 👉 Muito usada por quem faz musculação.',
     price: 0, // Price varies by option
-    category: 'saudaveis',
+    category: 'marmitas',
     image: '/images/marmita-prot.jpg',
     hasOptions: true,
     options: [
@@ -203,7 +205,7 @@ export const products: Product[] = [
     name: '🥗 Marmita Fitness Vegetariana - Sem carnes, rica em nutrientes.',
     description: 'Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão). Ovos ou Tofu. 👉 Ideal para quem não consome carne.',
     price: 18,
-    category: 'saudaveis',
+    category: 'marmitas',
     image: '/images/marmita-veget.jpg',
     hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
@@ -213,7 +215,7 @@ export const products: Product[] = [
     name: '🌱 Marmita Vegana - 100% vegetal.',
     description: 'leguminosa (lentilha ou grão-de-bico). Legumes e verduras. Arroz integral ou macarrão integral. 👉 Sem ingredientes de origem animal.',
     price: 18,
-    category: 'saudaveis',
+    category: 'marmitas',
     image: '/images/marmita-vegana.jpg',
     hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
@@ -223,7 +225,7 @@ export const products: Product[] = [
     name: '🧘 Marmita Detox - Focada em leveza e desintoxicação.',
     description: 'Legumes cozidos ou crus. Grãos leves. Pouco sal e gordura. 👉 Ideal para refeições leves.',
     price: 18,
-    category: 'saudaveis',
+    category: 'marmitas',
     image: '/images/marmita-detox.jpg',
     hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
@@ -233,7 +235,7 @@ export const products: Product[] = [
     name: '🍠 Marmita Fit Econômica - Opção acessível e nutritiva.',
     description: 'Arroz e Feijão. Frango ou ovos. Salada simples.',
     price: 0, // Price varies by option
-    category: 'saudaveis',
+    category: 'marmitas',
     image: '/images/marmita-econ.jpg',
     hasOptions: true,
     options: [
@@ -267,5 +269,6 @@ export const categories = [
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },
   { id: 'bebidas', name: 'Bebidas', icon: '🥤' },
-  { id: 'saudaveis', name: 'Delícias Saudáveis', icon: '🥗' }
+  { id: 'saudaveis', name: 'Delícias Saudáveis', icon: '🍧🍓🥥' }
+  { id: 'marmitas', name: 'Marmitas Fit', icon: '🥗' }
 ];
