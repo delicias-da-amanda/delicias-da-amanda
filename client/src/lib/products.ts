@@ -214,10 +214,10 @@ export const products: Product[] = [
     image: '/images/suco-detox.jpg',
     hasOptions: true,
     options: [
-      { name: 'Couve + Limão + Gengibre', price: 10 },
-      { name: 'Couve + Maçã + Hortelã', price: 10 },
-      { name: 'Pepino + Limão + Hortelã', price: 10 },
-      { name: 'Abacaxi + Hortelã + Gengibre', price: 10 }
+      { name: 'Couve + Limão + Gengibre - 300ml', price: 10 },
+      { name: 'Couve + Maçã + Hortelã - 300ml', price: 10 },
+      { name: 'Pepino + Limão + Hortelã - 300ml', price: 10 },
+      { name: 'Abacaxi + Hortelã + Gengibre - 300ml', price: 10 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
@@ -230,9 +230,9 @@ export const products: Product[] = [
     image: '/images/suco-detox.jpg',
     hasOptions: true,
     options: [
-      { name: 'Beterraba + Laranja + Gengibre', price: 10 },
-      { name: 'Cenoura + Laranja + Beterraba', price: 10 },
-      { name: 'Manga + Gengibre + Limão', price: 10 }
+      { name: 'Beterraba + Laranja + Gengibre - 300ml', price: 10 },
+      { name: 'Cenoura + Laranja + Beterraba - 300ml', price: 10 },
+      { name: 'Manga + Gengibre + Limão - 300ml', price: 10 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
