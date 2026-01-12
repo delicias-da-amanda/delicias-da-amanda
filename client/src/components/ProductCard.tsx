@@ -98,36 +98,29 @@ export default function ProductCard({ product }: ProductCardProps) {
       </Card>
 
       {/* Options Dialog */}
-      <Dialog open={showOptions} onOpenChange={setShowOptions}>
-  <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#f8f8f7] p-6 rounded-[20px] flex flex-col gap-6">
+<Dialog open={showOptions} onOpenChange={setShowOptions}>
+  <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#f8f8f7] p-0 rounded-[24px] flex flex-col gap-0 border-none">
     
-    <DialogHeader className="pt-2"> {/* Adicionamos um pequeno respiro no topo */}
-      <DialogTitle className="text-2xl font-display">Escolha uma opção</DialogTitle>
-      <DialogDescription className="text-base">
+    {/* CABEÇALHO: Adicionamos padding interno (p-6) e uma borda inferior sutil */}
+    <div className="p-6 pb-4 border-b border-black/5 bg-[#f8f8f7] sticky top-0 z-10">
+      <DialogTitle className="text-2xl font-display font-semibold text-[#34322d]">
+        Escolha uma opção
+      </DialogTitle>
+      <DialogDescription className="text-base text-[#858481] mt-2 leading-relaxed">
         Selecione a variação desejada de {product.name}
       </DialogDescription>
-    </DialogHeader>
+    </div>
 
-    {/* Alteramos 'mt-4' para 'mt-2' e garantimos que o container tenha espaço inferior */}
-    <div className="space-y-3 mt-2 pb-4">
+    {/* LISTA DE OPÇÕES: Adicionamos um padding (p-5) para as opções não encostarem no cabeçalho */}
+    <div className="p-5 flex flex-col gap-3">
       {product.options?.map((option, index) => (
         <button
           key={index}
           onClick={() => handleOptionSelect(option)}
-          className="w-full flex items-center justify-between p-4 rounded-2xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all duration-300 group bg-white" 
+          className="w-full flex items-center justify-between p-4 rounded-2xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all duration-300 group bg-white shadow-sm"
         >
-          {/* Adicionei 'bg-white' acima para destacar as opções do fundo cinza claro */}
           <div className="text-left">
-            <p className="font-medium text-foreground">
-              {option.name.includes(':') ? (
-                <>
-                  <strong>{option.name.split(':')[0]}</strong>:
-                  {option.name.split(':')[1]}
-                </>
-              ) : (
-                option.name
-              )}
-            </p>
+            <p className="font-medium text-foreground">{option.name}</p>
             {option.price > 0 && (
               <p className="text-sm font-mono text-muted-foreground mt-1">
                 R$ {option.price.toFixed(2).replace('.', ',')}
