@@ -56,7 +56,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <>
-      <Card className="group overflow-hidden rounded-3xl border-2 border-border hover:border-accent transition-all duration-400 hover:-translate-y-1 hover:shadow-lg bg-card">
+      <Card className="group overflow-hidden rounded-3xl border-2 border-border hover:border-accent transition-all duration-400 hover:-translate-y-1 hover:shadow-lg bg-card flex flex-col h-full">
         <div className="relative overflow-hidden aspect-square">
           <img
             src={product.image}
@@ -71,21 +71,21 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        <CardContent className="p-6">
-          <h3 className="text-xl font-display font-semibold text-foreground mb-2 line-clamp-2">
-            {product.name}
-          </h3>
-          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
-            {product.description}
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="text-2xl font-mono font-medium text-accent">
-              {displayPrice}
-            </span>
-          </div>
-        </CardContent>
+        <CardContent className="p-6 flex-grow">
+  <h3 className="text-xl font-display font-semibold text-foreground mb-2 whitespace-normal">
+    {product.name}
+  </h3>
+  <p className="text-sm text-muted-foreground leading-relaxed whitespace-normal mb-4">
+    {product.description}
+  </p>
+  <div className="flex items-center justify-between">
+    <span className="text-2xl font-mono font-medium text-accent">
+      {displayPrice}
+    </span>
+  </div>
+</CardContent>
 
-        <CardFooter className="p-6 pt-0">
+        <CardFooter className="p-6 pt-0 mt-auto">
           <Button
             onClick={handleAddToCart}
             className="w-full rounded-full h-12 font-medium transition-all duration-300 hover:scale-[1.02]"
