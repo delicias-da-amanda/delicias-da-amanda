@@ -98,37 +98,43 @@ export default function ProductCard({ product }: ProductCardProps) {
       </Card>
 
       {/* Options Dialog */}
-<Dialog open={showOptions} onOpenChange={setShowOptions}>
-  <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#f8f8f7] p-0 rounded-[24px] flex flex-col gap-0 border-none">
+      <Dialog open={showOptions} onOpenChange={setShowOptions}>
+  <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#f8f8f7] p-6 rounded-[20px] flex flex-col gap-6">
     
-    <div className="p-6 pb-4 border-b border-black/5 bg-[#f8f8f7] sticky top-0 z-10">
-      <DialogTitle className="text-2xl font-display font-semibold text-[#34322d]">
-        Escolha uma opção
-      </DialogTitle>
-      <DialogDescription className="text-base text-[#858481] mt-2 leading-relaxed">
+    <DialogHeader className="pt-2"> {/* Adicionamos um pequeno respiro no topo */}
+      <DialogTitle className="text-2xl font-display">Escolha uma opção</DialogTitle>
+      <DialogDescription className="text-base">
         Selecione a variação desejada de {product.name}
       </DialogDescription>
-    </div>
+    </DialogHeader>
 
-    <div className="p-5 flex flex-col gap-3">
+    {/* Alteramos 'mt-4' para 'mt-2' e garantimos que o container tenha espaço inferior */}
+    <div className="space-y-3 mt-2 pb-4">
       {product.options?.map((option, index) => (
         <button
           key={index}
           onClick={() => handleOptionSelect(option)}
-          className="w-full flex items-start justify-between p-4 rounded-2xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all duration-300 group bg-white shadow-sm gap-3 h-auto"
+          className="w-full flex items-center justify-between p-4 rounded-2xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all duration-300 group bg-white" 
         >
-          <div className="text-left flex-1 min-w-0">
-            <p className="font-medium text-foreground leading-snug break-words whitespace-normal">
-              {option.name}
+          {/* Adicionei 'bg-white' acima para destacar as opções do fundo cinza claro */}
+          <div className="text-left">
+            <p className="font-medium text-foreground">
+              {option.name.includes(':') ? (
+                <>
+                  <strong>{option.name.split(':')[0]}</strong>:
+                  {option.name.split(':')[1]}
+                </>
+              ) : (
+                option.name
+              )}
             </p>
             {option.price > 0 && (
-              <p className="text-sm font-mono text-muted-foreground mt-2">
+              <p className="text-sm font-mono text-muted-foreground mt-1">
                 R$ {option.price.toFixed(2).replace('.', ',')}
               </p>
             )}
           </div>
-
-          <div className="w-8 h-8 rounded-full border-2 border-border group-hover:border-accent group-hover:bg-accent flex items-center justify-center transition-all duration-300 shrink-0 mt-1">
+          <div className="w-8 h-8 rounded-full border-2 border-border group-hover:border-accent group-hover:bg-accent flex items-center justify-center transition-all duration-300">
             <Check className="h-4 w-4 text-accent-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         </button>
