@@ -237,6 +237,23 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
+    id: 'suco-natural-300ml',
+    name: '🍹 Sucos Naturais - 300ml',
+    description: 'Preparados com frutas frescas e selecionadas, sem conservantes ou adição de açúcares.',
+    price: 0, // Price varies by option
+    category: 'bebidas',
+    image: '/images/sucos.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Laranja – Refrescante e rica em vitamina C. - 300ml', price: 10 },
+      { name: 'Abacaxi – Leve, digestivo e tropical. - 300ml', price: 10 },
+      { name: 'Abacaxi com Hortelã – Refrescante e aromático. - 300ml', price: 10 },
+      { name: 'Maracujá – Sabor marcante e suave. - 300ml', price: 10 },
+      { name: 'Limão – Cítrico e revigorante - 300ml', price: 10 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
     id: 'refrigerante-200ml',
     name: 'Refrigerante 200ml',
     description: 'Refrigerante gelado para acompanhar seu lanche',
