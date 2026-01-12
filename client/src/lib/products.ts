@@ -206,6 +206,22 @@ export const products: Product[] = [
   // Bebidas
 
   {
+    id: 'suco-detox-300ml',
+    name: '🥬 Detox Clássicos (limpeza do organismo 300ml',
+    description: 'Auxiliam na eliminação de toxinas, melhoram a digestão e promovem mais disposição no dia a dia.',
+    price: 0, // Price varies by option
+    category: 'bebidas',
+    image: '/images/suco-detox.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Couve + Limão + Gengibre', price: 10 },
+      { name: 'Couve + Maçã + Hortelã', price: 10 },
+      { name: 'Pepino + Limão + Hortelã', price: 10 },
+      { name: 'Abacaxi + Hortelã + Gengibre', price: 10 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
     id: 'refrigerante-200ml',
     name: 'Refrigerante 200ml',
     description: 'Refrigerante gelado para acompanhar seu lanche',
