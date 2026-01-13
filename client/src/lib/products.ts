@@ -52,7 +52,7 @@ export const products: Product[] = [
   {
     id: 'lanche-natural',
     name: 'Lanche Natural',
-    description: 'Lanche saudável e saboroso',
+    description: 'Lanche Natural saudável por natureza, artesanal por escolha. Sabor leve que alimenta e satisfaz.',
     price: 0, // Price varies by option
     category: 'lanches',
     image: '/images/lanche-natural.jpg',
