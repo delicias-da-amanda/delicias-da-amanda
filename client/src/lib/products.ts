@@ -118,7 +118,7 @@ export const products: Product[] = [
   {
     id: 'salada-fit',
     name: '🥗 Salada Fit',
-    description: 'Leve, saborosa e super saudável.!',
+    description: 'Praticidade e saúde em cada garfada. Nutritiva, saborosa e pronta para o seu dia a dia.',
     price: 10,
     category: 'marmitas',
     image: '/images/salada-fit.jpg',
