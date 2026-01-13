@@ -88,7 +88,7 @@ export const products: Product[] = [
   {
     id: 'pao-recheado',
     name: 'Pão Recheado',
-    description: 'Pão quentinho recheado com ingredientes selecionados',
+    description: 'O equilíbrio perfeito entre uma massa macia e um recheio suculento. Qualidade e sabor em cada fatia.',
     price: 0, // Price varies by option
     category: 'paes',
     image: '/images/recheado.jpg',
