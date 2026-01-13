@@ -76,7 +76,7 @@ export const products: Product[] = [
   {
     id: 'lanche-baguete-frango',
     name: 'Lanche de Baguete de Filé de Frango',
-    description: 'Peito de frango grelhado e temperado em baguete crocante. Feita na hora para garantir o máximo frescor.',
+    description: 'Peito de frango assado e temperado em baguete crocante. Feita na hora para garantir o máximo frescor.',
     price: 12.00,
     category: 'lanches',
     image: '/images/baguete.jpg',
