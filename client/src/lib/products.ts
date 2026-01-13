@@ -249,7 +249,7 @@ export const products: Product[] = [
       { name: 'Abacaxi – Leve, digestivo e tropical. - 300ml', price: 10 },
       { name: 'Abacaxi com Hortelã – Refrescante e aromático. - 300ml', price: 10 },
       { name: 'Maracujá – Sabor marcante e suave. - 300ml', price: 10 },
-      { name: 'Limão – Cítrico e revigorante - 300ml', price: 10 }
+      { name: 'Limão – Cítrico e revigorante - 300ml', price: 8 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
