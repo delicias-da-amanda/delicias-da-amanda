@@ -96,7 +96,7 @@ export const products: Product[] = [
     options: [
       { name: 'Calabresa', price: 16 },
       { name: 'Calabresa com Requeijão Cremoso', price: 18 },
-      { name: 'Calabresa com Queijo e Requijão', price: 18 },
+      { name: 'Calabresa com Queijo e Requijão', price: 20 },
       { name: 'Calabresa, Frango e Requijão', price: 18 },
       { name: 'Calabresa com Presunto e Queijo', price: 18 }
     ],
@@ -105,7 +105,7 @@ export const products: Product[] = [
   {
     id: 'pao-caseirinho',
     name: 'Pão Caseirinho',
-    description: 'Pão caseiro tradicional, macio e saboroso',
+    description: 'O verdadeiro sabor de casa. Massa ultra macia e artesanal, perfeita para aquele café quentinho. Um carinho em forma de pão.',
     price: 10.00,
     category: 'paes',
     image: '/images/pao-caseiro.jpg',
