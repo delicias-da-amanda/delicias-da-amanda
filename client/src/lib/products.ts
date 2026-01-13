@@ -256,7 +256,7 @@ export const products: Product[] = [
   {
     id: 'refrigerante-200ml',
     name: 'Refrigerante 200ml',
-    description: 'Refrigerante gelado para acompanhar seu lanche',
+    description: 'Refrescante, gelado e no tamanho ideal para sua refeição. O acompanhamento clássico que não pode faltar.',
     price: 0, // Price varies by option
     category: 'bebidas',
     image: '/images/refri.jpg',
