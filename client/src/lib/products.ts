@@ -35,7 +35,7 @@ export const products: Product[] = [
   {
     id: 'biscoito-amanteigado',
     name: 'Biscoito Amanteigado',
-    description: 'Biscoitos Amanteigados Caseiros, aquela receita clássica que desmancha no paladar. Perfeitos para acompanhar seu café.',
+    description: 'Aquela receita clássica que desmancha no paladar. Perfeitos para acompanhar seu café.',
     price: 0, // Price varies by option
     category: 'biscoitos',
     image: '/images/biscoito-amanteigado.jpg',
@@ -52,7 +52,7 @@ export const products: Product[] = [
   {
     id: 'lanche-natural',
     name: 'Lanche Natural',
-    description: 'Lanche Natural saudável por natureza, artesanal por escolha. Sabor leve que alimenta e satisfaz.',
+    description: 'Saudável por natureza, artesanal por escolha. Sabor leve que alimenta e satisfaz.',
     price: 0, // Price varies by option
     category: 'lanches',
     image: '/images/lanche-natural.jpg',
@@ -66,7 +66,7 @@ export const products: Product[] = [
   {
     id: 'lanche-carne-louca',
     name: 'Lanche de Carne Louca',
-    description: 'Delicioso lanche com carne desfiada temperada',
+    description: 'Carne desfiada suculenta e artesanalmente temperada. O clássico irresistível, cheio de sabor e tradição.',
     price: 8.00,
     category: 'lanches',
     image: '/images/lanches-hero.jpg',
