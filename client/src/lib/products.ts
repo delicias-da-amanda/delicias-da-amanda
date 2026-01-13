@@ -35,7 +35,7 @@ export const products: Product[] = [
   {
     id: 'biscoito-amanteigado',
     name: 'Biscoito Amanteigado',
-    description: 'Biscoitos Amanteigados Caseiros Aquela receita clássica que desmancha no paladar. perfeitos para acompanhar seu café.',
+    description: 'Biscoitos Amanteigados Caseiros, aquela receita clássica que desmancha no paladar. Perfeitos para acompanhar seu café.',
     price: 0, // Price varies by option
     category: 'biscoitos',
     image: '/images/biscoito-amanteigado.jpg',
