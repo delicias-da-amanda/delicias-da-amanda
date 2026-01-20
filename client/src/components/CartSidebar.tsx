@@ -52,7 +52,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
       message += `\n📝 *Observações:* ${observations}`;
     }
 
-    const whatsappUrl = `https://wa.me/5511986511287?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5511953293602?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     toast.success('Redirecionando para WhatsApp...');
   };

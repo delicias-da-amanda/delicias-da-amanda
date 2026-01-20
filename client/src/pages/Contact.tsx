@@ -15,7 +15,7 @@ export default function Contact() {
       title: 'WhatsApp',
       description: 'Faça seu pedido ou tire dúvidas',
       action: 'Enviar mensagem',
-      link: 'https://wa.me/5511986511287',
+      link: 'https://wa.me/5511953293602',
       color: 'bg-green-500/10 text-green-700 hover:bg-green-500/20'
     },
     {
@@ -147,7 +147,7 @@ export default function Contact() {
             size="lg"
             variant="secondary"
             className="rounded-full h-14 px-8 text-base font-medium bg-background text-foreground hover:bg-background/90"
-            onClick={() => window.open('https://wa.me/5511986511287', '_blank')}
+            onClick={() => window.open('https://wa.me/5511953293602', '_blank')}
           >
             <MessageCircle className="mr-2 h-5 w-5" />
             Falar no WhatsApp

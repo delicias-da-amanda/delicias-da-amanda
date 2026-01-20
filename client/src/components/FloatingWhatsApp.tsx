@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 export default function FloatingWhatsApp() {
   const handleClick = () => {
     const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os produtos da Delícias da Amanda.');
-    window.open(`https://wa.me/5511986511287?text=${message}`, '_blank');
+    window.open(`https://wa.me/5511953293602?text=${message}`, '_blank');
   };
 
   return (

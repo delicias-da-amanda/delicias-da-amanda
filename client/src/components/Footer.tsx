@@ -60,7 +60,7 @@ export default function Footer() {
             <h4 className="text-lg font-display font-semibold mb-4">Fale Conosco</h4>
             <div className="space-y-4">
               <a 
-                href="https://wa.me/5511986511287" 
+                href="https://wa.me/5511953293602" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm hover:opacity-70 transition-opacity duration-300"
