@@ -83,7 +83,7 @@ export default function Home() {
                   size="lg" 
                   variant="outline" 
                   className="rounded-full h-14 px-8 text-base font-medium"
-                  onClick={() => window.open('https://wa.me/5511986511287', '_blank')}
+                  onClick={() => window.open('https://wa.me/5511', '_blank')}
                 >
                   Pedir pelo WhatsApp
                 </Button>
