@@ -40,8 +40,13 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
     let message = `*🍞 NOVO PEDIDO - DELÍCIAS DA AMANDA*\n`;
     message += `------------------------------------------\n\n`;
     message += `👤 *Cliente:* ${customerName}\n\n`;
-    
-    message += `💳 *Pagamento:* ${paymentMethod.toUpperCase()}\n\n`;
+
+    message += `💳 *Pagamento:* ${paymentMethod.toUpperCase()}\n`;
+    if (paymentMethod === 'pix') {
+  message += `🔑 *Chave PIX:* 11953293602\n`;
+}
+    message += `\n`;
+
     message += `📦 *ITENS DO PEDIDO:*\n`;
     items.forEach(item => {
       const itemName = item.selectedOption 
@@ -67,6 +72,9 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const handlePrint = () => {
     if (items.length === 0) return toast.error('Seu carrinho está vazio!');
     if (!customerName.trim()) return toast.error('Por favor, informe seu nome!');
+     const paymentLabel = paymentMethod
+    ? paymentMethod.toUpperCase()
+    : 'NÃO INFORMADO';
 
     const printHTML = `
       <html>
@@ -83,12 +91,20 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
           </style>
         </head>
         <body>
-          <div class="header">
-            <h1>🍞 Delícias da Amanda</h1>
-            <p>Comprovante de Pedido</p>
-          </div>
-          <p><strong>Cliente:</strong> ${customerName}</p>
-          <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
+         <div class="header">
+  <h1>🍞 Delícias da Amanda</h1>
+  <p>Comprovante de Pedido</p>
+  </div>
+
+  <p><strong>Cliente:</strong> ${customerName}</p>
+  <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
+
+${paymentMethod === 'pix' ? `
+  <p><strong>Pagamento:</strong> PIX</p>
+  <p><strong>Chave PIX:</strong> 11953293602</p>
+` : `
+  <p><strong>Pagamento:</strong> ${paymentLabel}</p>
+`}
           <table>
             <thead>
               <tr><th>Produto</th><th>Qtd</th><th>Total</th></tr>
