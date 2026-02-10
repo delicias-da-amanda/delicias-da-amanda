@@ -43,7 +43,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
 
     message += `💳 *Pagamento:* ${paymentMethod.toUpperCase()}\n`;
     if (paymentMethod === 'pix') {
-  message += `🔑 *Chave PIX:* 11953293602\n`;
+  message += `🔑 *Chave PIX:* 11986511287\n`;
 }
     message += `\n`;
 
@@ -101,7 +101,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
 
 ${paymentMethod === 'pix' ? `
   <p><strong>Pagamento:</strong> PIX</p>
-  <p><strong>Chave PIX:</strong> 11953293602</p>
+  <p><strong>Chave PIX:</strong> 11986511287</p>
 ` : `
   <p><strong>Pagamento:</strong> ${paymentLabel}</p>
 `}
