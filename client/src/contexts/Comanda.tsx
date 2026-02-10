@@ -17,12 +17,18 @@ export default function Comanda() {
       </p>
 
       {paymentMethod === "pix" && (
-        <div className="mt-2">
-          <p className="font-semibold">Pague via Pix</p>
-          <p>
-            <strong>Chave Pix:</strong> {PIX_KEY}
-          </p>
-        </div>
+         <div className="mt-3 text-center border rounded-md p-3">
+    <p className="font-semibold">Pagamento via PIX</p>
+    <p className="text-xs mt-1">Chave PIX:</p>
+
+    <p className="font-mono text-sm mt-1">
+      11986511287
+    </p>
+
+    <p className="text-xs text-muted-foreground mt-2">
+      Delícias da Amanda
+    </p>
+  </div>
       )}
 
       <hr className="my-3" />
