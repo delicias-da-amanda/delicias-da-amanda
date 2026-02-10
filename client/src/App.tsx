@@ -7,6 +7,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { CartProvider } from "./contexts/CartContext";
+import { PaymentProvider } from "./contexts/PaymentContext"; // 👈 AQUI
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import About from "./pages/About";
@@ -99,10 +100,12 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <CartProvider>
-          <TooltipProvider>
-            <Toaster position="top-center" />
-            <Router />
-          </TooltipProvider>
+          <PaymentProvider>
+            <TooltipProvider>
+              <Toaster position="top-center" />
+              <Router />
+            </TooltipProvider>
+          </PaymentProvider>
         </CartProvider>
       </ThemeProvider>
     </ErrorBoundary>
