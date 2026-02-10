@@ -15,6 +15,9 @@ import { X, Plus, Minus, ShoppingBag, MessageCircle, Printer } from 'lucide-reac
 import { useState } from 'react';
 import { toast } from 'sonner';
 
+import { PaymentSelector } from '@/components/PaymentSelector';
+import { usePayment } from '@/contexts/PaymentContext';
+
 interface CartSidebarProps {
   open: boolean;
   onClose: () => void;
@@ -24,10 +27,13 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
   const [customerName, setCustomerName] = useState('');
   const [observations, setObservations] = useState('');
+  const { paymentMethod } = usePayment();
 
   const handleWhatsAppOrder = () => {
     if (items.length === 0) return toast.error('Seu carrinho está vazio!');
     if (!customerName.trim()) return toast.error('Por favor, informe seu nome!');
+    if (!paymentMethod)
+  return toast.error('Selecione a forma de pagamento!');
 
     const totalPedido = getTotalPrice();
 
@@ -35,6 +41,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
     message += `------------------------------------------\n\n`;
     message += `👤 *Cliente:* ${customerName}\n\n`;
     
+    message += `💳 *Pagamento:* ${paymentMethod.toUpperCase()}\n\n`;
     message += `📦 *ITENS DO PEDIDO:*\n`;
     items.forEach(item => {
       const itemName = item.selectedOption 
@@ -168,6 +175,9 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
                 <label className="text-sm font-medium text-foreground mb-2 block">Observações</label>
                 <Textarea placeholder="Ex: sem cebola..." value={observations} onChange={(e) => setObservations(e.target.value)} className="rounded-xl min-h-[80px]" />
               </div>
+            </div>
+            <div className="mb-6">
+              <PaymentSelector />
             </div>
 
             <div className="bg-accent/10 rounded-2xl p-4 mb-6">

@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { products, categories, DAYS_OF_WEEK, DAYS_LABELS, DayOfWeek } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
-import { PaymentSelector } from '@/contexts/PaymentSelector';
+import { PaymentSelector } from '@/components/PaymentSelector';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Calendar } from 'lucide-react';
