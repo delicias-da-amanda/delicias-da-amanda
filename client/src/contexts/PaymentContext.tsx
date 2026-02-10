@@ -1,6 +1,11 @@
 import { createContext, useContext, useState } from "react";
 
-export type PaymentMethod = "pix" | "credito" | "debito" | "dinheiro";
+export type PaymentMethod =
+  | "pix"
+  | "credito"
+  | "debito"
+  | "dinheiro"
+  | null;
 
 type PaymentContextType = {
   paymentMethod: PaymentMethod;
@@ -10,7 +15,8 @@ type PaymentContextType = {
 const PaymentContext = createContext({} as PaymentContextType);
 
 export const PaymentProvider = ({ children }: { children: React.ReactNode }) => {
-  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("dinheiro");
+  const [paymentMethod, setPaymentMethod] =
+  useState<PaymentMethod>(null);
 
   return (
     <PaymentContext.Provider value={{ paymentMethod, setPaymentMethod }}>
@@ -19,4 +25,12 @@ export const PaymentProvider = ({ children }: { children: React.ReactNode }) => 
   );
 };
 
-export const usePayment = () => useContext(PaymentContext);
+export const usePayment = () => {
+  const context = useContext(PaymentContext);
+
+  if (!context) {
+    throw new Error("usePayment deve ser usado dentro de PaymentProvider");
+  }
+
+  return context;
+};

@@ -28,6 +28,13 @@ export function PaymentSelector() {
       >
         Débito
       </Button>
+
+      <Button
+        variant={paymentMethod === "dinheiro" ? "default" : "outline"}
+        onClick={() => setPaymentMethod("dinheiro")}
+>
+        Dinheiro
+      </Button>
     </div>
   );
 }
