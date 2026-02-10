@@ -5,6 +5,28 @@ export default function Comanda() {
 
   const PIX_KEY = "11 98651-1287";
 
+     const generateWhatsAppMessage = () => {
+    let message = `
+🧾 *Delícias da Amanda*
+
+Forma de pagamento: ${paymentMethod.toUpperCase()}
+`;
+
+    if (paymentMethod === "pix") {
+      message += `
+💠 *Pagamento via PIX*
+Chave PIX: ${PIX_KEY}
+Delícias da Amanda
+`;
+    }
+
+    message += `
+Obrigado pela preferência ❤️
+`;
+
+    return encodeURIComponent(message);
+  };
+
   return (
     <div id="print-area" className="p-4 text-sm">
       <h2 className="text-center font-bold text-lg mb-2">
@@ -31,8 +53,24 @@ export default function Comanda() {
   </div>
       )}
 
-      <hr className="my-3" />
-      <p className="text-center">Obrigado pela preferência ❤️</p>
+     <hr className="my-3" />
+
+<button
+  className="mt-3 w-full no-print"
+  onClick={() => {
+    const text = generateWhatsAppMessage();
+    window.open(
+      `https://wa.me/5511953293602?text=${text}`,
+      "_blank"
+    );
+  }}
+>
+  📲 Enviar Comanda no WhatsApp
+</button>
+
+<p className="text-center mt-3">
+  Obrigado pela preferência ❤️
+</p>
     </div>
   );
 }
