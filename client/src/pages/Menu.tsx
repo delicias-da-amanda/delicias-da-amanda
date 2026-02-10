@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { products, categories, DAYS_OF_WEEK, DAYS_LABELS, DayOfWeek } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
+import { PaymentSelector } from '@/contexts/PaymentSelector';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Calendar } from 'lucide-react';
@@ -11,6 +12,7 @@ export default function Menu() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedDay, setSelectedDay] = useState<DayOfWeek | 'all'>('all');
   const [showAviso, setShowAviso] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState<string | null>(null);
 
   useEffect(() => {
     setShowAviso(true);
@@ -28,13 +30,13 @@ export default function Menu() {
   // CORREÇÃO: Ajuste do mapeamento do dia da semana (JavaScript: 0=Dom, 1=Seg...)
   const getCurrentDay = (): DayOfWeek => {
     // O JavaScript usa: 0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sab
-    const days: DayOfWeek[] = ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
-    const todayIndex = new Date().getDay(); // Pega o índice real (0-6)
+    const days: DayOfWeek[] = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
+      const todayIndex = new Date().getDay(); // 0 = domingo
     const today = days[todayIndex];
     
     // Se hoje for domingo e você não abre, ou se der erro, 
     // podemos retornar 'segunda' como padrão ou manter o dia real
-    if (today === 'domingo') return 'segunda' as DayOfWeek; 
+    if (todayIndex === 0) return 'segunda';
 
     return today as DayOfWeek;
   };
@@ -76,6 +78,17 @@ const productsByCategory = useMemo(() => {
             Explore nossa seleção de produtos artesanais feitos com carinho
           </p>
         </div>
+
+        {/* Seleção de Forma de Pagamento */}
+       <div className="mb-12 animate-in fade-in slide-in-from-top-4 duration-700 delay-75">
+       <h3 className="text-lg font-display font-semibold text-foreground text-center mb-4">
+        Como você prefere pagar?
+       </h3>
+
+      <div className="flex justify-center">
+  <PaymentSelector />
+      </div>
+     </div>
 
         {/* Day Filter */}
         <div className="mb-8 animate-in fade-in slide-in-from-top-4 duration-700 delay-100">
