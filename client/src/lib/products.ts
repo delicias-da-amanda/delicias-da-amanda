@@ -126,6 +126,16 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
+    id: 'Marmita-Duo de Mar',
+    name: 'Marmitas',
+    description: 'Filé de merluza grelhado no ponto certo, finalizado com molho cremoso de camarões e acompanhado de legumes frescos no vapor com ervas. Leve, nutritivo e cheio de sabor, com baixas calorias!',
+    price: 23,
+    category: 'marmitas',
+    image: '/images/camarao.jpg',
+    hasOptions: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
     id: 'marmita-tradicional',
     name: '🥗 Marmita Fitness Tradicional - Equilíbrio entre proteínas, carboidratos e legumes.',
     description: 'Arroz integral ou branco. Frango grelhado / carne magra / peixe / ovos. Legumes cozidos ou salteados. 👉 Ideal para quem quer alimentação saudável no dia a dia.',
