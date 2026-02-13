@@ -126,7 +126,7 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
-    id: 'Marmita-Duo de Mar',
+    id: 'Marmita-Duode Mar',
     name: '🦐🐟🌊Marmita Fit - Duo de Mar: Filé de Merluza & Camarão ao Molho + Mix de Legumes',
     description: 'Filé de merluza grelhado no ponto certo, finalizado com molho cremoso de camarões e acompanhado de legumes frescos no vapor com ervas. Leve, nutritivo e cheio de sabor, com baixas calorias!',
     price: 23,
