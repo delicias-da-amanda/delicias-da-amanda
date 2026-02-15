@@ -133,7 +133,7 @@ export const products: Product[] = [
     category: 'marmitas',
     image: '/images/camarao.jpg',
     hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['sexta']
   },
   {
     id: 'marmita-tradicional',
