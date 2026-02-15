@@ -216,7 +216,7 @@ export const products: Product[] = [
   // Bebidas
 
   {
-    id: 'suco-detox-300ml',
+    id: 'suco-detox-classico-300ml',
     name: '🥬 Detox Clássicos (limpeza do organismo) 300ml',
     description: 'Auxiliam na eliminação de toxinas, melhoram a digestão e promovem mais disposição no dia a dia.',
     price: 0, // Price varies by option
@@ -232,7 +232,7 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
-    id: 'suco-detox-300ml',
+    id: 'suco-detox-energetico-300ml',
     name: '💪 Detox Energético (Combinações nutritivas e naturalmente energéticas) 300ml',
     description: 'Auxiliam no aumento da disposição, fortalecimento do organismo e recuperação da energia de forma saudável.',
     price: 0, // Price varies by option
