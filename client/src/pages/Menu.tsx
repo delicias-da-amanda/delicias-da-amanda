@@ -9,8 +9,26 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar } from 'lucide-react';
 
 export default function Menu() {
+  const getCurrentDay = (): DayOfWeek => {
+    const todayIndex = new Date().getDay(); // 0 = domingo
+
+    const days: DayOfWeek[] = [
+      'segunda',
+      'terca',
+      'quarta',
+      'quinta',
+      'sexta',
+      'sabado'
+    ];
+
+    // Se for domingo (0), retorna segunda como padrão
+    if (todayIndex === 0) return 'segunda';
+
+    // Ajuste porque nosso array começa em segunda
+    return days[todayIndex - 1];
+  };
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedDay, setSelectedDay] = useState<DayOfWeek | 'all'>('all');
+  const [selectedDay, setSelectedDay] = useState<DayOfWeek | 'all'>(() => getCurrentDay());
   const [showAviso, setShowAviso] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<string | null>(null);
 
@@ -25,20 +43,6 @@ export default function Menu() {
       alert('"🥖 Atenção: Os produtos desta categoria são feitos sob medida para você. Não esqueça de realizar sua encomenda com antecedência!".');
     }
     setSelectedCategory(categoryId);
-  };
-
-  // CORREÇÃO: Ajuste do mapeamento do dia da semana (JavaScript: 0=Dom, 1=Seg...)
-  const getCurrentDay = (): DayOfWeek => {
-    // O JavaScript usa: 0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sab
-    const days: DayOfWeek[] = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
-      const todayIndex = new Date().getDay(); // 0 = domingo
-    const today = days[todayIndex];
-    
-    // Se hoje for domingo e você não abre, ou se der erro, 
-    // podemos retornar 'segunda' como padrão ou manter o dia real
-    if (todayIndex === 0) return 'segunda';
-
-    return today as DayOfWeek;
   };
 
   const filteredProducts = useMemo(() => {
@@ -104,9 +108,7 @@ const productsByCategory = useMemo(() => {
               className="rounded-full"
               onClick={() => setSelectedDay('all')}
             >
-              Todos os dias
-            </Button>
-            
+
             {/* Botão Hoje */}
             <Button
               variant={selectedDay === getCurrentDay() ? 'default' : 'outline'}
