@@ -35,13 +35,6 @@ export function PaymentSelector() {
 >
         Dinheiro
       </Button>
-
-      <Button
-        variant={paymentMethod === "outra-forma" ? "default" : "outline"}
-        onClick={() => setPaymentMethod("outra-forma")}
->
-        Outra Forma de Pagamento
-      </Button>
     </div>
   );
 }

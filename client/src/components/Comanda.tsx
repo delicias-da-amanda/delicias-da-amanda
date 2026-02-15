@@ -11,7 +11,6 @@ export default function Comanda() {
     credito: "Cartão de Crédito",
     debito: "Cartão de Débito",
     dinheiro: "Dinheiro",
-    "outra-forma": "Outra forma de Pagamento",
   };
 
   const paymentLabel = paymentMethod
