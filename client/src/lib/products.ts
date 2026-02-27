@@ -12,7 +12,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: 'biscoitos' | 'lanches' | 'marmitas'| 'paes' | 'saudaveis' | 'bebidas';
+  category: 'biscoitos' | 'lanches' | 'marmitas'|'marmitas-trad'|'paes' | 'saudaveis' | 'bebidas';
   image: string;
   hasOptions: boolean;
   options?: ProductOption[];
@@ -111,6 +111,39 @@ export const products: Product[] = [
     image: '/images/pao-caseiro.jpg',
     hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+
+  // Marmitas Tradicionais
+
+  {
+    id: 'Feijoada Tudo Junto',
+    name: '🍛 Feijoada Magra (Tudo Junto)',
+    description: 'Sabor de feijoada raiz em versão mais leve! Feijão bem temperado com carnes selecionadas e menos gordurosas, acompanhada de arroz, farofa, couve e torresmo — tudo junto na marmita.',
+    price: 0,
+    category: 'marmitas-trad',
+    image: '/images/feijoada.jpg',
+    hasOptions: true,
+    options: [
+      { name: '🍛 Pequena', price: 25 },
+      { name: '🍛 Média', price: 30 },
+      { name: '🍛 Grande', price: 35 }
+      ],
+    availableDays: ['sexta','sabado']
+  },
+  {
+    id: 'Feijoada Separada',
+    name: '🍛 Feijoada Magra (Separada)',
+    description: 'Feijão bem temperado com carnes selecionadas e menos gordurosas. Acompanha arroz soltinho, farofa, couve e torresmo, tudo separadinho para você montar do seu jeito.',
+    price: 0,
+    category: 'marmitas-trad',
+    image: '/images/feijoada.jpg',
+    hasOptions: true,
+    options: [
+      { name: '🍛 Pequena', price: 35 },
+      { name: '🍛 Média', price: 55 },
+      { name: '🍛 Grande', price: 75 }
+      ],
+    availableDays: ['sexta','sabado']
   },
 
   // Marmitas Fit
@@ -283,6 +316,7 @@ export const products: Product[] = [
 export const categories = [
   { id: 'biscoitos', name: 'Biscoitos Amanteigados (Sequilhos)', icon: '🍪' },
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
+  { id: 'tradicional', name: 'Marmitas Tradicionais', icon: '🍛' },
   { id: 'marmitas', name: 'Marmitas Fit', icon: '🥗' },
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },
   { id: 'saudaveis', name: 'Sobremesas Saudáveis', icon: '🥥' },
