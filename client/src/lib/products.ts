@@ -316,7 +316,7 @@ export const products: Product[] = [
 export const categories = [
   { id: 'biscoitos', name: 'Biscoitos Amanteigados (Sequilhos)', icon: '🍪' },
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
-  { id: 'marmtas-trad', name: 'Marmitas Tradicionais', icon: '🍛' },
+  { id: 'marmitas-trad', name: 'Marmitas Tradicionais', icon: '🍛' },
   { id: 'marmitas', name: 'Marmitas Fit', icon: '🥗' },
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },
   { id: 'saudaveis', name: 'Sobremesas Saudáveis', icon: '🥥' },
