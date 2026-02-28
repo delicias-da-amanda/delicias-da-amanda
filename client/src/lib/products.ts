@@ -128,7 +128,7 @@ export const products: Product[] = [
       { name: '🍛 Média', price: 30 },
       { name: '🍛 Grande', price: 35 }
       ],
-    availableDays: ['sexta','sabado']
+    availableDays: ['quarta','sabado']
   },
   {
     id: 'Feijoada Separada',
@@ -143,7 +143,7 @@ export const products: Product[] = [
       { name: '🍛 Média', price: 55 },
       { name: '🍛 Grande', price: 75 }
       ],
-    availableDays: ['sexta','sabado']
+    availableDays: ['quarta','sabado']
   },
 
   // Marmitas Fit
