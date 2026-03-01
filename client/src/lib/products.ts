@@ -146,8 +146,8 @@ export const products: Product[] = [
     availableDays: ['quarta','sabado']
   },
   {
-    id: 'Virado a Paulista',
-    name: '😋🍛 Virado a Paulista',
+    id: 'Virado à Paulista',
+    name: '😋🍛 Virado à Paulista',
     description: 'Arroz soltinho, tutu de feijão bem temperado, couve refogada, banana frita, bisteca suculenta e ovo frito no ponto.',
     price: 24,
     category: 'marmitas-trad',
@@ -234,8 +234,8 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
-    id: 'Bife a Cavalo',
-    name: '🍳🥩 Bife a Cavalo',
+    id: 'Bife à Cavalo',
+    name: '🍳🥩 Bife à Cavalo',
     description: 'Bife suculento preparado no ponto certo, com ovo frito na hora, acompanhado de arroz soltinho e feijão bem temperado.',
     price: 22,
     category: 'marmitas-trad',
