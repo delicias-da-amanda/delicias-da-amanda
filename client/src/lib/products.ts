@@ -200,6 +200,20 @@ export const products: Product[] = [
     availableDays: ['quinta']
   },
   {
+    id: 'Filé de Merluza',
+    name: '😋🐟 Filé de Merluza à Milanesa',
+    description: 'Filé de merluza crocante por fora e macio por dentro, acompanhado de arroz soltinho e feijão bem temperado. Escolha entre batata frita douradinha ou polenta frita crocante para completar.',
+    price: 0,
+    category: 'marmitas-trad',
+    image: '/images/merluzaamilanesa.jpg',
+    hasOptions: true,
+    options: [
+      { name: '🌯 Filé de Merluza à Milanesa com Batata Frita', price: 23 },
+      { name: '🌯 Filé de Merluza à Milanesa com Polenta Frita', price: 23 },
+     ],
+    availableDays: ['sexta']
+  },
+  {
     id: 'Filé de Frango',
     name: '😋🍗 Filé de Frango acompanhado de Farofa crocante',
     description: 'Filé de frango grelhado, macio e suculento, acompanhado de arroz soltinho, feijão bem temperado e farofa crocante.',
