@@ -136,6 +136,26 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
+    id: 'Bife a Cavalo',
+    name: '🍳🥩 Bife a Cavalo',
+    description: 'Bife suculento preparado no ponto certo, com ovo frito na hora, acompanhado de arroz soltinho e feijão bem temperado.',
+    price: 22,
+    category: 'marmitas-trad',
+    image: '/images/bifeacavalo.jpg',
+    hasOptions: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
+    id: 'Calabresa acebolada',
+    name: '🍳🍛 Calabresa acebolada com ovos fritos',
+    description: 'Calabresa douradinha com bastante cebola refogada, acompanhada de dois ovos fritos no ponto, arroz soltinho e feijão bem temperado.',
+    price: 22,
+    category: 'marmitas-trad',
+    image: '/images/calabresa.jpg',
+    hasOptions: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
     id: 'Feijoada Tudo Junto',
     name: '🍛 Feijoada Magra (Tudo Junto)',
     description: 'Sabor de feijoada raiz em versão mais leve! Feijão bem temperado com carnes selecionadas e menos gordurosas, acompanhada de arroz, farofa, couve e torresmo — tudo junto na marmita.',
