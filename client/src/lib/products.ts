@@ -126,6 +126,16 @@ export const products: Product[] = [
     availableDays: ['segunda']
   },
   {
+    id: 'Filé de Frango',
+    name: '😋🍗 Filé de Frango acompanhado de Farofa crocante',
+    description: 'Filé de frango grelhado, macio e suculento, acompanhado de arroz soltinho, feijão bem temperado e farofa crocante.',
+    price: 18,
+    category: 'marmitas-trad',
+    image: '/images/filedefrango.jpg',
+    hasOptions: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
     id: 'Feijoada Tudo Junto',
     name: '🍛 Feijoada Magra (Tudo Junto)',
     description: 'Sabor de feijoada raiz em versão mais leve! Feijão bem temperado com carnes selecionadas e menos gordurosas, acompanhada de arroz, farofa, couve e torresmo — tudo junto na marmita.',
