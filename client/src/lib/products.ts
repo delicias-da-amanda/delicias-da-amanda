@@ -214,6 +214,16 @@ export const products: Product[] = [
     availableDays: ['sexta']
   },
   {
+    id: 'Filé de Tilápia',
+    name: '😋🐟 Filé de Tilápia Grelhado',
+    description: 'Filé de tilápia grelhado no ponto certo, leve e suculento, acompanhado de purê de abóbora cremoso, brócolis fresquinho, arroz soltinho e feijão bem temperado.',
+    price: 23,
+    category: 'marmitas-trad',
+    image: '/images/filedetilapia.jpg',
+    hasOptions: false,
+    availableDays: ['sexta']
+  },
+  {
     id: 'Filé de Frango',
     name: '😋🍗 Filé de Frango acompanhado de Farofa crocante',
     description: 'Filé de frango grelhado, macio e suculento, acompanhado de arroz soltinho, feijão bem temperado e farofa crocante.',
