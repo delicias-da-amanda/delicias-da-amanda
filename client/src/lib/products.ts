@@ -73,17 +73,7 @@ export const products: Product[] = [
     hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
-  {
-    id: 'lanche-baguete-frango',
-    name: 'Lanche de Baguete de Filé de Frango',
-    description: 'Peito de frango assado e temperado em baguete crocante. Feita na hora para garantir o máximo frescor.',
-    price: 12.00,
-    category: 'lanches',
-    image: '/images/baguete.jpg',
-    hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  
+    
   // Pães Especiais
   {
     id: 'pao-recheado',
@@ -94,11 +84,11 @@ export const products: Product[] = [
     image: '/images/recheado.jpg',
     hasOptions: true,
     options: [
-      { name: 'Calabresa', price: 16 },
-      { name: 'Calabresa com Requeijão Cremoso', price: 18 },
-      { name: 'Calabresa com Queijo e Requeijão', price: 20 },
-      { name: 'Frango com Requeijão', price: 18 },
-      { name: 'Presunto e Queijo', price: 18 }
+      { name: 'Calabresa', price: 18 },
+      { name: 'Calabresa com Requeijão Cremoso', price: 20 },
+      { name: 'Calabresa com Queijo e Requeijão', price: 22 },
+      { name: 'Frango com Requeijão', price: 22 },
+      { name: 'Presunto e Queijo', price: 20 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
@@ -106,7 +96,7 @@ export const products: Product[] = [
     id: 'pao-caseirinho',
     name: 'Pão Caseirinho',
     description: 'O verdadeiro sabor de casa. Massa ultra macia e artesanal, perfeita para aquele café quentinho. Um carinho em forma de pão.',
-    price: 10.00,
+    price: 12.00,
     category: 'paes',
     image: '/images/pao-caseiro.jpg',
     hasOptions: false,
@@ -267,16 +257,6 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
-    id: 'Marmita-Duode Mar',
-    name: '🦐🐟🌊Marmita Fit - Duo de Mar: Filé de Merluza & Camarão ao Molho + Mix de Legumes',
-    description: 'Filé de merluza grelhado no ponto certo, finalizado com molho cremoso de camarões e acompanhado de legumes frescos no vapor. Arroz integral ou branco. Leve, nutritivo e cheio de sabor, com baixas calorias!',
-    price: 23,
-    category: 'marmitas',
-    image: '/images/camarao.jpg',
-    hasOptions: false,
-    availableDays: ['sexta']
-  },
-  {
     id: 'marmita-tradicional',
     name: '🥗 Marmita Fitness Tradicional - Equilíbrio entre proteínas, carboidratos e legumes.',
     description: 'Arroz integral ou branco. Frango grelhado / carne magra / peixe / ovos. Legumes cozidos ou salteados. 👉 Ideal para quem quer alimentação saudável no dia a dia.',
@@ -295,7 +275,7 @@ export const products: Product[] = [
   {
     id: 'marmita-low',
     name: '🥩 Marmita Low Carb - Pouco ou nenhum carboidrato.',
-    description: 'Carnes (frango, carne bovina, peixe ou ovos). Legumes (abobrinha, brócolis, couve-flor). Gordura boa (azeite). 👉 Indicada para quem busca emagrecimento.',
+    description: 'Carnes (frango, carne bovina, peixe ou ovos). Legumes. Gordura boa (azeite). 👉 Indicada para quem busca emagrecimento.',
     price: 0, // Price varies by option
     category: 'marmitas',
     image: '/images/marmita-low.jpg',
