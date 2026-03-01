@@ -185,6 +185,20 @@ export const products: Product[] = [
     hasOptions: false,
     availableDays: ['quinta']
   },
+   {
+    id: 'Panqueca',
+    name: '🌯🍟 Panqueca de Carne ou Frango',
+    description: 'Panqueca recheada com carne bem temperada ou frango suculento, coberta com molho caseiro, acompanhada de arroz soltinho e batata frita crocante.',
+    price: 0,
+    category: 'marmitas-trad',
+    image: '/images/panqueca.jpg',
+    hasOptions: true,
+    options: [
+      { name: '🌯 Panqueca de Carne', price: 22 },
+      { name: '🌯 Panqueca de Frango', price: 22 },
+     ],
+    availableDays: ['quinta']
+  },
   {
     id: 'Filé de Frango',
     name: '😋🍗 Filé de Frango acompanhado de Farofa crocante',
