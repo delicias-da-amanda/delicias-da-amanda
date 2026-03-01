@@ -214,6 +214,16 @@ export const products: Product[] = [
     availableDays: ['sexta']
   },
   {
+    id: 'Strogonoff de Frango',
+    name: '😋🍗 Strogonoff de Frango',
+    description: 'Frango em cubos ao molho cremoso e bem temperado, acompanhado de arroz soltinho e batata palha crocante.',
+    price: 20,
+    category: 'marmitas-trad',
+    image: '/images/strogonoff.jpg',
+    hasOptions: false,
+    availableDays: ['sexta']
+  },
+  {
     id: 'Filé de Frango',
     name: '😋🍗 Filé de Frango acompanhado de Farofa crocante',
     description: 'Filé de frango grelhado, macio e suculento, acompanhado de arroz soltinho, feijão bem temperado e farofa crocante.',
