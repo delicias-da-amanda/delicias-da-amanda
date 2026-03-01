@@ -116,6 +116,36 @@ export const products: Product[] = [
   // Marmitas Tradicionais
 
   {
+    id: 'Feijoada Tudo Junto',
+    name: '🍛 Feijoada Magra (Tudo Junto)',
+    description: 'Sabor de feijoada raiz em versão mais leve! Feijão bem temperado com carnes selecionadas e menos gordurosas, acompanhada de arroz, farofa, couve e torresmo — tudo junto na marmita.',
+    price: 0,
+    category: 'marmitas-trad',
+    image: '/images/feijoada.jpg',
+    hasOptions: true,
+    options: [
+      { name: '🍛 Pequena', price: 25 },
+      { name: '🍛 Média', price: 30 },
+      { name: '🍛 Grande', price: 35 }
+      ],
+    availableDays: ['quarta','sabado']
+  },
+  {
+    id: 'Feijoada Separada',
+    name: '🍛 Feijoada Magra (Separada)',
+    description: 'Feijão bem temperado com carnes selecionadas e menos gordurosas. Acompanha arroz soltinho, farofa, couve e torresmo, tudo separadinho para você montar do seu jeito.',
+    price: 0,
+    category: 'marmitas-trad',
+    image: '/images/feijoada.jpg',
+    hasOptions: true,
+    options: [
+      { name: '🍛 Pequena', price: 35 },
+      { name: '🍛 Média', price: 55 },
+      { name: '🍛 Grande', price: 75 }
+      ],
+    availableDays: ['quarta','sabado']
+  },
+  {
     id: 'Virado a Paulista',
     name: '😋🍛 Virado a Paulista',
     description: 'Arroz soltinho, tutu de feijão bem temperado, couve refogada, banana frita, bisteca suculenta e ovo frito no ponto.',
@@ -155,37 +185,7 @@ export const products: Product[] = [
     hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
-  {
-    id: 'Feijoada Tudo Junto',
-    name: '🍛 Feijoada Magra (Tudo Junto)',
-    description: 'Sabor de feijoada raiz em versão mais leve! Feijão bem temperado com carnes selecionadas e menos gordurosas, acompanhada de arroz, farofa, couve e torresmo — tudo junto na marmita.',
-    price: 0,
-    category: 'marmitas-trad',
-    image: '/images/feijoada.jpg',
-    hasOptions: true,
-    options: [
-      { name: '🍛 Pequena', price: 25 },
-      { name: '🍛 Média', price: 30 },
-      { name: '🍛 Grande', price: 35 }
-      ],
-    availableDays: ['quarta','sabado']
-  },
-  {
-    id: 'Feijoada Separada',
-    name: '🍛 Feijoada Magra (Separada)',
-    description: 'Feijão bem temperado com carnes selecionadas e menos gordurosas. Acompanha arroz soltinho, farofa, couve e torresmo, tudo separadinho para você montar do seu jeito.',
-    price: 0,
-    category: 'marmitas-trad',
-    image: '/images/feijoada.jpg',
-    hasOptions: true,
-    options: [
-      { name: '🍛 Pequena', price: 35 },
-      { name: '🍛 Média', price: 55 },
-      { name: '🍛 Grande', price: 75 }
-      ],
-    availableDays: ['quarta','sabado']
-  },
-
+  
   // Marmitas Fit
 
   {
