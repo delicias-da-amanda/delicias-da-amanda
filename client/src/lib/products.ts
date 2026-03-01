@@ -116,6 +116,16 @@ export const products: Product[] = [
   // Marmitas Tradicionais
 
   {
+    id: 'Virado a Paulista',
+    name: '😋🍛 Virado a Paulista',
+    description: 'Arroz soltinho, tutu de feijão bem temperado, couve refogada, banana frita, bisteca suculenta e ovo frito no ponto.',
+    price: 24,
+    category: 'marmitas-trad',
+    image: '/images/virado.jpg',
+    hasOptions: false,
+    availableDays: ['segunda']
+  },
+  {
     id: 'Feijoada Tudo Junto',
     name: '🍛 Feijoada Magra (Tudo Junto)',
     description: 'Sabor de feijoada raiz em versão mais leve! Feijão bem temperado com carnes selecionadas e menos gordurosas, acompanhada de arroz, farofa, couve e torresmo — tudo junto na marmita.',
