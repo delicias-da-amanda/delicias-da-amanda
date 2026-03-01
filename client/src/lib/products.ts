@@ -156,6 +156,36 @@ export const products: Product[] = [
     availableDays: ['segunda']
   },
   {
+    id: 'Frango ao Molho',
+    name: '😋🍗 Frango ao Molho com batata',
+    description: 'Frango macio e suculento ao molho caseiro, acompanhado de batata cozida, arroz soltinho e feijão bem temperado.',
+    price: 20,
+    category: 'marmitas-trad',
+    image: '/images/frangoaomolho.jpg',
+    hasOptions: false,
+    availableDays: ['terca']
+  },
+   {
+    id: 'Picanho',
+    name: '😋🥩 Picadinho',
+    description: 'Carne macia em cubos, cozida com batata e cenoura no tempero caseiro, acompanhada de arroz soltinho e feijão bem temperado.',
+    price: 22,
+    category: 'marmitas-trad',
+    image: '/images/picadinho.jpg',
+    hasOptions: false,
+    availableDays: ['terca']
+  },
+  {
+    id: 'Macarrão ao molho',
+    name: '🍝 Macarrão ao Molho com carne',
+    description: 'Macarrão ao molho caseiro com carne bem temperada, acompanhado de frango assado suculento e salada de maionese caseira.',
+    price: 22,
+    category: 'marmitas-trad',
+    image: '/images/macarraoaomolho.jpg',
+    hasOptions: false,
+    availableDays: ['quinta']
+  },
+  {
     id: 'Filé de Frango',
     name: '😋🍗 Filé de Frango acompanhado de Farofa crocante',
     description: 'Filé de frango grelhado, macio e suculento, acompanhado de arroz soltinho, feijão bem temperado e farofa crocante.',
