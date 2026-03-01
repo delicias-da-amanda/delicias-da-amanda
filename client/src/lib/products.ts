@@ -121,7 +121,7 @@ export const products: Product[] = [
     description: 'Arroz soltinho, tutu de feijão bem temperado, couve refogada, banana frita, bisteca suculenta e ovo frito no ponto.',
     price: 24,
     category: 'marmitas-trad',
-    image: '/images/virado.jpg',
+    image: '/images/viradoapaulista.jpg',
     hasOptions: false,
     availableDays: ['segunda']
   },
