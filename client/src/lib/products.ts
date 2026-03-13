@@ -209,7 +209,7 @@ export const products: Product[] = [
     description: 'Filé de tilápia grelhado no ponto certo, leve e suculento, acompanhado de purê de batata cremoso, arroz soltinho e feijão bem temperado.',
     price: 23,
     category: 'marmitas-trad',
-    image: '/images/filedetilapia.jpg',
+    image: '/images/tilapia.jpg',
     hasOptions: false,
     availableDays: ['sexta']
   },
