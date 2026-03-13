@@ -206,7 +206,7 @@ export const products: Product[] = [
   {
     id: 'Filé de Tilápia',
     name: '😋🐟 Filé de Tilápia Grelhado',
-    description: 'Filé de tilápia grelhado no ponto certo, leve e suculento, acompanhado de purê de abóbora cremoso, brócolis fresquinho, arroz soltinho e feijão bem temperado.',
+    description: 'Filé de tilápia grelhado no ponto certo, leve e suculento, acompanhado de purê de batata cremoso, arroz soltinho e feijão bem temperado.',
     price: 23,
     category: 'marmitas-trad',
     image: '/images/filedetilapia.jpg',
