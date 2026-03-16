@@ -71,7 +71,7 @@ export const products: Product[] = [
     category: 'lanches',
     image: '/images/lanches-hero.jpg',
     hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['terca', 'quinta']
   },
     
   // Pães Especiais
@@ -142,6 +142,16 @@ export const products: Product[] = [
     price: 24,
     category: 'marmitas-trad',
     image: '/images/viradoapaulista.jpg',
+    hasOptions: false,
+    availableDays: ['segunda']
+  },
+  {
+    id: 'Parmegiana de Frango',
+    name: '🍽️ Parmegiana de Frango',
+    description: 'Suculento filé de frango empanado, coberto com molho de tomate e queijo derretido, formando uma parmegiana irresistível. Acompanha batata frita crocante, arroz soltinho e feijão fresquinho, garantindo um prato completo, saboroso e perfeito para matar a fome com muito sabor! 😋',
+    price: 26,
+    category: 'marmitas-trad',
+    image: '/images/parmegiana.jpg',
     hasOptions: false,
     availableDays: ['segunda']
   },
