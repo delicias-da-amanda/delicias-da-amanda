@@ -71,7 +71,7 @@ export default function Menu() {
 
       {/* IMAGEM */}
       <img
-        src="/frangoepicadinho.jpg"
+        src="/frango.jpg"
         alt="Prato da semana"
         className="w-full rounded-lg mb-3"
       />
