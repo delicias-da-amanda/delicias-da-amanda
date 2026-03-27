@@ -64,6 +64,52 @@ export default function Menu() {
 
   return (
     <div className="min-h-screen py-12 md:py-20">
+      {/* 🔥 POP-UP */}
+{showAviso && (
+  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+    <div className="bg-white p-5 rounded-xl max-w-sm text-center shadow-lg">
+
+      {/* IMAGEM */}
+      <img
+        src="/frangoepicadinho.jpg"
+        alt="Prato da semana"
+        className="w-full rounded-lg mb-3"
+      />
+
+      <h2 className="text-xl font-bold mb-2">
+        🔥 Prato da Semana
+      </h2>
+
+      <p className="font-semibold">
+        Frango ao Molho com Batata e Picadinho 🍛
+      </p>
+
+      <p className="text-sm text-gray-600 mb-4">
+        Aproveite essa delícia com preço promocional!
+      </p>
+
+      {/* BOTÕES */}
+      <div className="flex gap-2 justify-center">
+        <a
+          href="https://wa.me/5511953293602"
+          target="_blank"
+        >
+          <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
+            Pedir Agora
+          </button>
+        </a>
+
+        <button
+          onClick={() => setShowAviso(false)}
+          className="bg-gray-300 px-4 py-2 rounded-lg"
+        >
+          Fechar
+        </button>
+      </div>
+
+    </div>
+  </div>
+)}
       <div className="container">
         {/* Header */}
         <div className="text-center mb-12 space-y-4">
