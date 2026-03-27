@@ -67,46 +67,34 @@ export default function Menu() {
       {/* 🔥 POP-UP */}
 {showAviso && (
   <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-    <div className="bg-white p-5 rounded-xl max-w-sm text-center shadow-lg">
 
-      {/* IMAGEM */}
-      <img
-        src="/frango.jpg"
-        alt="Prato da semana"
-        className="w-full rounded-lg mb-3"
-      />
+    <div className="relative max-w-sm w-full">
 
-      <h2 className="text-xl font-bold mb-2">
-        🔥 Prato da Semana
-      </h2>
-
-      <p className="font-semibold">
-        Frango ao Molho com Batata e Picadinho 🍛
-      </p>
-
-      <p className="text-sm text-gray-600 mb-4">
-        Aproveite essa delícia com preço promocional!
-      </p>
-
-      {/* BOTÕES */}
-      <div className="flex gap-2 justify-center">
-        <button
-       onClick={() => {
-       setSelectedDay(getCurrentDay()); // seleciona o dia atual
-       setShowAviso(false); // fecha o pop-up
-       }}
-       className="bg-green-500 text-white px-4 py-2 rounded-lg"
+      {/* ❌ BOTÃO FECHAR */}
+      <button
+        onClick={() => setShowAviso(false)}
+        className="absolute top-2 right-2 bg-white rounded-full px-3 py-1 shadow-md"
       >
-      Ver Pratos de Hoje
+        ✕
       </button>
 
-        <button
-          onClick={() => setShowAviso(false)}
-          className="bg-gray-300 px-4 py-2 rounded-lg"
-        >
-          Fechar
-        </button>
-      </div>
+      {/* 🖼️ IMAGEM CLICÁVEL */}
+      <img
+        src="/santa.jpg"
+        alt="Prato do dia"
+        className="w-full rounded-xl cursor-pointer"
+        onClick={() => {
+          setSelectedDay(getCurrentDay()); // filtra o dia atual
+          setShowAviso(false); // fecha o pop-up
+
+          // rolagem suave (opcional)
+          setTimeout(() => {
+            document
+              .getElementById("produtos")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        }}
+      />
 
     </div>
   </div>
@@ -214,7 +202,9 @@ export default function Menu() {
 
         {/* Products */}
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+        id="produtos"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}
