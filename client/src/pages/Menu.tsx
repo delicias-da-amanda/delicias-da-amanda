@@ -90,14 +90,15 @@ export default function Menu() {
 
       {/* BOTÕES */}
       <div className="flex gap-2 justify-center">
-        <a
-          href="https://wa.me/5511953293602"
-          target="_blank"
-        >
-          <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
-            Pedir Agora
-          </button>
-        </a>
+        <button
+       onClick={() => {
+       setSelectedDay(getCurrentDay()); // seleciona o dia atual
+       setShowAviso(false); // fecha o pop-up
+       }}
+       className="bg-green-500 text-white px-4 py-2 rounded-lg"
+      >
+      Ver Pratos de Hoje
+      </button>
 
         <button
           onClick={() => setShowAviso(false)}
