@@ -80,7 +80,7 @@ export default function Menu() {
 
       {/* 🖼️ IMAGEM CLICÁVEL */}
       <img
-        src="/santa.jpg"
+        src="/santa.gif"
         alt="Prato do dia"
         className="w-full rounded-xl cursor-pointer"
         onClick={() => {
