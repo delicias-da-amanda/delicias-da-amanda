@@ -79,10 +79,12 @@ export default function Menu() {
       </button>
 
       {/* 🖼️ IMAGEM CLICÁVEL */}
-      <img
-        src="/santa.gif"
-        alt="Prato do dia"
-        className="w-full rounded-xl cursor-pointer"
+      <video
+      src="/santa.mp4"
+      autoPlay
+      loop
+      muted
+     className="w-full rounded-xl cursor-pointer"
         onClick={() => {
           setSelectedDay(getCurrentDay()); // filtra o dia atual
           setShowAviso(false); // fecha o pop-up
