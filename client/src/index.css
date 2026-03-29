@@ -204,7 +204,7 @@ Design Philosophy: Organic Minimalism
 
 .peixe {
   position: absolute;
-  font-size: 28px;
+  font-size: 36px;
   animation: nadar 12s linear infinite;
   opacity: 0.9;
   transform: scaleX(-1); /* 🐟 vira o peixe */
