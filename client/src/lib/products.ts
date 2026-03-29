@@ -143,7 +143,7 @@ export const products: Product[] = [
     description: 'Tilápia empanada e frita até ficar bem crocante por fora e suculenta por dentro. Acompanha o exclusivo molho especial da casa, que traz um toque único e irresistível ao prato.',
     price: 27.00,
     category: 'santa',
-    image: '/images/tiapiacrocante.jpg',
+    image: '/images/tilapiacrocante.jpg',
     hasOptions: false,
     availableDays: ['sexta']
   },
