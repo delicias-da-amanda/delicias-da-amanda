@@ -70,6 +70,28 @@ export const products: Product[] = [
     hasOptions: false,
     availableDays: ['segunda']
   },
+
+  {
+    id: 'merluza-empanada',
+    name: '🐟✨ Merluza Empanada Crocante com batata frita ✨🐟',
+    description: 'Deliciosa merluza empanada, douradinha por fora e macia por dentro, preparada no ponto perfeito para garantir muito sabor em cada mordida! Acompanha batata frita sequinha e crocante. 😋',
+    price: 23.00,
+    category: 'santa',
+    image: '/images/merluzaamilanesa.jpg',
+    hasOptions: false,
+    availableDays: ['terca']
+  },
+
+    {
+    id: 'sardinha',
+    name: '🐟🔥 Sardinha Frita com Vinagrete 🔥🐟',
+    description: 'Sardinha frita crocante por fora e macia por dentro, cheia de sabor! Acompanha arroz branco soltinho e um vinagrete fresquinho que traz aquele toque especial e refrescante à refeição. 😋',
+    price: 20.00,
+    category: 'santa',
+    image: '/images/sardinha.jpg',
+    hasOptions: false,
+    availableDays: ['terca']
+  },
   
   // Lanches
   {
