@@ -66,7 +66,7 @@ export default function Menu() {
   <div className="min-h-screen py-12 md:py-20">
 
     {/* 🐟 PEIXES AQUI */}
-    {true && (
+    {selectedCategory === "santa" && (
       <div className="peixes-container">
         <span className="peixe">🐟</span>
         <span className="peixe">🐠</span>
