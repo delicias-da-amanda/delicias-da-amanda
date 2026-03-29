@@ -48,6 +48,18 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   
+  // Especial Semana Santa
+   {
+    id: 'tilapia-ao-molho',
+    name: '🐟✨ Tilápia ao Molho com batata ao murro✨🐟',
+    description: 'Deliciosa tilápia suculenta preparada em um irresistível molho de tomate com leite de coco, trazendo um sabor leve e cremoso na medida certa. Acompanha arroz branco soltinho e batata ao murro dourada e macia por dentro.',
+    price: 26.00,
+    category: 'santa',
+    image: '/images/tilapiaaomolho.jpg',
+    hasOptions: false,
+    availableDays: ['segunda']
+  },
+  
   // Lanches
   {
     id: 'lanche-natural',
