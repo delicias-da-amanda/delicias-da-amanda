@@ -85,9 +85,18 @@ export default function Menu() {
       loop
       muted
      className="w-full rounded-xl cursor-pointer"
-     onClick={() => {
-  setSelectedCategory("santa"); // mantém Semana Santa
-  setSelectedDay(getCurrentDay()); // 👉 filtra pelo dia atual
+    onClick={() => {
+  const today = getCurrentDay();
+
+  // verifica se existe produto da Semana Santa hoje
+  const hasTodaySanta = products.some(
+    (p) =>
+      p.category === "santa" &&
+      p.availableDays.includes(today)
+  );
+
+  setSelectedCategory("santa");
+  setSelectedDay(hasTodaySanta ? today : "all"); // 👈 fallback inteligente
   setShowAviso(false);
 
   setTimeout(() => {
