@@ -85,17 +85,17 @@ export default function Menu() {
       loop
       muted
      className="w-full rounded-xl cursor-pointer"
-        onClick={() => {
-  setSelectedCategory("santa"); // 👉 FILTRA SEMANA SANTA
-  setSelectedDay("all"); // filtra o dia atual
+     onClick={() => {
+  setSelectedCategory("santa"); // mantém Semana Santa
+  setSelectedDay(getCurrentDay()); // 👉 filtra pelo dia atual
   setShowAviso(false);
 
   setTimeout(() => {
     document
       .getElementById("produtos")
       ?.scrollIntoView({ behavior: "smooth" });
-     }, 100);
-     }}
+  }, 100);
+}}
       />
 
     </div>
