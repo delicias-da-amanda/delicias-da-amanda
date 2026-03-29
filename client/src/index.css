@@ -207,6 +207,7 @@ Design Philosophy: Organic Minimalism
   font-size: 28px;
   animation: nadar 12s linear infinite;
   opacity: 0.9;
+  transform: scaleX(-1); /* 🐟 vira o peixe */
 }
 
 .peixe:nth-child(1) { top: 20%; animation-duration: 12s; }
