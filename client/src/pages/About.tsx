@@ -42,19 +42,13 @@ export default function About() {
             </h1>
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                A <strong className="text-foreground">Delícias da Amanda</strong> nasceu do amor pela culinária caseira 
-                e do desejo de compartilhar sabores que aquecem o coração. O que começou como uma paixão por preparar 
-                receitas especiais para a família se transformou em um negócio dedicado a levar produtos artesanais 
-                de qualidade para cada vez mais pessoas.
+                A <strong className="text-foreground">Delícias da Amanda</strong> nasceu do amor pela culinária caseira e do desejo de compartilhar sabores que aquecem o coração. O que começou com o aroma dos nossos primeiros pães artesanais, sequilhos e marmitas fit, transformou-se em um cardápio completo feito para acompanhar todos os momentos do seu dia.
               </p>
               <p>
-                Cada biscoito, pão e lanche que sai da nossa cozinha carrega não apenas ingredientes selecionados, 
-                mas também histórias, memórias afetivas e o cuidado de quem faz com amor. Acreditamos que a comida 
-                tem o poder de criar momentos especiais e fortalecer laços.
+                Hoje, além das nossas raízes artesanais, oferecemos também marmitas tradicionais com aquele tempero de família, sucos detox refrescantes e uma variedade de lanches preparados com ingredientes selecionados. Evoluímos para cuidar da sua alimentação com praticidade, sem nunca abrir mão do cuidado e do afeto que dedicamos a cada receita desde o primeiro dia.
               </p>
               <p>
-                Hoje, continuamos fiéis às nossas raízes: produção artesanal, ingredientes de qualidade e o compromisso 
-                de fazer cada cliente se sentir em casa com nossos sabores.
+                Nosso compromisso continua o mesmo: fazer você se sentir em casa com sabores que alimentam o corpo e a alma.
               </p>
             </div>
           </div>
