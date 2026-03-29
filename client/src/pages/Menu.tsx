@@ -63,7 +63,17 @@ export default function Menu() {
   }, [selectedCategory, selectedDay]);
 
   return (
-    <div className="min-h-screen py-12 md:py-20">
+  <div className="min-h-screen py-12 md:py-20">
+
+    {/* 🐟 PEIXES AQUI */}
+    {true && (
+      <div className="peixes-container">
+        <span className="peixe">🐟</span>
+        <span className="peixe">🐠</span>
+        <span className="peixe">🐟</span>
+        <span className="peixe">🐡</span>
+      </div>
+    )}
       {/* 🔥 POP-UP */}
 {showAviso && (
   <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
