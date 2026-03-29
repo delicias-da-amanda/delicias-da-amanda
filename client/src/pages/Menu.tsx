@@ -87,7 +87,7 @@ export default function Menu() {
      className="w-full rounded-xl cursor-pointer"
         onClick={() => {
   setSelectedCategory("santa"); // 👉 FILTRA SEMANA SANTA
-  setSelectedDay("all"); // 👉 mostra todos os dias da categoria
+  setSelectedDay("all"); // filtra o dia atual
   setShowAviso(false);
 
   setTimeout(() => {
