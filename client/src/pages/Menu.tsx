@@ -114,10 +114,10 @@ export default function Menu() {
         {/* Header */}
         <div className="text-center mb-12 space-y-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold">
-            Nosso Cardápio
+            Sua Rotina com Mais Sabor e Leveza
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore nossa seleção de produtos artesanais feitos com carinho
+            Esqueça a cozinha e foque no seu dia. Explore nosso cardápio variado e receba sua refeição pronta, nutritiva e deliciosa.
           </p>
         </div>
 
