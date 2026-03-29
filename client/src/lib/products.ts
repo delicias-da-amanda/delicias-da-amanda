@@ -12,7 +12,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: 'biscoitos' | 'lanches' | 'marmitas'|'marmitas-trad'|'paes' | 'saudaveis' | 'bebidas';
+  category: 'santa' | 'biscoitos' | 'lanches' | 'marmitas'|'marmitas-trad'|'paes' | 'saudaveis' | 'bebidas';
   image: string;
   hasOptions: boolean;
   options?: ProductOption[];
@@ -418,6 +418,7 @@ export const products: Product[] = [
 ];
 
 export const categories = [
+  { id: 'santa', name: '🐟Especial Semana Santa 🐟', icon: '🐟' },
   { id: 'biscoitos', name: 'Biscoitos Amanteigados (Sequilhos)', icon: '🍪' },
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
   { id: 'marmitas-trad', name: 'Marmitas Tradicionais', icon: '🍛' },
