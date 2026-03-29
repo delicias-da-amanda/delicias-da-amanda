@@ -86,16 +86,16 @@ export default function Menu() {
       muted
      className="w-full rounded-xl cursor-pointer"
         onClick={() => {
-          setSelectedDay(getCurrentDay()); // filtra o dia atual
-          setShowAviso(false); // fecha o pop-up
+  setSelectedCategory("santa"); // 👉 FILTRA SEMANA SANTA
+  setSelectedDay("all"); // 👉 mostra todos os dias da categoria
+  setShowAviso(false);
 
-          // rolagem suave (opcional)
-          setTimeout(() => {
-            document
-              .getElementById("produtos")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }, 100);
-        }}
+  setTimeout(() => {
+    document
+      .getElementById("produtos")
+      ?.scrollIntoView({ behavior: "smooth" });
+     }, 100);
+     }}
       />
 
     </div>
