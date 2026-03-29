@@ -193,21 +193,25 @@ export default function Menu() {
             </Badge>
 
             {categories.map((category) => (
-              <Badge
-                key={category.id}
-                variant={
-                  selectedCategory === category.id
-                    ? "default"
-                    : "outline"
-                }
-                className="cursor-pointer"
-                onClick={() =>
-                  handleCategoryClick(category.id)
-                }
-              >
-                {category.icon} {category.name}
-              </Badge>
-            ))}
+  <Badge
+    key={category.id}
+    variant={
+      selectedCategory === category.id
+        ? "default"
+        : "outline"
+    }
+    className={`cursor-pointer ${
+      category.id === "santa"
+        ? "bg-orange-500 text-white animate-pulse font-bold"
+        : ""
+    }`}
+    onClick={() =>
+      handleCategoryClick(category.id)
+    }
+  >
+    {category.icon} {category.name}
+  </Badge>
+   ))}
           </div>
         </div>
 
