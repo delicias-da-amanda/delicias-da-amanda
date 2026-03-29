@@ -59,6 +59,17 @@ export const products: Product[] = [
     hasOptions: false,
     availableDays: ['segunda']
   },
+
+  {
+    id: 'tilapia-grelhada',
+    name: '🐟🔥 Tilápia Grelhada com Puré de Batata 🔥🐟',
+    description: 'Tilápia grelhada no ponto certo, leve, suculenta e cheia de sabor! Acompanha arroz branco soltinho e um purê de batata bem cremoso, feito com todo cuidado para deixar sua refeição ainda mais especial.',
+    price: 25.00,
+    category: 'santa',
+    image: '/images/tilapiagrelhada.jpg',
+    hasOptions: false,
+    availableDays: ['segunda']
+  },
   
   // Lanches
   {
@@ -430,7 +441,7 @@ export const products: Product[] = [
 ];
 
 export const categories = [
-  { id: 'santa', name: '🐟Especial Semana Santa 🐟', icon: '🐟' },
+  { id: 'santa', name: 'Especial Semana Santa 🐟', icon: '🐟' },
   { id: 'biscoitos', name: 'Biscoitos Amanteigados (Sequilhos)', icon: '🍪' },
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
   { id: 'marmitas-trad', name: 'Marmitas Tradicionais', icon: '🍛' },
