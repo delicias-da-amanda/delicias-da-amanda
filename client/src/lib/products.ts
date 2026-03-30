@@ -264,7 +264,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/parmegiana.jpg',
     hasOptions: false,
-    availableDays: ['quarta']
+    availableDays: ['segunda']
   },
   {
     id: 'Frango ao Molho',
@@ -284,7 +284,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/picadinho.jpg',
     hasOptions: false,
-    availableDays: ['terca']
+    availableDays: ['segunda']
   },
   {
     id: 'Macarrão ao molho',
