@@ -143,33 +143,7 @@ export const products: Product[] = [
     availableDays: ['sexta']
   },
 
-  // Lanches
-  {
-    id: 'lanche-natural',
-    name: 'Lanche Natural',
-    description: 'Saudável por natureza, artesanal por escolha. Sabor leve que alimenta e satisfaz.',
-    price: 0, // Price varies by option
-    category: 'lanches',
-    image: '/images/lanche-natural.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Atum', price: 9.00 },
-      { name: 'Frango', price: 9.00 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'lanche-carne-louca',
-    name: 'Lanche de Carne Louca',
-    description: 'Carne desfiada suculenta e artesanalmente temperada. O clássico irresistível, cheio de sabor e tradição.',
-    price: 8.00,
-    category: 'lanches',
-    image: '/images/lanches-hero.jpg',
-    hasOptions: false,
-    availableDays: ['terca', 'quinta']
-  },
-    
-   // Marmitas Tradicionais
+    // Marmitas Tradicionais
 
   {
     id: 'Feijoada Tudo Junto',
@@ -388,6 +362,32 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
 },
 
+// Lanches
+  {
+    id: 'lanche-natural',
+    name: 'Lanche Natural',
+    description: 'Saudável por natureza, artesanal por escolha. Sabor leve que alimenta e satisfaz.',
+    price: 0, // Price varies by option
+    category: 'lanches',
+    image: '/images/lanche-natural.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Atum', price: 9.00 },
+      { name: 'Frango', price: 9.00 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
+    id: 'lanche-carne-louca',
+    name: 'Lanche de Carne Louca',
+    description: 'Carne desfiada suculenta e artesanalmente temperada. O clássico irresistível, cheio de sabor e tradição.',
+    price: 8.00,
+    category: 'lanches',
+    image: '/images/lanches-hero.jpg',
+    hasOptions: false,
+    availableDays: ['terca', 'quinta']
+  },
+    
  // Pães Especiais
   {
     id: 'pao-recheado',
