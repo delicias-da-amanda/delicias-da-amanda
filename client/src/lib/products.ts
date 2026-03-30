@@ -530,11 +530,11 @@ export const products: Product[] = [
 
 export const categories = [
   { id: 'santa', name: 'Especial Semana Santa 🐟', icon: '🐟' },
-  { id: 'biscoitos', name: 'Biscoitos Amanteigados (Sequilhos)', icon: '🍪' },
-  { id: 'lanches', name: 'Lanches', icon: '🥪' },
   { id: 'marmitas-trad', name: 'Marmitas Tradicionais', icon: '🍛' },
   { id: 'marmitas', name: 'Marmitas Fit', icon: '🥗' },
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },
+  { id: 'biscoitos', name: 'Biscoitos Amanteigados (Sequilhos)', icon: '🍪' },
+  { id: 'lanches', name: 'Lanches', icon: '🥪' },
   { id: 'saudaveis', name: 'Sobremesas Saudáveis', icon: '🥥' },
   { id: 'bebidas', name: 'Bebidas', icon: '🥤' }
 ];
