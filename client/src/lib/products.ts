@@ -12,7 +12,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: 'santa' | 'biscoitos' | 'lanches' | 'marmitas'|'marmitas-trad'|'paes' | 'saudaveis' | 'bebidas';
+  category: 'santa' | 'marmitas'|'marmitas-trad'|'paes' | 'biscoitos' | 'lanches' | 'saudaveis' | 'bebidas';
   image: string;
   hasOptions: boolean;
   options?: ProductOption[];
@@ -31,22 +31,6 @@ export const DAYS_LABELS: Record<DayOfWeek, string> = {
 };
 
 export const products: Product[] = [
-  // Biscoitos Amanteigados (Sequilhos)
-  {
-    id: 'biscoito-amanteigado',
-    name: 'Biscoito Amanteigado',
-    description: 'Aquela receita clássica que desmancha no paladar. Perfeitos para acompanhar seu café.',
-    price: 0, // Price varies by option
-    category: 'biscoitos',
-    image: '/images/biscoito-amanteigado.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Tradicional', price: 6.00 },
-      { name: 'Com chocolate', price: 7.00 },
-      { name: 'Com Goiabada', price: 7.00 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
   
   // Especial Semana Santa
    {
@@ -185,36 +169,7 @@ export const products: Product[] = [
     availableDays: ['terca', 'quinta']
   },
     
-  // Pães Especiais
-  {
-    id: 'pao-recheado',
-    name: 'Pão Recheado',
-    description: 'O equilíbrio perfeito entre uma massa macia e um recheio suculento. Qualidade e sabor em cada fatia.',
-    price: 0, // Price varies by option
-    category: 'paes',
-    image: '/images/recheado.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Calabresa', price: 18 },
-      { name: 'Calabresa com Requeijão Cremoso', price: 20 },
-      { name: 'Calabresa com Queijo e Requeijão', price: 22 },
-      { name: 'Frango com Requeijão', price: 22 },
-      { name: 'Presunto e Queijo', price: 20 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'pao-caseirinho',
-    name: 'Pão Caseirinho',
-    description: 'O verdadeiro sabor de casa. Massa ultra macia e artesanal, perfeita para aquele café quentinho. Um carinho em forma de pão.',
-    price: 12.00,
-    category: 'paes',
-    image: '/images/pao-caseiro.jpg',
-    hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-
-  // Marmitas Tradicionais
+   // Marmitas Tradicionais
 
   {
     id: 'Feijoada Tudo Junto',
@@ -433,6 +388,52 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
 },
 
+ // Pães Especiais
+  {
+    id: 'pao-recheado',
+    name: 'Pão Recheado',
+    description: 'O equilíbrio perfeito entre uma massa macia e um recheio suculento. Qualidade e sabor em cada fatia.',
+    price: 0, // Price varies by option
+    category: 'paes',
+    image: '/images/recheado.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Calabresa', price: 18 },
+      { name: 'Calabresa com Requeijão Cremoso', price: 20 },
+      { name: 'Calabresa com Queijo e Requeijão', price: 22 },
+      { name: 'Frango com Requeijão', price: 22 },
+      { name: 'Presunto e Queijo', price: 20 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
+    id: 'pao-caseirinho',
+    name: 'Pão Caseirinho',
+    description: 'O verdadeiro sabor de casa. Massa ultra macia e artesanal, perfeita para aquele café quentinho. Um carinho em forma de pão.',
+    price: 12.00,
+    category: 'paes',
+    image: '/images/pao-caseiro.jpg',
+    hasOptions: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+
+   // Biscoitos Amanteigados (Sequilhos)
+  {
+    id: 'biscoito-amanteigado',
+    name: 'Biscoito Amanteigado',
+    description: 'Aquela receita clássica que desmancha no paladar. Perfeitos para acompanhar seu café.',
+    price: 0, // Price varies by option
+    category: 'biscoitos',
+    image: '/images/biscoito-amanteigado.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Tradicional', price: 6.00 },
+      { name: 'Com chocolate', price: 7.00 },
+      { name: 'Com Goiabada', price: 7.00 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+ 
   // Sobremesas Saudáveis
 
   {
