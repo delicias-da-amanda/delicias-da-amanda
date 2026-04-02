@@ -193,7 +193,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/parmegiana.jpg',
     hasOptions: false,
-    availableDays: ['segunda']
+    availableDays: ['segunda','quarta']
   },
   {
     id: 'Frango ao Molho',
@@ -213,7 +213,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/picadinho.jpg',
     hasOptions: false,
-    availableDays: ['segunda']
+    availableDays: ['terca']
   },
   {
     id: 'Macarrão ao molho',
@@ -223,20 +223,16 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/macarraoaomolho.jpg',
     hasOptions: false,
-    availableDays: ['quinta']
+    availableDays: ['quarta']
   },
    {
     id: 'Panqueca',
-    name: '🌯🍟 Panqueca de Carne ou Frango',
-    description: 'Panqueca recheada com carne bem temperada ou frango suculento, coberta com molho caseiro, acompanhada de arroz soltinho e batata frita crocante.',
-    price: 0,
+    name: '🌯🍟 Panqueca de Carne',
+    description: 'Panqueca recheada com frango bem temperado e suculento, coberta com molho caseiro, acompanhada de arroz soltinho e batata frita crocante.',
+    price: 22,
     category: 'marmitas-trad',
     image: '/images/panqueca.jpg',
-    hasOptions: true,
-    options: [
-      { name: '🌯 Panqueca de Carne', price: 22 },
-      { name: '🌯 Panqueca de Frango', price: 22 },
-     ],
+    hasOptions: false,
     availableDays: ['quinta']
   },
   {
