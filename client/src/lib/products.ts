@@ -227,7 +227,7 @@ export const products: Product[] = [
   },
    {
     id: 'Panqueca',
-    name: '🌯🍟 Panqueca de Carne',
+    name: '🌯🍟 Panqueca de Frango',
     description: 'Panqueca recheada com frango bem temperado e suculento, coberta com molho caseiro, acompanhada de arroz soltinho e batata frita crocante.',
     price: 22,
     category: 'marmitas-trad',
