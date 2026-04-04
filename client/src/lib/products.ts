@@ -96,7 +96,7 @@ export const products: Product[] = [
     category: 'santa',
     image: '/images/escondidinho.jpg',
     hasOptions: false,
-    availableDays: ['quarta']
+    availableDays: ['quarta','sabado']
   },
 
 {
@@ -122,14 +122,14 @@ export const products: Product[] = [
   },
 
 {
-    id: 'tilapia-crocante',
-    name: '🐟✨ Tilápia Crocante ao Molho Especial da Casa ✨🐟',
-    description: 'Tilápia empanada e frita até ficar bem crocante por fora e suculenta por dentro. Acompanha o exclusivo molho especial da casa, que traz um toque único e irresistível ao prato.',
+    id: 'merluza-crocante',
+    name: '🐟✨ Merluza Crocante ao Molho Especial da Casa ✨🐟',
+    description: 'Merluza empanada e frita até ficar bem crocante por fora e suculenta por dentro. Acompanha o exclusivo molho especial da casa, que traz um toque único e irresistível ao prato.',
     price: 27.00,
     category: 'santa',
     image: '/images/tilapiacrocante.jpg',
     hasOptions: false,
-    availableDays: ['sexta']
+    availableDays: ['sexta','sabado']
   },
 
 {
@@ -158,7 +158,7 @@ export const products: Product[] = [
       { name: '🍛 Média', price: 30 },
       { name: '🍛 Grande', price: 35 }
       ],
-    availableDays: ['quarta','sabado']
+    availableDays: ['quarta']
   },
   {
     id: 'Feijoada Separada',
@@ -173,7 +173,7 @@ export const products: Product[] = [
       { name: '🍛 Média', price: 55 },
       { name: '🍛 Grande', price: 75 }
       ],
-    availableDays: ['quarta','sabado']
+    availableDays: ['quarta']
   },
   {
     id: 'Virado à Paulista',
