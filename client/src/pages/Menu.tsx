@@ -212,7 +212,7 @@ export default function Menu() {
         : "outline"
     }
     className={`cursor-pointer ${
-      category.id === "santa"
+      category.id === "marmitas-trad"
         ? "bg-orange-500 text-white animate-pulse font-bold"
         : ""
     }`}
