@@ -65,7 +65,7 @@ export default function Menu() {
   return (
   <div className="min-h-screen py-12 md:py-20">
 
-    {/* 🐟 PEIXES AQUI */}
+    {/* 👨‍🍳 COZINHA AQUI */}
     {selectedCategory === "marmitas-trad" && (
       <div className="cozinha-container">
         <span className="cozinha">👨‍🍳</span>
