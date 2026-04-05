@@ -12,7 +12,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: 'santa' | 'marmitas'|'marmitas-trad'|'paes' | 'biscoitos' | 'lanches' | 'saudaveis' | 'bebidas';
+  category: 'marmitas'|'marmitas-trad'|'paes' | 'biscoitos' | 'lanches' | 'saudaveis' | 'bebidas';
   image: string;
   hasOptions: boolean;
   options?: ProductOption[];
@@ -32,118 +32,7 @@ export const DAYS_LABELS: Record<DayOfWeek, string> = {
 
 export const products: Product[] = [
   
-  // Especial Semana Santa
-   {
-    id: 'tilapia-ao-molho',
-    name: '🐟✨ Tilápia ao Molho com batata ao murro✨🐟',
-    description: 'Deliciosa tilápia suculenta preparada em um irresistível molho de tomate com leite de coco, trazendo um sabor leve e cremoso na medida certa. Acompanha arroz branco soltinho e batata ao murro dourada e macia por dentro.',
-    price: 26.00,
-    category: 'santa',
-    image: '/images/tilapiaaomolho.jpg',
-    hasOptions: false,
-    availableDays: ['segunda']
-  },
-
-  {
-    id: 'tilapia-grelhada',
-    name: '🐟🔥 Tilápia Grelhada com Puré de Batata 🔥🐟',
-    description: 'Tilápia grelhada no ponto certo, leve, suculenta e cheia de sabor! Acompanha arroz branco soltinho e um purê de batata bem cremoso, feito com todo cuidado para deixar sua refeição ainda mais especial.',
-    price: 25.00,
-    category: 'santa',
-    image: '/images/tilapiagrelhada.jpg',
-    hasOptions: false,
-    availableDays: ['segunda']
-  },
-
-  {
-    id: 'merluza-empanada',
-    name: '🐟✨ Merluza Empanada Crocante com batata frita ✨🐟',
-    description: 'Deliciosa merluza empanada, douradinha por fora e macia por dentro, preparada no ponto perfeito para garantir muito sabor em cada mordida! Acompanha batata frita sequinha e crocante. 😋',
-    price: 23.00,
-    category: 'santa',
-    image: '/images/merluzaamilanesa.jpg',
-    hasOptions: false,
-    availableDays: ['terca']
-  },
-
-  {
-    id: 'sardinha',
-    name: '🐟🔥 Sardinha Frita com Vinagrete 🔥🐟',
-    description: 'Sardinha frita crocante por fora e macia por dentro, cheia de sabor! Acompanha arroz branco soltinho e um vinagrete fresquinho que traz aquele toque especial e refrescante à refeição. 😋',
-    price: 20.00,
-    category: 'santa',
-    image: '/images/sardinha.jpg',
-    hasOptions: false,
-    availableDays: ['terca']
-  },
-  
-{
-    id: 'cacao',
-    name: '🐟🇵🇹 Cação à Portuguesa 🇵🇹🐟',
-    description: 'Postas de cação preparadas com muito sabor, refogadas com pimentão, ovos cozidos e azeitonas pretas, criando uma combinação rica e irresistível. Acompanha arroz branco soltinho para completar essa refeição cheia de tradição.',
-    price: 27.00,
-    category: 'santa',
-    image: '/images/cacao.jpg',
-    hasOptions: false,
-    availableDays: ['quarta']
-  },
-
-{
-    id: 'escondidinho',
-    name: '🐟🥔 Escondidinho de Peixe 🥔🐟',
-    description: 'Camadas generosas de purê de batata bem cremoso, recheadas com peixe desfiado temperado com muito sabor, formando uma combinação irresistível. Finalizado no ponto certo para garantir uma textura macia e um sabor que conquista a cada garfada.',
-    price: 26.00,
-    category: 'santa',
-    image: '/images/escondidinho.jpg',
-    hasOptions: false,
-    availableDays: ['quarta','sabado']
-  },
-
-{
-    id: 'bolinho',
-    name: '🐟🍛 Bolinho de Peixe 🍛🐟',
-    description: 'Arroz branco soltinho acompanhado de bolinhos de peixe dourados e crocantes por fora, macios por dentro, e um pirão bem temperado e cremoso que completa a refeição com muito sabor.',
-    price: 24.00,
-    category: 'santa',
-    image: '/images/bolinhopeixe.jpg',
-    hasOptions: false,
-    availableDays: ['quinta']
-  },
-
-{
-    id: 'macarrao-atum',
-    name: '🍝🐟 Macarrão Cremoso com Atum + Iscas de Peixe 🐟🍝',
-    description: 'Macarrão envolvido em um molho cremoso de atum com creme de leite, bem temperado e cheio de sabor. Acompanha deliciosas iscas de peixe douradas, crocantes por fora e macias por dentro, que deixam o prato ainda mais irresistível.',
-    price: 25.00,
-    category: 'santa',
-    image: '/images/macarraoeatum.jpg',
-    hasOptions: false,
-    availableDays: ['quinta']
-  },
-
-{
-    id: 'merluza-crocante',
-    name: '🐟✨ Merluza Crocante ao Molho Especial da Casa ✨🐟',
-    description: 'Merluza empanada e frita até ficar bem crocante por fora e suculenta por dentro. Acompanha o exclusivo molho especial da casa, que traz um toque único e irresistível ao prato.',
-    price: 27.00,
-    category: 'santa',
-    image: '/images/tilapiacrocante.jpg',
-    hasOptions: false,
-    availableDays: ['sexta','sabado']
-  },
-
-{
-    id: 'moqueca',
-    name: '🐟🥥 Moqueca Especial da Casa 🥥🐟',
-    description: 'Peixe preparado com muito sabor em um molho rico e encorpado, com leite de coco, temperos frescos e aquele toque especial da casa. Um prato aromático, suculento e cheio de tradição.',
-    price: 32.00,
-    category: 'santa',
-    image: '/images/moqueca.jpg',
-    hasOptions: false,
-    availableDays: ['sexta']
-  },
-
-    // Marmitas Tradicionais
+ // Marmitas Tradicionais
 
   {
     id: 'Feijoada Tudo Junto',
@@ -158,7 +47,7 @@ export const products: Product[] = [
       { name: '🍛 Média', price: 30 },
       { name: '🍛 Grande', price: 35 }
       ],
-    availableDays: ['quarta']
+    availableDays: ['quarta','sabado']
   },
   {
     id: 'Feijoada Separada',
@@ -173,7 +62,7 @@ export const products: Product[] = [
       { name: '🍛 Média', price: 55 },
       { name: '🍛 Grande', price: 75 }
       ],
-    availableDays: ['quarta']
+    availableDays: ['quarta','sabado']
   },
   {
     id: 'Virado à Paulista',
@@ -223,7 +112,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/macarraoaomolho.jpg',
     hasOptions: false,
-    availableDays: ['quarta']
+    availableDays: ['quinta']
   },
    {
     id: 'Panqueca',
@@ -526,7 +415,6 @@ export const products: Product[] = [
 ];
 
 export const categories = [
-  { id: 'santa', name: 'Especial Semana Santa 🐟', icon: '🐟' },
   { id: 'marmitas-trad', name: 'Marmitas Tradicionais', icon: '🍛' },
   { id: 'marmitas', name: 'Marmitas Fit', icon: '🥗' },
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },

@@ -66,7 +66,7 @@ export default function Menu() {
   <div className="min-h-screen py-12 md:py-20">
 
     {/* 🐟 PEIXES AQUI */}
-    {selectedCategory === "santa" && (
+    {selectedCategory === "marmitas-trad" && (
       <div className="peixes-container">
         <span className="peixe">🐟</span>
         <span className="peixe">🐠</span>
@@ -98,15 +98,16 @@ export default function Menu() {
     onClick={() => {
   const today = getCurrentDay();
 
-  // verifica se existe produto da Semana Santa hoje
+  // verifica se existe produto da Marmitas Tradicionais hoje
   const hasTodaySanta = products.some(
     (p) =>
-      p.category === "santa" &&
+      p.category === "marmitas-trad" &&
       p.availableDays.includes(today)
   );
 
-  setSelectedCategory("santa");
-  setSelectedDay(hasTodaySanta ? today : "all"); // 👈 fallback inteligente
+    setSelectedCategory("marmitas-trad");
+  setSelectedDay(hasTodaySanta ? today : "all");
+
   setShowAviso(false);
 
   setTimeout(() => {
