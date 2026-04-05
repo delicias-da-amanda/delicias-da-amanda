@@ -99,14 +99,14 @@ export default function Menu() {
   const today = getCurrentDay();
 
   // verifica se existe produto da Marmitas Tradicionais hoje
-  const hasTodaySanta = products.some(
+  const hasToday = products.some(
     (p) =>
       p.category === "marmitas-trad" &&
       p.availableDays.includes(today)
   );
 
     setSelectedCategory("marmitas-trad");
-  setSelectedDay(hasTodaySanta ? today : "all");
+  setSelectedDay(hasToday ? today : "all");
 
   setShowAviso(false);
 
