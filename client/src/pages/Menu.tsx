@@ -67,11 +67,11 @@ export default function Menu() {
 
     {/* 🐟 PEIXES AQUI */}
     {selectedCategory === "marmitas-trad" && (
-      <div className="peixes-container">
-        <span className="peixe">🐟</span>
-        <span className="peixe">🐠</span>
-        <span className="peixe">🦀</span>
-        <span className="peixe">🐡</span>
+      <div className="cozinha-container">
+        <span className="cozinha">👨‍🍳</span>
+        <span className="cozinha">🐠</span>
+        <span className="cozinha">🍛</span>
+        <span className="cozinha">🍽️</span>
       </div>
     )}
       {/* 🔥 POP-UP */}
