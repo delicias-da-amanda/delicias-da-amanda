@@ -77,7 +77,7 @@ export const products: Product[] = [
   {
     id: '🌭✨ Linguiça Toscana Recheada Especial',
     name: '🌭✨ Linguiça Toscana Recheada Especial',
-    description: 'Linguiça toscana suculenta e recheada, cheia de sabor, acompanhada de batatas rústicas crocantes, arroz branco soltinho e feijão bem temperado. 😋🍽️',
+    description: 'Linguiça toscana suculenta e recheada, cheia de sabor, acompanhada de batatas rústicas, arroz branco soltinho e feijão bem temperado. 😋🍽️',
     price: 22,
     category: 'marmitas-trad',
     image: '/images/linguiça.jpg',
