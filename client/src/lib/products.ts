@@ -75,6 +75,17 @@ export const products: Product[] = [
     availableDays: ['segunda']
   },
   {
+    id: '🌭✨ Linguiça Toscana Recheada Especial',
+    name: '🌭✨ Linguiça Toscana Recheada Especial',
+    description: 'Linguiça toscana suculenta e recheada, cheia de sabor, acompanhada de batatas rústicas crocantes, arroz branco soltinho e feijão bem temperado. 😋🍽️',
+    price: 22,
+    category: 'marmitas-trad',
+    image: '/images/linguiça.jpg',
+    hasOptions: false,
+    availableDays: ['segunda']
+  },
+
+  {
     id: 'Parmegiana de Frango',
     name: '🍽️ Parmegiana de Frango',
     description: 'Suculento filé de frango empanado, coberto com molho de tomate e queijo derretido, formando uma parmegiana irresistível. Acompanha batata frita crocante, arroz soltinho e feijão fresquinho, garantindo um prato completo, saboroso e perfeito para matar a fome com muito sabor! 😋',
@@ -98,7 +109,7 @@ export const products: Product[] = [
     id: 'Picanho',
     name: '😋🥩 Picadinho',
     description: 'Carne macia em cubos, cozida com batata e cenoura no tempero caseiro, acompanhada de arroz soltinho e feijão bem temperado.',
-    price: 22,
+    price: 24,
     category: 'marmitas-trad',
     image: '/images/picadinho.jpg',
     hasOptions: false,
@@ -148,7 +159,7 @@ export const products: Product[] = [
     id: 'Strogonoff de Frango',
     name: '😋🍗 Strogonoff de Frango',
     description: 'Frango em cubos ao molho cremoso e bem temperado, acompanhado de arroz soltinho e batata palha crocante.',
-    price: 20,
+    price: 22,
     category: 'marmitas-trad',
     image: '/images/strogonoff.jpg',
     hasOptions: false,
@@ -158,7 +169,7 @@ export const products: Product[] = [
     id: 'Filé de Frango',
     name: '😋🍗 Filé de Frango acompanhado de Farofa crocante',
     description: 'Filé de frango grelhado, macio e suculento, acompanhado de arroz soltinho, feijão bem temperado e farofa crocante.',
-    price: 18,
+    price: 20,
     category: 'marmitas-trad',
     image: '/images/filedefrango.jpg',
     hasOptions: false,
@@ -168,7 +179,7 @@ export const products: Product[] = [
     id: 'Bife à Cavalo',
     name: '🍳🥩 Bife à Cavalo',
     description: 'Bife suculento preparado no ponto certo, com ovo frito na hora, acompanhado de arroz soltinho e feijão bem temperado.',
-    price: 22,
+    price: 24,
     category: 'marmitas-trad',
     image: '/images/bifeacavalo.jpg',
     hasOptions: false,
