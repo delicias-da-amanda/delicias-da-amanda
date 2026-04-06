@@ -90,7 +90,7 @@ export default function Menu() {
 
       {/* 🖼️ IMAGEM CLICÁVEL */}
       <video
-      src="/santa.mp4"
+      src="/pratododia.mp4"
       autoPlay
       loop
       muted
