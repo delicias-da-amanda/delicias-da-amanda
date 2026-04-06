@@ -89,13 +89,13 @@ export default function Menu() {
       </button>
 
       {/* 🖼️ IMAGEM CLICÁVEL */}
-      <video
-      src="/pratododia.mp4"
-      autoPlay
-      loop
-      muted
-     className="w-full rounded-xl cursor-pointer"
-    onClick={() => {
+      <img
+      src="/pratododia.png"
+       alt="Prato do dia"
+       width={400}
+       height={300}
+       className="w-full rounded-xl cursor-pointer"
+       onClick={() => {
   const today = getCurrentDay();
 
   // verifica se existe produto da Marmitas Tradicionais hoje
