@@ -3,7 +3,7 @@ import { usePayment } from "@/contexts/PaymentContext";
 export default function Comanda() {
   const { paymentMethod } = usePayment();
 
-  const PIX_KEY = "11 98651-1287";
+  const PIX_KEY = "66.120.230/0001-00";
 
   // 🔹 Mapeamento amigável da forma de pagamento
   const paymentLabelMap: Record<string, string> = {
