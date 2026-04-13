@@ -82,7 +82,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/linguiça.jpg',
     hasOptions: false,
-    availableDays: ['quinta']
+    availableDays: ['segunda']
   },
 
   {
@@ -187,7 +187,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/bifeacavalo.jpg',
     hasOptions: false,
-    availableDays: ['terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['segunda','terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
     id: 'Calabresa acebolada',
