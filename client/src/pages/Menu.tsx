@@ -138,8 +138,7 @@ export default function Menu() {
             Como você prefere pagar?
           </h3>
           <div className="flex justify-center">
-            <PaymentSelector />
-          </div>
+            </div>
         </div>
 
         {/* Day Filter */}
