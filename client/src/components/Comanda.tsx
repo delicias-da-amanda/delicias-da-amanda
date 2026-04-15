@@ -9,8 +9,8 @@ export default function Comanda() {
   const paymentLabelMap: Record<string, string> = {
      pix: "PIX",
   cartao: "Cartão de Crédito/Débito",
-  vale_alimentacao: "VA",
-  vale_refeicao: "VR",
+  alimentacao: "VA",
+  refeicao: "VR",
   dinheiro: "Dinheiro",
   };
 

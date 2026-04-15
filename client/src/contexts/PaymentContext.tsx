@@ -5,7 +5,8 @@ export type PaymentMethod =
   | "credito"
   | "debito"
   | "dinheiro"
-  | "outra-forma"
+  | "alimentacao"
+  |  "refeicao"
   | null;
 
 type PaymentContextType = {

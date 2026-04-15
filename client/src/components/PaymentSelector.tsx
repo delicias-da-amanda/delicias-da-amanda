@@ -30,15 +30,15 @@ export function PaymentSelector() {
       </Button>
 
       <Button
-        variant={paymentMethod === "dinheiro" ? "default" : "outline"}
-        onClick={() => setPaymentMethod("dinheiro")}
+        variant={paymentMethod === "alimentacao" ? "default" : "outline"}
+        onClick={() => setPaymentMethod("alimentacao")}
       >
             VR
       </Button>
 
       <Button
-        variant={paymentMethod === "dinheiro" ? "default" : "outline"}
-        onClick={() => setPaymentMethod("dinheiro")}
+        variant={paymentMethod === "refeicao" ? "default" : "outline"}
+        onClick={() => setPaymentMethod("refeicao")}
 >
         Dinheiro
       </Button>
