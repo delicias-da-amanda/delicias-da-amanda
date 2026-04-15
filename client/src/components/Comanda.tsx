@@ -7,10 +7,11 @@ export default function Comanda() {
 
   // 🔹 Mapeamento amigável da forma de pagamento
   const paymentLabelMap: Record<string, string> = {
-    pix: "PIX",
-    credito: "Cartão de Crédito",
-    debito: "Cartão de Débito",
-    dinheiro: "Dinheiro",
+     pix: "PIX",
+  cartao: "Cartão de Crédito/Débito",
+  vale_alimentacao: "VA",
+  vale_refeicao: "VR",
+  dinheiro: "Dinheiro",
   };
 
   const paymentLabel = paymentMethod

@@ -19,14 +19,21 @@ export function PaymentSelector() {
         variant={paymentMethod === "credito" ? "default" : "outline"}
         onClick={() => setPaymentMethod("credito")}
       >
-        Crédito
+        Crédito/Débito
       </Button>
 
       <Button
         variant={paymentMethod === "debito" ? "default" : "outline"}
         onClick={() => setPaymentMethod("debito")}
       >
-        Débito
+        VA
+      </Button>
+
+      <Button
+        variant={paymentMethod === "dinheiro" ? "default" : "outline"}
+        onClick={() => setPaymentMethod("dinheiro")}
+      >
+            VR
       </Button>
 
       <Button
