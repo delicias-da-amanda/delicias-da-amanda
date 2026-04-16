@@ -4,6 +4,8 @@ import "./index.css";
 
 import { PaymentProvider } from "@/contexts/PaymentContext";
 
+document.documentElement.classList.add("dark");
+
 createRoot(document.getElementById("root")!).render(
   <PaymentProvider>
     <App />
