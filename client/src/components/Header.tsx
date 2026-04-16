@@ -11,6 +11,7 @@ import { Link, useLocation } from 'wouter';
 import { useCart } from '@/contexts/CartContext';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Header({ onCartClick }: { onCartClick: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -59,6 +60,9 @@ export default function Header({ onCartClick }: { onCartClick: () => void }) {
 
           {/* Cart Button */}
           <div className="flex items-center gap-4">
+
+            <ThemeToggle />
+            
             <Button
               onClick={onCartClick}
               variant="outline"
