@@ -99,7 +99,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Options Dialog */}
       <Dialog open={showOptions} onOpenChange={setShowOptions}>
-  <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-[#f8f8f7] p-6 rounded-[20px] flex flex-col gap-6">
+  <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-card text-foreground p-6 rounded-[20px] flex flex-col gap-6">
     
     <DialogHeader className="pt-2"> {/* Adicionamos um pequeno respiro no topo */}
       <DialogTitle className="text-2xl font-display">Escolha uma opção</DialogTitle>
@@ -114,7 +114,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <button
           key={index}
           onClick={() => handleOptionSelect(option)}
-          className="w-full flex items-center justify-between p-4 rounded-2xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all duration-300 group bg-white" 
+          className="w-full flex items-center justify-between p-4 rounded-2xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all duration-300 group bg-card" 
         >
           {/* Adicionei 'bg-white' acima para destacar as opções do fundo cinza claro */}
           <div className="text-left">
