@@ -1,4 +1,4 @@
-# Propostas de Design - Delícias da Amanda
+# Propostas de Design - Alquimia da Amanda
 
 <response>
 <text>
