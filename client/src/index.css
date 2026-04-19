@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 @plugin "tailwind-scrollbar-hide";
 
-@variant dark (&:is(.dark, .dark *));
+@variant dark (&:where(.dark, .dark *));
 
 /* 
 Design Philosophy: Organic Minimalism
@@ -128,12 +128,9 @@ Design Philosophy: Organic Minimalism
     box-sizing: border-box;
   }
   body {
+   background-color: var(--background);
+    color: var(--foreground);
     @apply bg-background text-foreground;
-    font-family: var(--font-body);
-    line-height: 1.7;
-    width: 100%;
-    overflow-x: hidden; 
-    position: relative;
   }
   
   h1, h2, h3, h4, h5, h6 {
