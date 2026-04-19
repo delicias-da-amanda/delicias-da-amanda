@@ -50,6 +50,18 @@ export default function Home() {
               Sabores feitos com dedicação e ingredientes de qualidade, direto para sua casa.
             </motion.p>
 
+           <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+         >
+           <img 
+            src="/logo.png" 
+            alt="Logo Alquimia da Amanda" 
+            className="h-24 w-auto" 
+        />
+            </motion.div>
+
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
