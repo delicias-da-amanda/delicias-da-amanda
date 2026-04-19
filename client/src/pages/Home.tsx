@@ -12,7 +12,7 @@ import { motion } from 'framer-motion'; // Recomendo instalar: npm install frame
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#fcfcfc] text-[#1a1a1a] selection:bg-accent selection:text-white">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300 selection:bg-accent selection:text-white">
       
       {/* Hero Section - Foco total no nome e impacto */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6">
@@ -24,7 +24,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3 py-1 border border-[#1a1a1a]/10 rounded-full text-[10px] uppercase tracking-[0.2em] font-medium"
+              className="inline-flex items-center gap-2 px-3 py-1 border border-border rounded-full text-[10px] uppercase tracking-[0.2em] font-medium"
             >
               <Sparkles className="h-3 w-3" />
               Sabor Artesanal • 2026
@@ -69,7 +69,7 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-8 items-center pt-8"
             >
               <Link href="/cardapio">
-                <button className="group text-lg font-medium uppercase tracking-tighter flex items-center gap-2 border-b-2 border-[#1a1a1a] pb-1 hover:text-accent hover:border-accent transition-all">
+                <button className="group text-lg font-medium uppercase tracking-tighter flex items-center gap-2 border-b-2 border-foreground pb-1 hover:text-accent hover:border-accent transition-all">
                   Ver Cardápio
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
                 </button>
@@ -79,11 +79,11 @@ export default function Home() {
         </div>
 
         {/* Detalhe de linha vertical (estilo portfólio) */}
-        <div className="absolute bottom-0 left-1/2 w-[1px] h-20 bg-[#1a1a1a]/10" />
+        <div className="absolute bottom-0 left-1/2 w-[1px] h-20 bg-border" />
       </section>
 
       {/* Seção Sobre / Frase de Impacto */}
-      <section className="py-32 bg-white border-y border-[#1a1a1a]/5">
+      <section className="py-32 bg-card text-card-foreground border-y border-border">
         <div className="container px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8">
@@ -99,7 +99,7 @@ export default function Home() {
       </section>
 
       {/* CTA Final Minimalista */}
-      <section className="py-40 bg-[#1a1a1a] text-white overflow-hidden">
+      <section className="py-40 bg-secondary text-white overflow-hidden">
         <div className="container px-6 text-center">
           <h2 className="text-[10vw] font-bold uppercase tracking-tighter leading-none mb-12">
             Peça agora
