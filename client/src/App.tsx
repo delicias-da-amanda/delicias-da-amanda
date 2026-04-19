@@ -98,7 +98,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
+      <ThemeProvider defaultTheme="light" attribute="class">
         <CartProvider>
           <PaymentProvider>
             <TooltipProvider>
