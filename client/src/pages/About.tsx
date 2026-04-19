@@ -75,13 +75,22 @@ Mais do que crescer, nós nos transformamos — sem nunca perder a essência. Se
               Nossos Valores
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Princípios que guiam cada etapa do nosso trabalho
+              Princípios que transformam cada preparo em uma verdadeira experiência de sabor e cuidado:
 
-              ❤️ Afeto em Cada Detalhe: Preservamos o amor pela culinária caseira para criar sabores que aquecem o coração e resgatam memórias.
+             ❤️ Afeto em Cada Detalhe
+             Cada prato carrega mais do que ingredientes — leva carinho, dedicação e aquele toque especial que transforma refeições em momentos que aquecem o coração.
 
-              🥖 Essência Artesanal: Somos fiéis às nossas raízes, unindo ingredientes selecionados ao cuidado do preparo manual.
+            🥖 Essência Artesanal
+             Mantemos viva a nossa origem, valorizando o preparo cuidadoso, os ingredientes selecionados e a qualidade que só o feito com atenção e amor pode oferecer.
 
-              🏠 Conexão e Acolhimento: Acreditamos no poder da comida para fortalecer laços e fazer cada cliente se sentir em casa.
+            🏠 Conexão e Acolhimento
+            Acreditamos que a comida tem o poder de aproximar pessoas. Por isso, criamos experiências que fazem você se sentir em casa, em cada pedido.
+
+            ⚡ Transformação com Propósito
+             Assim como a nossa essência, estamos sempre evoluindo — trazendo mais variedade, praticidade e sabor, sem abrir mão da qualidade e do cuidado que nos definem.
+
+            🍽️ Qualidade e Sabor de Verdade
+             Compromisso com refeições frescas, bem preparadas e cheias de sabor, para tornar o seu dia mais leve, prático e especial.
             </p>
           </div>
 
