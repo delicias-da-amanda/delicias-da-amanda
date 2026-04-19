@@ -22,8 +22,8 @@ export default function Contact() {
       icon: <Instagram className="h-8 w-8" />,
       title: 'Instagram',
       description: 'Acompanhe novidades e promoções',
-      action: 'Seguir @deliciasdaamandapasseli',
-      link: 'https://instagram.com/deliciasdaamandapasseli',
+      action: 'Seguir @alquimiadaamanda/',
+      link: 'https://instagram.com/dalquimiadaamanda/',
       color: 'bg-pink-500/10 text-pink-700 hover:bg-pink-500/20'
     },
     {
