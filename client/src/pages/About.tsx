@@ -60,9 +60,9 @@ Mais do que crescer, nós nos transformamos — sem nunca perder a essência. Se
           <div className="relative animate-in fade-in slide-in-from-right-4 duration-700 delay-200">
             <div className="relative rounded-[3rem] overflow-hidden shadow-2xl">
               <img
-                src="/images/about-texture.jpg"
+                src="/images/nossahistoria.png"
                 alt="Sobre a Alquimia da Amanda"
-                className="w-full h-auto"
+                className="w-full h-[500px] object-cover"
               />
             </div>
           </div>
