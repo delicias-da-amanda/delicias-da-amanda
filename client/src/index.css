@@ -1,8 +1,8 @@
-@import "tailwindcss";
+@variant dark (&:is(.dark, .dark *));
 @import "tw-animate-css";
 @plugin "tailwind-scrollbar-hide";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@variant dark (&:where(.dark, .dark *));
 
 /* 
 Design Philosophy: Organic Minimalism
