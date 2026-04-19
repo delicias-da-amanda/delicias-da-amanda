@@ -45,7 +45,7 @@ export default function Contact() {
     {
       icon: <Phone className="h-6 w-6" />,
       title: 'Telefone',
-      details: ['(11) 1198651-1287', 'WhatsApp disponível']
+      details: ['(11) 1195329-3602', 'WhatsApp disponível']
     },
     {
       icon: <Mail className="h-6 w-6" />,
