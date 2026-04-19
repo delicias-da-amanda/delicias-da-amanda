@@ -94,7 +94,7 @@ export default function Home() {
             <div className="relative animate-in fade-in slide-in-from-right-4 duration-1000 delay-200">
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl">
                 <img
-                  src="/images/logo.jpg"
+                  src="/images/logo.png"
                   alt="Produtos da Alquimia da Amanda"
                   className="w-full h-auto"
                 />
