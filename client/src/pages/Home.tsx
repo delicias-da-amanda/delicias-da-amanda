@@ -92,11 +92,11 @@ export default function Home() {
 
             {/* Right Image */}
             <div className="relative animate-in fade-in slide-in-from-right-4 duration-1000 delay-200">
-              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl">
-                <img
-                  src="/images/logo.png"
-                  alt="Produtos da Alquimia da Amanda"
-                  className="w-full h-auto"
+              <div className="relative">
+              <img
+              src="/images/logo.png"
+              alt="Produtos da Alquimia da Amanda"
+              className="w-full h-auto object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
               </div>
