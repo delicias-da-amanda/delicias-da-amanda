@@ -56,7 +56,7 @@ export default function Home() {
             transition={{ delay: 0.6 }}
          >
            <img 
-            src="/logo.png" 
+            src="/images/logo.png" 
             alt="Logo Alquimia da Amanda" 
             className="h-24 w-auto" 
         />
