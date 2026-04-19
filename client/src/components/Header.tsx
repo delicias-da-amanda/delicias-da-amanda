@@ -33,7 +33,7 @@ export default function Header({ onCartClick }: { onCartClick: () => void }) {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 cursor-pointer group hover:opacity-80 transition-opacity duration-300">
             <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-2xl transition-transform duration-400 group-hover:scale-105">
-              🍲🥘
+              🍲
             </div>
             <div>
               <h1 className="text-2xl font-display font-semibold text-foreground tracking-tight">
