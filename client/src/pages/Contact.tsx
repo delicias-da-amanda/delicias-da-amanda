@@ -23,7 +23,7 @@ export default function Contact() {
       title: 'Instagram',
       description: 'Acompanhe novidades e promoções',
       action: 'Seguir @alquimiadaamanda/',
-      link: 'https://instagram.com/dalquimiadaamanda/',
+      link: 'https://instagram.com/alquimiadaamanda/',
       color: 'bg-pink-500/10 text-pink-700 hover:bg-pink-500/20'
     },
     {
