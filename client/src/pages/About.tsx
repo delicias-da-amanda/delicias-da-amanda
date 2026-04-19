@@ -45,10 +45,14 @@ export default function About() {
                 A <strong className="text-foreground">Alquimia da Amanda</strong> nasceu do amor pela culinária caseira e do desejo de compartilhar sabores que aquecem o coração. O que começou com o aroma dos nossos primeiros pães artesanais, sequilhos e marmitas fit, transformou-se em um cardápio completo feito para acompanhar todos os momentos do seu dia.
               </p>
               <p>
-                Hoje, além das nossas raízes artesanais, oferecemos também marmitas tradicionais com aquele tempero de família, sucos detox refrescantes e uma variedade de lanches preparados com ingredientes selecionados. Evoluímos para cuidar da sua alimentação com praticidade, sem nunca abrir mão do cuidado e do afeto que dedicamos a cada receita desde o primeiro dia.
+                A Alquimia da Amanda nasceu do amor pela culinária caseira e da paixão por transformar ingredientes simples em experiências que aquecem o coração. ✨ Cada receita carrega um toque especial — uma verdadeira alquimia de sabores, feita com cuidado, afeto e dedicação diária.
+
+O que começou com o aroma irresistível dos nossos pães artesanais, sequilhos e marmitas fit, evoluiu e se transformou. Hoje, nosso cardápio é completo e pensado para acompanhar todos os momentos do seu dia: das marmitas tradicionais com tempero de família aos sucos detox refrescantes e lanches preparados com ingredientes selecionados.
+
+Mais do que crescer, nós nos transformamos — sem nunca perder a essência. Seguimos unindo sabor, qualidade e praticidade, sempre com aquele carinho que faz toda diferença em cada detalhe.
               </p>
               <p>
-                Nosso compromisso continua o mesmo: fazer você se sentir em casa com sabores que alimentam o corpo e a alma.
+                Nosso compromisso permanece o mesmo desde o início: fazer você se sentir em casa, com sabores que alimentam o corpo, confortam a alma e transformam o seu dia. 🍽️💛
               </p>
             </div>
           </div>

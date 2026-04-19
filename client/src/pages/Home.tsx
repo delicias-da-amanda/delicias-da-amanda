@@ -92,7 +92,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="lg:col-span-4 text-muted-foreground text-sm uppercase tracking-widest leading-loose">
-              Cada mordida é uma experiência única, preparada com ingredientes selecionados e produção diária.
+              Cada mordida é uma verdadeira alquimia de sabores — uma experiência única que transforma ingredientes selecionados em momentos inesquecíveis, com preparo fresco todos os dias e um toque especial que só a Alquimia da Amanda tem. ✨🍽️
             </div>
           </div>
         </div>
