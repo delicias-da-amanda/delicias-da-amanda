@@ -1,7 +1,8 @@
-@variant dark (&:is(.dark, .dark *));
+@import "tailwindcss";
 @import "tw-animate-css";
 @plugin "tailwind-scrollbar-hide";
 
+@variant dark (&:is(.dark, .dark *));
 @variant dark (&:where(.dark, .dark *));
 
 /* 
