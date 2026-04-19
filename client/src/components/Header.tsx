@@ -1,10 +1,3 @@
-/* 
-Design: Organic Minimalism
-- Warm cream background with soft shadows
-- Fraunces serif for logo, DM Sans for navigation
-- Generous spacing and rounded corners
-*/
-
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
@@ -12,6 +5,7 @@ import { useCart } from '@/contexts/CartContext';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { motion } from 'framer-motion';
 
 export default function Header({ onCartClick }: { onCartClick: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,88 +21,83 @@ export default function Header({ onCartClick }: { onCartClick: () => void }) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
-      <div className="container">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 cursor-pointer group hover:opacity-80 transition-opacity duration-300">
-            <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-2xl transition-transform duration-400 group-hover:scale-105">
-              🍲
-            </div>
-            <div>
-              <h1 className="text-2xl font-display font-semibold text-foreground tracking-tight">
-                Alquimia da Amanda
-              </h1>
-              <p className="text-xs text-muted-foreground font-body">Feito com carinho</p>
-            </div>
+    // Removido bg-background e shadow para ficar transparente sobre o Hero
+    <header className="fixed top-0 left-0 w-full z-50 px-6 py-4 md:px-12 md:py-8 transition-all duration-500">
+      <div className="max-w-[1800px] mx-auto">
+        <div className="flex items-center justify-between">
+          
+          {/* Logo Minimalista: Apenas texto ou ícone discreto */}
+          <Link href="/" className="flex flex-col cursor-pointer group">
+            <span className="text-xl font-bold uppercase tracking-[0.2em] leading-none">
+              Amanda
+            </span>
+            <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1 group-hover:text-accent transition-colors">
+              Alquimia
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Desktop Nav: Links pequenos e em caixa alta (Estilo Portfólio) */}
+          <nav className="hidden md:flex items-center gap-12">
             {navLinks.map(link => (
               <Link 
                 key={link.href} 
                 href={link.href} 
-                className={`font-body font-medium text-sm transition-colors duration-300 hover:text-accent ${
-                  location === link.href ? 'text-accent' : 'text-foreground'
+                className={`text-[11px] uppercase tracking-[0.25em] transition-all duration-300 hover:opacity-50 relative ${
+                  location === link.href ? 'font-bold' : 'font-medium'
                 }`}
               >
                 {link.label}
+                {location === link.href && (
+                  <motion.div layoutId="underline" className="absolute -bottom-1 left-0 w-full h-[1px] bg-foreground" />
+                )}
               </Link>
             ))}
           </nav>
 
-          {/* Cart Button */}
-          <div className="flex items-center gap-4">
-
+          {/* Ações: Botões circulares e limpos */}
+          <div className="flex items-center gap-3 md:gap-6">
             <ThemeToggle />
             
-            <Button
+            <button
               onClick={onCartClick}
-              variant="outline"
-              size="icon"
-              className="relative rounded-full h-12 w-12 border-2 transition-all duration-300 hover:scale-105 hover:border-accent"
+              className="relative p-2 hover:opacity-50 transition-opacity"
             >
-              <ShoppingCart className="h-5 w-5" />
+              <ShoppingCart className="h-5 w-5 stroke-[1.5px]" />
               {totalItems > 0 && (
-                <Badge 
-                  className="absolute -top-2 -right-2 h-6 w-6 flex items-center justify-center p-0 bg-primary text-primary-foreground rounded-full font-mono text-xs"
-                >
+                <span className="absolute -top-1 -right-1 h-4 w-4 bg-accent text-[9px] flex items-center justify-center rounded-full text-white font-bold">
                   {totalItems}
-                </Badge>
+                </span>
               )}
-            </Button>
+            </button>
 
-            {/* Mobile Menu Button */}
-            <Button
+            {/* Mobile Menu Toggle */}
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              variant="ghost"
-              size="icon"
-              className="md:hidden rounded-full h-12 w-12"
+              className="md:hidden p-2"
             >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu Overlay: Tela cheia como o do Kuon */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-6 border-t border-border animate-in slide-in-from-top-2 duration-300">
-            <div className="flex flex-col gap-4">
-              {navLinks.map(link => (
-                <Link 
-                  key={link.href} 
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`font-body font-medium text-base py-2 transition-colors duration-300 hover:text-accent ${
-                    location === link.href ? 'text-accent' : 'text-foreground'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </nav>
+          <motion.nav 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="fixed inset-0 bg-background z-[-1] flex flex-col items-center justify-center gap-8 text-center"
+          >
+            {navLinks.map(link => (
+              <Link 
+                key={link.href} 
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-4xl font-bold uppercase tracking-tighter hover:text-accent"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </motion.nav>
         )}
       </div>
     </header>
