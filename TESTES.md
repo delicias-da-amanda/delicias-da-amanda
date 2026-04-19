@@ -1,4 +1,4 @@
-# Relatório de Testes - Delícias da Amanda
+# Relatório de Testes - Alquimia da Amanda
 
 ## ✅ Testes Realizados
 
@@ -120,7 +120,7 @@ O site está completamente funcional e pronto para uso, atendendo a todos os req
 - ✅ Integração completa com WhatsApp
 - ✅ Funcionalidade de impressão de pedidos
 - ✅ Funciona offline (sem necessidade de internet, exceto para WhatsApp)
-- ✅ Adaptado para Delícias da Amanda
+- ✅ Adaptado para Alquimia da Amanda
 - ✅ Pronto para uso em redes sociais e Google Meu Negócio
 
 ## 🚀 Próximos Passos Sugeridos

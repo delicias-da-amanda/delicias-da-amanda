@@ -95,7 +95,7 @@ export default function Home() {
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl">
                 <img
                   src="/images/logo.jpg"
-                  alt="Produtos da Delícias da Amanda"
+                  alt="Produtos da Alquimia da Amanda"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
@@ -123,7 +123,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-foreground">
-              Por que escolher a Delícias da Amanda?
+              Por que escolher a Alquimia da Amanda?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Nosso compromisso é oferecer produtos de qualidade que trazem conforto e felicidade

@@ -20,7 +20,7 @@ export default function Comanda() {
 
   const generateWhatsAppMessage = () => {
     let message = `
-🧾 *Delícias da Amanda*
+🧾 *Alquimia da Amanda*
 
 Forma de pagamento: ${paymentLabel}
 `;
@@ -29,7 +29,7 @@ Forma de pagamento: ${paymentLabel}
       message += `
 💠 *Pagamento via PIX*
 Chave PIX: ${PIX_KEY}
-Delícias da Amanda
+Alquimia da Amanda
 `;
     }
 
@@ -43,7 +43,7 @@ Obrigado pela preferência ❤️
   return (
     <div id="print-area" className="p-4 text-sm">
       <h2 className="text-center font-bold text-lg mb-2">
-        Delícias da Amanda
+        Alquimia da Amanda
       </h2>
 
       <p className="mb-1">
@@ -60,7 +60,7 @@ Obrigado pela preferência ❤️
           </p>
 
           <p className="text-xs text-muted-foreground mt-2">
-            Delícias da Amanda
+            Alquimia da Amanda
           </p>
         </div>
       )}

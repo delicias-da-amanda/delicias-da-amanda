@@ -37,7 +37,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
 
     const totalPedido = getTotalPrice();
 
-    let message = `*🍞 NOVO PEDIDO - DELÍCIAS DA AMANDA*\n`;
+    let message = `*🍽️ NOVO PEDIDO - ALQUIMIA DA AMANDA*\n`;
     message += `------------------------------------------\n\n`;
     message += `👤 *Cliente:* ${customerName}\n\n`;
 
@@ -79,7 +79,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
     const printHTML = `
       <html>
         <head>
-          <title>Pedido - Delícias da Amanda</title>
+          <title>Pedido - Alquimia da Amanda</title>
           <style>
             body { font-family: sans-serif; padding: 20px; color: #4A3933; }
             .header { text-align: center; border-bottom: 2px solid #8B9474; margin-bottom: 20px; }
@@ -92,7 +92,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
         </head>
         <body>
          <div class="header">
-  <h1>🍞 Delícias da Amanda</h1>
+  <h1>🍽️ Alquimia da Amanda</h1>
   <p>Comprovante de Pedido</p>
   </div>
 

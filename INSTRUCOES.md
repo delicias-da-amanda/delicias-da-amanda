@@ -1,8 +1,8 @@
-# Delícias da Amanda - Instruções de Uso
+# Alquimia da Amanda - Instruções de Uso
 
 ## 📋 Sobre o Site
 
-Este é um cardápio digital completo e moderno para a **Delícias da Amanda**, desenvolvido com design **Organic Minimalism** (Minimalismo Orgânico), que transmite autenticidade, calor e qualidade artesanal através de:
+Este é um cardápio digital completo e moderno para a **Alquimia da Amanda**, desenvolvido com design **Organic Minimalism** (Minimalismo Orgânico), que transmite autenticidade, calor e qualidade artesanal através de:
 
 - Paleta de cores terrosas e naturais (creme, marrom chocolate, verde oliva, coral)
 - Formas suaves e arredondadas (bordas de 28px)
@@ -159,4 +159,4 @@ Para dúvidas ou personalizações adicionais, entre em contato através do What
 
 ---
 
-**Desenvolvido com 💚 e muito carinho para a Delícias da Amanda**
+**Desenvolvido com 💚 e muito carinho para a Almquimia da Amanda**

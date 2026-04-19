@@ -42,7 +42,7 @@ export default function About() {
             </h1>
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                A <strong className="text-foreground">Delícias da Amanda</strong> nasceu do amor pela culinária caseira e do desejo de compartilhar sabores que aquecem o coração. O que começou com o aroma dos nossos primeiros pães artesanais, sequilhos e marmitas fit, transformou-se em um cardápio completo feito para acompanhar todos os momentos do seu dia.
+                A <strong className="text-foreground">Alquimia da Amanda</strong> nasceu do amor pela culinária caseira e do desejo de compartilhar sabores que aquecem o coração. O que começou com o aroma dos nossos primeiros pães artesanais, sequilhos e marmitas fit, transformou-se em um cardápio completo feito para acompanhar todos os momentos do seu dia.
               </p>
               <p>
                 Hoje, além das nossas raízes artesanais, oferecemos também marmitas tradicionais com aquele tempero de família, sucos detox refrescantes e uma variedade de lanches preparados com ingredientes selecionados. Evoluímos para cuidar da sua alimentação com praticidade, sem nunca abrir mão do cuidado e do afeto que dedicamos a cada receita desde o primeiro dia.
@@ -57,7 +57,7 @@ export default function About() {
             <div className="relative rounded-[3rem] overflow-hidden shadow-2xl">
               <img
                 src="/images/about-texture.jpg"
-                alt="Sobre a Delícias da Amanda"
+                alt="Sobre a Alquimia da Amanda"
                 className="w-full h-auto"
               />
             </div>

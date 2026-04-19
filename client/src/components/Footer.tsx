@@ -20,7 +20,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-full bg-background/20 flex items-center justify-center text-xl">
                 🍞
               </div>
-              <h3 className="text-xl font-display font-semibold">Delícias da Amanda</h3>
+              <h3 className="text-xl font-display font-semibold">Alquimia da Amanda</h3>
             </div>
             <p className="text-sm leading-relaxed opacity-90">
               Produtos artesanais feitos com carinho e ingredientes selecionados. 
@@ -93,7 +93,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-background/20 text-center">
           <p className="text-sm opacity-80">
-            © {currentYear} Delícias da Amanda. Todos os direitos reservados.
+            © {currentYear} Alquimia da Amanda. Todos os direitos reservados.
           </p>
           <p className="text-xs mt-2 opacity-70">
             Feito com 💚 e muito carinho

@@ -137,7 +137,7 @@ Combinação de fontes geométricas com pesos variados cria hierarquia forte e m
 
 ## Escolha Final: Proposta 2 - Organic Minimalism
 
-Selecionei a **Proposta 2: Organic Minimalism** por melhor representar os valores de uma padaria artesanal como "Delícias da Amanda". Esta abordagem:
+Selecionei a **Proposta 2: Organic Minimalism** por melhor representar os valores de uma padaria artesanal como "Alquimia da Amanda". Esta abordagem:
 
 - Transmite autenticidade e qualidade através de paleta terrosa e formas orgânicas
 - Cria experiência acolhedora e confortável, ideal para produtos alimentícios caseiros
