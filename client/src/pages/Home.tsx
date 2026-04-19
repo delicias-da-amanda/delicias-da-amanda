@@ -58,7 +58,7 @@ export default function Home() {
            <img 
             src="/images/logo.png" 
             alt="Logo Alquimia da Amanda" 
-            className="h-40 w-auto" 
+            className="h-48 w-auto" 
         />
             </motion.div>
 
