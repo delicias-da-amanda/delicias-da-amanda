@@ -99,14 +99,14 @@ export default function Home() {
       </section>
 
       {/* CTA Final Minimalista */}
-      <section className="py-40 bg-secondary text-white overflow-hidden">
+      <section className="py-40 bg-secondary text-foreground dark:text-white overflow-hidden transition-colors duration-300">
         <div className="container px-6 text-center">
           <h2 className="text-[10vw] font-bold uppercase tracking-tighter leading-none mb-12">
             Peça agora
           </h2>
           <Button 
             variant="outline"
-            className="rounded-full h-20 px-12 text-xl border-white text-white hover:bg-white hover:text-black transition-all"
+            className="rounded-full h-20 px-12 text-xl border-foreground text-foreground dark:border-white dark:text-white hover:bg-foreground hover:text-background dark:hover:bg-white dark:hover:text-black transition-all"
             onClick={() => window.open('https://wa.me/5511', '_blank')}
           >
             WhatsApp
