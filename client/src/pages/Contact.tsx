@@ -31,7 +31,7 @@ export default function Contact() {
       title: 'Google Meu Negócio',
       description: 'Veja avaliações e localização',
       action: 'Ver no Google',
-      link: 'https://g.page/deliciasdaamanda',
+      link: 'https://share.google/Avq7r6jksESUC4dQl',
       color: 'bg-blue-500/10 text-blue-700 hover:bg-blue-500/20'
     }
   ];
