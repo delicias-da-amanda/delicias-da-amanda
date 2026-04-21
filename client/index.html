@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#e21f26">
   </head>
 
   <body>
@@ -20,5 +22,11 @@
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
+  
+  if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(reg => console.log('Service Worker registrado!', reg))
+    .catch(err => console.log('Erro ao registrar:', err));
+}
 
 </html>
