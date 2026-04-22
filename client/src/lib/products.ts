@@ -428,6 +428,21 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
+    id: 'refrigerante-Coca',
+    name: 'Refrigerante Coca-Cola',
+    description: 'Refrescante, gelado e no tamanho ideal para sua refeição. O acompanhamento clássico que não pode faltar.',
+    price: 0, // Price varies by option
+    category: 'bebidas',
+    image: '/images/coca.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Coca-Cola 600ml', price: 9 },
+      { name: 'Coca-Cola 1l', price: 11 },
+      { name: 'Coca-Cola 2l', price: 16.50 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  }
+  {
     id: 'refrigerante-200ml',
     name: 'Refrigerante 200ml',
     description: 'Refrescante, gelado e no tamanho ideal para sua refeição. O acompanhamento clássico que não pode faltar.',
