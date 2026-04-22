@@ -131,6 +131,16 @@ export const products: Product[] = [
     availableDays: ['terca']
   },
   {
+    id: 'Macarrão ao molho + Guaraná',
+    name: 'Combo Duo Sabor - Macarrão + Guaraná: O par perfeito!',
+    description: 'Macarrão ao molho caseiro com carne bem temperada, acompanhado de frango assado suculento e salada de maionese caseira. além é claro do delicioso Guaraná geladinho',
+    price: 31.50,
+    category: 'marmitas-trad',
+    image: '/images/combonana.jpg',
+    hasOptions: false,
+    availableDays: ['quinta']
+  },
+  {
     id: 'Macarrão ao molho',
     name: '🍝 Macarrão ao Molho com carne',
     description: 'Macarrão ao molho caseiro com carne bem temperada, acompanhado de frango assado suculento e salada de maionese caseira.',
@@ -296,7 +306,7 @@ export const products: Product[] = [
     id: 'lanche-carne-louca',
     name: 'Lanche de Carne Louca',
     description: 'Carne desfiada suculenta e artesanalmente temperada. O clássico irresistível, cheio de sabor e tradição.',
-    price: 8.00,
+    price: 9.00,
     category: 'lanches',
     image: '/images/lanches-hero.jpg',
     hasOptions: false,
