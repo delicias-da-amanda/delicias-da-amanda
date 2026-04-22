@@ -34,7 +34,22 @@ export const products: Product[] = [
   
  // Marmitas Tradicionais
 
-  {
+ {
+    id: 'COMBO - Feijoada Separada',
+    name: '🍛 Combo - Feijoada Magra (Separada)',
+    description: 'Feijão bem temperado com carnes selecionadas e menos gordurosas. Acompanha arroz soltinho, farofa, couve e torresmo, tudo separadinho para você montar do seu jeito. E mais uma deliciosa Coca-cola geladinha.',
+    price: 0,
+    category: 'marmitas-trad',
+    image: '/images/combo.jpg',
+    hasOptions: true,
+    options: [
+      { name: '🍛 Pequena + Coca-Cola 600ml', price: 44.90 },
+      { name: '🍛 Média + Coca-Cola 1l', price: 67.90 },
+      { name: '🍛 Grande + Coca-Cola 2l', price: 89.90 }
+      ],
+    availableDays: ['quarta','sabado']
+  }, 
+ {
     id: 'Feijoada Tudo Junto',
     name: '🍛 Feijoada Magra (Tudo Junto)',
     description: 'Sabor de feijoada raiz em versão mais leve! Feijão bem temperado com carnes selecionadas e menos gordurosas, acompanhada de arroz, farofa, couve e torresmo — tudo junto na marmita.',
