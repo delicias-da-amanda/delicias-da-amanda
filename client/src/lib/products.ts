@@ -441,7 +441,7 @@ export const products: Product[] = [
       { name: 'Coca-Cola 2l', price: 16.50 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  }
+  },
   {
     id: 'refrigerante-200ml',
     name: 'Refrigerante 200ml',
