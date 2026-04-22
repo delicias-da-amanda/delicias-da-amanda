@@ -436,24 +436,26 @@ export const products: Product[] = [
     image: '/images/coca.jpg',
     hasOptions: true,
     options: [
-      { name: 'Coca-Cola 600ml', price: 9 },
-      { name: 'Coca-Cola 1l', price: 11 },
+      { name: 'Coca-Cola', price: 3.50 },
+      { name: 'Coca-Cola 600ml', price: 9.90 },
+      { name: 'Coca-Cola 1l', price: 11.90 },
       { name: 'Coca-Cola 2l', price: 16.50 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
-    id: 'refrigerante-200ml',
-    name: 'Refrigerante 200ml',
+    id: 'refrigerante-guarana',
+    name: 'Refrigerante Guaraná',
     description: 'Refrescante, gelado e no tamanho ideal para sua refeição. O acompanhamento clássico que não pode faltar.',
     price: 0, // Price varies by option
     category: 'bebidas',
-    image: '/images/refri.jpg',
+    image: '/images/guarana.jpg',
     hasOptions: true,
     options: [
-      { name: 'Coca-Cola', price: 3.50 },
       { name: 'Guaraná', price: 3.50 },
-      { name: 'Fanta Laranja', price: 3.50 }
+      { name: 'Guaraná 600ml', price: 9.90 },
+      { name: 'Guaraná 1l', price: 11.90 },
+      { name: 'Guaraná 2l', price: 16.50 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   }
