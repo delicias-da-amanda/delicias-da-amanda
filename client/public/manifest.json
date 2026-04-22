@@ -13,7 +13,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://alquimia-da-amanda.vercel.app/",
+  "start_url": "/",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
