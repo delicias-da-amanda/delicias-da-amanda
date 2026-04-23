@@ -177,7 +177,7 @@ export const products: Product[] = [
   {
     id: 'Pescado da Casa',
     name: '🍽️ "Pescado da Casa" + Suco Del Valle: O par perfeito! 🍝✨',
-    description: 'Macarrão ao molho caseiro com carne bem temperada, acompanhado de frango assado suculento e salada de maionese caseira. além é claro do delicioso Guaraná geladinho',
+    description: '"Filé suculento com crosta dourada e crocante, preparado com aquele tempero caseiro especial. Acompanha suco Del Valle geladinho para uma refeição completa e saborosa." ou "Filé de tilápia leve e macio, grelhado no ponto certo com ervas finas. A combinação perfeita com suco Del Valle para quem busca leveza e muito sabor."',
     price: 0,
     category: 'marmitas-trad',
     image: '/images/combopescado.jpg',
