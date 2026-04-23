@@ -1,10 +1,3 @@
-/* 
-Design: Organic Minimalism
-- Generous rounded corners (24px)
-- Soft shadows with hover lift effect
-- Warm color palette
-*/
-
 import { useState } from 'react';
 import { Product, ProductOption } from '@/lib/products';
 import { useCart } from '@/contexts/CartContext';
@@ -27,11 +20,23 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const [showOptions, setShowOptions] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<ProductOption | undefined>();
+  const [step, setStep] = useState(1); // 1: Tamanho, 2: Bebida
+  const [tempSelectedSize, setTempSelectedSize] = useState<ProductOption | undefined>();
   const { addToCart } = useCart();
+
+  const handleOpenChange = (open: boolean) => {
+    setShowOptions(open);
+    if (!open) {
+      setTimeout(() => {
+        setStep(1);
+        setTempSelectedSize(undefined);
+      }, 300);
+    }
+  };
 
   const handleAddToCart = () => {
     if (product.hasOptions && product.options && product.options.length > 0) {
+      setStep(1);
       setShowOptions(true);
     } else {
       addToCart(product);
@@ -42,12 +47,31 @@ export default function ProductCard({ product }: ProductCardProps) {
   };
 
   const handleOptionSelect = (option: ProductOption) => {
-    addToCart(product, option);
-    toast.success(`${product.name} (${option.name}) adicionado ao carrinho!`, {
-      duration: 2000,
-    });
-    setShowOptions(false);
-    setSelectedOption(undefined);
+    // Se estivermos no passo 1 e o produto tiver opções de bebida (como no seu novo products.ts)
+    if (step === 1 && product.drinkOptions && product.drinkOptions.length > 0) {
+      setTempSelectedSize(option);
+      setStep(2);
+    } else {
+      // Se não tiver bebida ou já estivermos no passo 2, finaliza
+      finalizarCompra(option);
+    }
+  };
+
+  const finalizarCompra = (drinkOption?: ProductOption) => {
+    if (tempSelectedSize) {
+      // Monta o nome combinado para a sacola (Ex: Pequena + Coca-Cola)
+      const comboOption: ProductOption = {
+        name: `${tempSelectedSize.name}${drinkOption ? ' + ' + drinkOption.name : ''}`,
+        price: tempSelectedSize.price + (drinkOption?.price || 0)
+      };
+      addToCart(product, comboOption);
+    } else {
+      // Caso simples onde só tem uma opção
+      addToCart(product, drinkOption);
+    }
+
+    toast.success(`Adicionado ao carrinho!`, { duration: 2000 });
+    handleOpenChange(false);
   };
 
   const displayPrice = product.price > 0 
@@ -72,18 +96,18 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <CardContent className="p-6 flex-grow">
-  <h3 className="text-xl font-display font-semibold text-foreground mb-2 whitespace-normal">
-    {product.name}
-  </h3>
-  <p className="text-sm text-muted-foreground leading-relaxed whitespace-normal mb-4">
-    {product.description}
-  </p>
-  <div className="flex items-center justify-between">
-    <span className="text-2xl font-mono font-medium text-accent">
-      {displayPrice}
-    </span>
-  </div>
-</CardContent>
+          <h3 className="text-xl font-display font-semibold text-foreground mb-2 whitespace-normal">
+            {product.name}
+          </h3>
+          <p className="text-sm text-muted-foreground leading-relaxed whitespace-normal mb-4">
+            {product.description}
+          </p>
+          <div className="flex items-center justify-between">
+            <span className="text-2xl font-mono font-medium text-accent">
+              {displayPrice}
+            </span>
+          </div>
+        </CardContent>
 
         <CardFooter className="p-6 pt-0 mt-auto">
           <Button
@@ -97,51 +121,54 @@ export default function ProductCard({ product }: ProductCardProps) {
         </CardFooter>
       </Card>
 
-      {/* Options Dialog */}
-      <Dialog open={showOptions} onOpenChange={setShowOptions}>
-  <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-card text-foreground p-6 rounded-[20px] flex flex-col gap-6">
-    
-    <DialogHeader className="pt-2"> {/* Adicionamos um pequeno respiro no topo */}
-      <DialogTitle className="text-2xl font-display">Escolha uma opção</DialogTitle>
-      <DialogDescription className="text-base">
-        Selecione a variação desejada de {product.name}
-      </DialogDescription>
-    </DialogHeader>
+      <Dialog open={showOptions} onOpenChange={handleOpenChange}>
+        <DialogContent className="w-[95vw] max-w-[550px] max-h-[90vh] overflow-y-auto scrollbar-hide bg-card text-foreground p-6 rounded-[20px] flex flex-col gap-6">
+          <DialogHeader className="pt-2">
+            <DialogTitle className="text-2xl font-display">
+              {step === 1 ? 'Escolha o tamanho' : 'Escolha a bebida'}
+            </DialogTitle>
+            <DialogDescription className="text-base">
+              {step === 1 
+                ? `Selecione a variação desejada de ${product.name}` 
+                : 'Selecione a bebida para acompanhar seu combo'}
+            </DialogDescription>
+          </DialogHeader>
 
-    {/* Alteramos 'mt-4' para 'mt-2' e garantimos que o container tenha espaço inferior */}
-    <div className="space-y-3 mt-2 pb-4">
-      {product.options?.map((option, index) => (
-        <button
-          key={index}
-          onClick={() => handleOptionSelect(option)}
-          className="w-full flex items-center justify-between p-4 rounded-2xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all duration-300 group bg-card" 
-        >
-          {/* Adicionei 'bg-white' acima para destacar as opções do fundo cinza claro */}
-          <div className="text-left">
-            <p className="font-medium text-foreground">
-              {option.name.includes(':') ? (
-                <>
-                  <strong>{option.name.split(':')[0]}</strong>:
-                  {option.name.split(':')[1]}
-                </>
-              ) : (
-                option.name
-              )}
-            </p>
-            {option.price > 0 && (
-              <p className="text-sm font-mono text-muted-foreground mt-1">
-                R$ {option.price.toFixed(2).replace('.', ',')}
-              </p>
+          <div className="space-y-3 mt-2 pb-4">
+            {(step === 1 ? product.options : product.drinkOptions)?.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => handleOptionSelect(option)}
+                className="w-full flex items-center justify-between p-4 rounded-2xl border-2 border-border hover:border-accent hover:bg-accent/5 transition-all duration-300 group bg-card" 
+              >
+                <div className="text-left">
+                  <p className="font-medium text-foreground">
+                    {option.name}
+                  </p>
+                  {option.price > 0 && (
+                    <p className="text-sm font-mono text-muted-foreground mt-1">
+                      R$ {option.price.toFixed(2).replace('.', ',')}
+                    </p>
+                  )}
+                </div>
+                <div className="w-8 h-8 rounded-full border-2 border-border group-hover:border-accent group-hover:bg-accent flex items-center justify-center transition-all duration-300">
+                  <Check className="h-4 w-4 text-accent-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </button>
+            ))}
+
+            {step === 2 && (
+              <Button 
+                variant="ghost" 
+                onClick={() => setStep(1)}
+                className="w-full rounded-xl text-muted-foreground mt-2"
+              >
+                Voltar para tamanhos
+              </Button>
             )}
           </div>
-          <div className="w-8 h-8 rounded-full border-2 border-border group-hover:border-accent group-hover:bg-accent flex items-center justify-center transition-all duration-300">
-            <Check className="h-4 w-4 text-accent-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-        </button>
-      ))}
-    </div>
-  </DialogContent>
-</Dialog>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

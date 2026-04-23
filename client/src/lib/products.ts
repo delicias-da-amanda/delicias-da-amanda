@@ -16,6 +16,7 @@ export interface Product {
   image: string;
   hasOptions: boolean;
   options?: ProductOption[];
+  drinkOptions?: ProductOption[]; 
   availableDays: DayOfWeek[]; // Days when this product is available
 }
 
@@ -134,10 +135,20 @@ export const products: Product[] = [
     id: 'Macarrão ao molho + Guaraná',
     name: 'Combo Duo Sabor - Macarrão + Guaraná 600ml: O par perfeito!',
     description: 'Macarrão ao molho caseiro com carne bem temperada, acompanhado de frango assado suculento e salada de maionese caseira. além é claro do delicioso Guaraná geladinho',
-    price: 31.50,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/combonana.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena', price: 44.90 },
+    { name: 'Média', price: 67.90 },
+    { name: 'Grande', price: 89.90 }
+    ],
+    drinkOptions: [
+    { name: 'Coca-Cola 600ml', price: 0 },
+    { name: 'Guaraná 600ml', price: 0 },
+    { name: 'Fanta Laranja 600ml', price: 0 }
+  ],
     availableDays: ['quinta']
   },
   {
