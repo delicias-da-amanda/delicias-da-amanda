@@ -132,7 +132,7 @@ export const products: Product[] = [
   },
   {
     id: 'Macarrão ao molho + Guaraná',
-    name: 'Combo Duo Sabor - Macarrão + Guaraná: O par perfeito!',
+    name: 'Combo Duo Sabor - Macarrão + Guaraná 600ml: O par perfeito!',
     description: 'Macarrão ao molho caseiro com carne bem temperada, acompanhado de frango assado suculento e salada de maionese caseira. além é claro do delicioso Guaraná geladinho',
     price: 31.50,
     category: 'marmitas-trad',
