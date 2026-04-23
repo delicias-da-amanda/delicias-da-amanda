@@ -82,12 +82,10 @@ export default function Menu() {
       {/* 🖼️ IMAGEM CLICÁVEL */}
       <img
       src="/pratododia.png"
-       alt="Prato do dia"
-       width={400}
-       height={300}
-       className="w-full rounded-xl cursor-pointer"
-       onClick={() => {
-  const today = getCurrentDay();
+      alt="Prato do dia"
+      className="w-full max-w-full h-auto rounded-xl cursor-pointer object-cover"
+      onClick={() => {
+      const today = getCurrentDay();
 
   // verifica se existe produto da Marmitas Tradicionais hoje
   const hasToday = products.some(
