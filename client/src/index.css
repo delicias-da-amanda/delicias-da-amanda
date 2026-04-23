@@ -219,35 +219,6 @@ Design Philosophy: Organic Minimalism
 ::-webkit-scrollbar-thumb:hover {
   background: oklch(0.55 0.07 120);
 }
-/* 🐟 ANIMAÇÃO DOS PEIXES (COLE AQUI EMBAIXO) */
-.peixes-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 9999;
-}
-
-.peixe {
-  position: absolute;
-  font-size: 36px;
-  animation: nadar 12s linear infinite;
-  opacity: 0.9;
-  transform: scaleX(-1); /* 🐟 vira o peixe */
-}
-
-.peixe:nth-child(1) { top: 20%; animation-duration: 12s; }
-.peixe:nth-child(2) { top: 40%; animation-duration: 10s; }
-.peixe:nth-child(3) { top: 60%; animation-duration: 14s; }
-.peixe:nth-child(4) { top: 80%; animation-duration: 11s; }
-
-@keyframes nadar {
-  0% { transform: translateX(110vw); }
-  100% { transform: translateX(-120px); }
-}
 @keyframes revealUp {
   0% {
     transform: translateY(30px);
@@ -258,7 +229,6 @@ Design Philosophy: Organic Minimalism
     opacity: 1;
   }
 }
-
 .animacao-nascimento {
   animation: revealUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }

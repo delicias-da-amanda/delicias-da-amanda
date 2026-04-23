@@ -150,6 +150,10 @@ export function MapView({
   }, [init]);
 
   return (
-    <div ref={mapContainer} className={cn("w-full h-[500px]", className)} />
+    <div 
+      ref={mapContainer} 
+      className={cn("w-full max-w-full h-[350px] md:h-[500px] overflow-hidden", className)} 
+      style={{ touchAction: 'pan-y' }}
+    />
   );
 }
