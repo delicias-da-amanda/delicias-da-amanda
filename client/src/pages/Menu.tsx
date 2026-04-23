@@ -140,7 +140,7 @@ export default function Menu() {
             </h3>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 max-w-full overflow-hidden">
             <Button
               variant={selectedDay === "all" ? "default" : "outline"}
               onClick={() => setSelectedDay("all")}
@@ -179,7 +179,7 @@ export default function Menu() {
 
         {/* Category Filter */}
         <div className="mb-12">
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-3 justify-center max-w-full">
             <Badge
               variant={
                 selectedCategory === "all"
