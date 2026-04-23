@@ -175,6 +175,26 @@ export const products: Product[] = [
     availableDays: ['quinta']
   },
   {
+    id: 'Pescado da Casa',
+    name: '🍽️ "Pescado da Casa" + Suco Del Valle: O par perfeito! 🍝✨',
+    description: 'Macarrão ao molho caseiro com carne bem temperada, acompanhado de frango assado suculento e salada de maionese caseira. além é claro do delicioso Guaraná geladinho',
+    price: 0,
+    category: 'marmitas-trad',
+    image: '/images/combopescado.jpg',
+    hasOptions: true,
+    options: [
+    { name: '😋🐟 Filé de Merluza à Milanesa', price: 31.50 },
+    { name: '😋🐟 Filé de Tilápia Grelhado', price: 31.50 }
+    ],
+    drinkOptions: [
+    { name: 'Suco Del Valle de Uva', price: 0 },
+    { name: 'Suco Del Valle de Manga', price: 0 },
+    { name: 'Suco Del Valle de Pêssego', price: 0 }
+    
+  ],
+    availableDays: ['sexta']
+  },
+  {
     id: 'Filé de Merluza',
     name: '😋🐟 Filé de Merluza à Milanesa',
     description: 'Filé de merluza crocante por fora e macio por dentro, acompanhado de arroz soltinho, feijão bem temperado e batata frita douradinha para completar.',
