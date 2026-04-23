@@ -133,21 +133,20 @@ export const products: Product[] = [
   },
   {
     id: 'Macarrão ao molho + Guaraná',
-    name: 'Combo Duo Sabor - Macarrão + Guaraná 600ml: O par perfeito!',
+    name: 'Combo Duo Sabor - Nossa massa suculenta acompanhada de um refrigerante',
     description: 'Macarrão ao molho caseiro com carne bem temperada, acompanhado de frango assado suculento e salada de maionese caseira. além é claro do delicioso Guaraná geladinho',
     price: 0,
     category: 'marmitas-trad',
     image: '/images/combonana.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena', price: 44.90 },
-    { name: 'Média', price: 67.90 },
-    { name: 'Grande', price: 89.90 }
+    { name: '🍝 Macarrão ao Molho com carne', price: 31.50 },
+    { name: '🌯🍟 Panqueca de Carne ou Frango', price: 31.50 }
     ],
     drinkOptions: [
     { name: 'Coca-Cola 600ml', price: 0 },
-    { name: 'Guaraná 600ml', price: 0 },
-    { name: 'Fanta Laranja 600ml', price: 0 }
+    { name: 'Guaraná 600ml', price: 0 }
+    
   ],
     availableDays: ['quinta']
   },
