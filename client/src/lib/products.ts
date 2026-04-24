@@ -278,7 +278,6 @@ export const products: Product[] = [
     options: [
       { name: 'Frango Grelhado', price: 18 },
       { name: 'Carne Magra (Patinho)', price: 20 },
-      { name: 'Peixe Grelhado', price: 18 },
       { name: 'Ovos cozidos', price: 16 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
@@ -294,29 +293,11 @@ export const products: Product[] = [
     options: [
       { name: 'Frango Grelhado', price: 18 },
       { name: 'Carne Magra (Patinho)', price: 20 },
-      { name: 'Peixe Grelhado', price: 18 },
       { name: 'Ovos cozidos', price: 16 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
-  {
-    id: 'marmita-veget-vegan',
-    name: '🥗 Marmita Fitness Vegetariana ou Vegana- Sem carnes, rica em nutrientes.',
-    description: 'Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão). Ovos ou PTS (Proteina texturizada de soja).',
-    price: 0, 
-    category: 'marmitas',
-    image: '/images/vegano-vege.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Vegetariana 1: Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão)', price: 18 },
-      { name: 'Vegetariana 2: Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão) e Ovos Cozidos', price: 19 },
-      { name: 'Vegetariana 3: Legumes variados. Grãos (Grão-de-bico, lentilha ou feijão) e PTS', price: 19 },
-      { name: 'Vegana 1: Leguminosa (lentilha ou grão-de-bico), legumes e verduras. Arroz integral ou macarrão integral', price: 18 },
-      { name: 'Vegana 2: Leguminosa (lentilha ou grão-de-bico), legumes e verduras. Arroz integral ou macarrão integral e PTS', price: 19 }
-    ], // Vírgula adicionada aqui
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-},
-
+  
 // Lanches
   {
     id: 'lanche-natural',
@@ -330,7 +311,7 @@ export const products: Product[] = [
       { name: 'Atum', price: 9.00 },
       { name: 'Frango', price: 9.00 }
     ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['segunda', 'quarta', 'sexta']
   },
   {
     id: 'lanche-carne-louca',
@@ -392,21 +373,6 @@ export const products: Product[] = [
   // Sobremesas Saudáveis
 
   {
-    id: 'overnight-200ml',
-    name: 'Overnight 200ml',
-    description: 'Leve, cremoso e delicioso!',
-    price: 0, // Price varies by option
-    category: 'saudaveis',
-    image: '/images/overnight.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Maracuja (geleia), Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
-      { name: 'Morango, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 },
-      { name: 'Manga, Iogurte Natural, Semente de Chia e Aveia em Flocos', price: 10 }
-    ],
-    availableDays: ['terca', 'quarta', 'quinta', 'sabado']
-  },
-  {
     id: 'salada-de-frutas-200ml',
     name: 'Salada de Frutas (Banana, Mamão, Morango, Manga Laranja e Maça)200ml',
     description: 'Refrescante, leve e cheia de sabor!',
@@ -429,8 +395,6 @@ export const products: Product[] = [
     hasOptions: true,
     options: [
       { name: 'Couve + Limão + Gengibre - 300ml', price: 10 },
-      { name: 'Couve + Maçã + Hortelã - 300ml', price: 10 },
-      { name: 'Pepino + Limão + Hortelã - 300ml', price: 10 },
       { name: 'Abacaxi + Hortelã + Gengibre - 300ml', price: 10 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
@@ -444,8 +408,7 @@ export const products: Product[] = [
     image: '/images/suco-detox.jpg',
     hasOptions: true,
     options: [
-      { name: 'Beterraba + Laranja + Gengibre - 300ml', price: 10 },
-      { name: 'Cenoura + Laranja + Beterraba - 300ml', price: 10 },
+      { name: 'Cenoura + Laranja + Gengibre - 300ml', price: 10 },
       { name: 'Manga + Gengibre + Limão - 300ml', price: 10 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
