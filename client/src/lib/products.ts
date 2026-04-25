@@ -44,7 +44,6 @@ export const products: Product[] = [
     image: '/images/combo.jpg',
     hasOptions: true,
     options: [
-      { name: '🍛 Pequena + Coca-Cola 600ml', price: 44.90 },
       { name: '🍛 Média + Coca-Cola 1l', price: 67.90 },
       { name: '🍛 Grande + Coca-Cola 2l', price: 89.90 }
       ],
