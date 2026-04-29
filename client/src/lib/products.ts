@@ -140,7 +140,8 @@ export const products: Product[] = [
     hasOptions: true,
     options: [
     { name: '🍝 Macarrão ao Molho com carne', price: 31.50 },
-    { name: '🌯🍟 Panqueca de Carne ou Frango', price: 31.50 }
+    { name: '🌯🍟 Panqueca de Carne', price: 31.50 },
+    { name: '🌯🍟 Panqueca de Frango', price: 31.50 }
     ],
     drinkOptions: [
     { name: 'Coca-Cola 600ml', price: 0 },
