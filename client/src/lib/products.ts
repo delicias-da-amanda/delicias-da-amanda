@@ -111,6 +111,16 @@ export const products: Product[] = [
     availableDays: ['segunda','quarta']
   },
   {
+    id: 'Bisteca Crocante com Fritas',
+    name: '🥩🍟 Bisteca Crocante com Fritas',
+    description: 'Deliciosa bisteca frita douradinha e suculenta, servida com arroz branco soltinho, feijão caseiro bem temperado e uma porção de batata frita crocante.',
+    price: 22,
+    category: 'marmitas-trad',
+    image: '/images/bisteca.jpg',
+    hasOptions: false,
+    availableDays: ['terca']
+  },
+  {
     id: 'Frango ao Molho',
     name: '😋🍗 Frango ao Molho com batata',
     description: 'Frango macio e suculento ao molho caseiro, acompanhado de batata cozida, arroz soltinho e feijão bem temperado.',
