@@ -111,8 +111,8 @@ export const products: Product[] = [
     availableDays: ['segunda','quarta']
   },
   {
-    id: 'Bisteca Crocante com Fritas',
-    name: '🥩🍟 Bisteca Crocante com Fritas',
+    id: 'Bisteca  com Fritas',
+    name: '🥩🍟 Bisteca com Fritas',
     description: 'Deliciosa bisteca frita douradinha e suculenta, servida com arroz branco soltinho, feijão caseiro bem temperado e uma porção de batata frita crocante.',
     price: 22,
     category: 'marmitas-trad',
