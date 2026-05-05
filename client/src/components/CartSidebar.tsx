@@ -12,11 +12,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
 import { X, Plus, Minus, ShoppingBag, MessageCircle, Printer } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from 'sonner';
 
 import { PaymentSelector } from '@/components/PaymentSelector';
 import { usePayment } from '@/contexts/PaymentContext';
+import { generateAvailableTimes } from '@/lib/utils';
 
 interface CartSidebarProps {
   open: boolean;
@@ -27,24 +28,43 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
   const [customerName, setCustomerName] = useState('');
   const [observations, setObservations] = useState('');
+  const [deliveryTime, setDeliveryTime] = useState('');
+  const [availableTimes, setAvailableTimes] = useState<string[]>([]);
   const { paymentMethod } = usePayment();
+
+  // Atualiza os horários disponíveis sempre que o carrinho for aberto
+  useEffect(() => {
+    if (open) {
+      setAvailableTimes(generateAvailableTimes());
+    }
+  }, [open]);
 
   const handleWhatsAppOrder = () => {
     if (items.length === 0) return toast.error('Seu carrinho está vazio!');
     if (!customerName.trim()) return toast.error('Por favor, informe seu nome!');
-    if (!paymentMethod)
-  return toast.error('Selecione a forma de pagamento!');
+    
+    // Validação obrigatória do horário
+    if (availableTimes.length > 0 && !deliveryTime) {
+      return toast.error('Por favor, selecione o horário que deseja receber seu pedido!');
+    }
+    
+    if (!paymentMethod) return toast.error('Selecione a forma de pagamento!');
 
     const totalPedido = getTotalPrice();
 
     let message = `*🍲 NOVO PEDIDO - ALQUIMIA DA AMANDA 🥘*\n`;
     message += `------------------------------------------\n\n`;
-    message += `👤 *Cliente:* ${customerName}\n\n`;
-
+    message += `👤 *Cliente:* ${customerName}\n`;
+    
+    if (deliveryTime) {
+      message += `⏰ *Horário Desejado:* ${deliveryTime}\n`;
+    }
+    
     message += `💳 *Pagamento:* ${paymentMethod.toUpperCase()}\n`;
+    
     if (paymentMethod === 'pix') {
-  message += `🔑 *Chave PIX:* 66.120.230/0001-00\n`;
-}
+      message += `🔑 *Chave PIX:* 66.120.230/0001-00\n`;
+    }
     message += `\n`;
 
     message += `📦 *ITENS DO PEDIDO:*\n`;
@@ -72,9 +92,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const handlePrint = () => {
     if (items.length === 0) return toast.error('Seu carrinho está vazio!');
     if (!customerName.trim()) return toast.error('Por favor, informe seu nome!');
-     const paymentLabel = paymentMethod
-    ? paymentMethod.toUpperCase()
-    : 'NÃO INFORMADO';
+    const paymentLabel = paymentMethod ? paymentMethod.toUpperCase() : 'NÃO INFORMADO';
 
     const printHTML = `
       <html>
@@ -91,20 +109,21 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
           </style>
         </head>
         <body>
-         <div class="header">
-  <h1>🍲 Alquimia da Amanda 🥘</h1>
-  <p>Comprovante de Pedido</p>
-  </div>
+          <div class="header">
+            <h1>🍲 Alquimia da Amanda 🥘</h1>
+            <p>Comprovante de Pedido</p>
+          </div>
 
-  <p><strong>Cliente:</strong> ${customerName}</p>
-  <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
+          <p><strong>Cliente:</strong> ${customerName}</p>
+          ${deliveryTime ? `<p><strong>Horário Desejado:</strong> ${deliveryTime}</p>` : ''}
+          <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
 
-${paymentMethod === 'pix' ? `
-  <p><strong>Pagamento:</strong> PIX</p>
-  <p><strong>Chave PIX:</strong> 66.120.230/0001-00</p>
-` : `
-  <p><strong>Pagamento:</strong> ${paymentLabel}</p>
-`}
+          ${paymentMethod === 'pix' ? `
+            <p><strong>Pagamento:</strong> PIX</p>
+            <p><strong>Chave PIX:</strong> 66.120.230/0001-00</p>
+          ` : `
+            <p><strong>Pagamento:</strong> ${paymentLabel}</p>
+          `}
           <table>
             <thead>
               <tr><th>Produto</th><th>Qtd</th><th>Total</th></tr>
@@ -187,11 +206,40 @@ ${paymentMethod === 'pix' ? `
                 <label className="text-sm font-medium text-foreground mb-2 block">Seu Nome *</label>
                 <Input placeholder="Digite seu nome" value={customerName} onChange={(e) => setCustomerName(e.target.value)} className="rounded-xl" />
               </div>
+              
               <div>
                 <label className="text-sm font-medium text-foreground mb-2 block">Observações</label>
                 <Textarea placeholder="Ex: sem cebola..." value={observations} onChange={(e) => setObservations(e.target.value)} className="rounded-xl min-h-[80px]" />
               </div>
+
+              <div>
+                <label className="text-sm font-medium text-foreground mb-2 block">Horário Desejado *</label>
+                {availableTimes.length > 0 ? (
+                  <select
+                    value={deliveryTime}
+                    onChange={(e) => setDeliveryTime(e.target.value)}
+                    className="flex h-10 w-full rounded-xl border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  >
+                    <option value="">Selecione um horário...</option>
+                    {availableTimes.map((time) => (
+                      <option key={time} value={time}>
+                        {time}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <div className="p-3 rounded-xl bg-destructive/10 border border-destructive/20">
+                    <p className="text-[11px] text-destructive font-medium leading-tight">
+                      Lamento! Atendimento encerrado hoje (11:30 - 15:00) ou sem tempo hábil para preparo.
+                    </p>
+                  </div>
+                )}
+                <p className="text-[10px] text-muted-foreground mt-1 px-1 italic">
+                  * Pedidos exigem antecedência mínima de 20 minutos para preparo.
+                </p>
+              </div>
             </div>
+
             <div className="mb-6">
               <PaymentSelector />
             </div>
