@@ -253,7 +253,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/bifeacavalo.jpg',
     hasOptions: false,
-    availableDays: ['segunda','terca', 'quinta', 'sexta', 'sabado']
+    availableDays: ['segunda','terca']
   },
   {
     id: 'Calabresa acebolada',
