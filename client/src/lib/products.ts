@@ -98,7 +98,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/linguiça.jpg',
     hasOptions: false,
-    availableDays: ['sabado']
+    availableDays: ['segunda']
   },
 
   {
@@ -119,7 +119,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/bisteca.jpg',
     hasOptions: false,
-    availableDays: ['terca']
+    availableDays: ['segunda']
   },
   {
     id: 'Frango ao Molho',
