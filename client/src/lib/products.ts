@@ -281,14 +281,13 @@ export const products: Product[] = [
   {
     id: 'marmita-tradicional',
     name: '🥗 Marmita Fitness Tradicional - Equilíbrio entre proteínas, carboidratos e legumes.',
-    description: 'Arroz integral ou branco. Frango grelhado / carne magra / peixe / ovos. Legumes cozidos ou salteados. 👉 Ideal para quem quer alimentação saudável no dia a dia.',
+    description: 'Arroz branco. Frango grelhado / ovos. Legumes cozidos ou salteados. 👉 Ideal para quem quer alimentação saudável no dia a dia.',
     price: 0, // Price varies by option
     category: 'marmitas',
     image: '/images/marmita-trad.jpg',
     hasOptions: true,
     options: [
       { name: 'Frango Grelhado', price: 18 },
-      { name: 'Carne Magra (Patinho)', price: 20 },
       { name: 'Ovos cozidos', price: 16 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
@@ -296,14 +295,13 @@ export const products: Product[] = [
   {
     id: 'marmita-low',
     name: '🥩 Marmita Low Carb - Pouco ou nenhum carboidrato.',
-    description: 'Carnes (frango, carne bovina, peixe ou ovos). Legumes. Gordura boa (azeite). 👉 Indicada para quem busca emagrecimento.',
+    description: 'Carnes (frango ou ovos). Legumes. Gordura boa (azeite). 👉 Indicada para quem busca emagrecimento.',
     price: 0, // Price varies by option
     category: 'marmitas',
     image: '/images/marmita-low.jpg',
     hasOptions: true,
     options: [
       { name: 'Frango Grelhado', price: 18 },
-      { name: 'Carne Magra (Patinho)', price: 20 },
       { name: 'Ovos cozidos', price: 16 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
