@@ -37,7 +37,7 @@ export const products: Product[] = [
 
  {
     id: 'COMBO - Feijoada Separada',
-    name: '🍛 Combo - Feijoada Magra (Separada)',
+    name: '🍛 COMBO Alquimia Perfeita - Feijoada Magra (Separada)',
     description: 'Feijão bem temperado com carnes selecionadas e menos gordurosas. Acompanha arroz soltinho, farofa, couve e torresmo, tudo separadinho para você montar do seu jeito. E mais uma deliciosa Coca-cola geladinha.',
     price: 0,
     category: 'marmitas-trad',
