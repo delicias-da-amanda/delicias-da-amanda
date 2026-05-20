@@ -348,7 +348,7 @@ export const products: Product[] = [
       { name: 'Calabresa com Queijo e Requeijão', price: 24 },
       { name: 'Frango com Requeijão', price: 24 },
       { name: 'Presunto e Queijo', price: 22 },
-      { name: '4 Queijos', price: 22 }
+      { name: '4 Queijos', price: 28 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
