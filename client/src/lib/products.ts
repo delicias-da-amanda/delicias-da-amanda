@@ -343,11 +343,12 @@ export const products: Product[] = [
     image: '/images/recheado.jpg',
     hasOptions: true,
     options: [
-      { name: 'Calabresa', price: 18 },
-      { name: 'Calabresa com Requeijão Cremoso', price: 20 },
-      { name: 'Calabresa com Queijo e Requeijão', price: 22 },
-      { name: 'Frango com Requeijão', price: 22 },
-      { name: 'Presunto e Queijo', price: 20 }
+      { name: 'Calabresa', price: 20 },
+      { name: 'Calabresa com Requeijão Cremoso', price: 22 },
+      { name: 'Calabresa com Queijo e Requeijão', price: 24 },
+      { name: 'Frango com Requeijão', price: 24 },
+      { name: 'Presunto e Queijo', price: 22 },
+      { name: '4 Queijos', price: 22 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
