@@ -144,7 +144,7 @@ export const products: Product[] = [
   {
     id: 'Macarrão ao molho + Refrigeirante',
     name: 'Combo Duo Sabor - Nossa massa suculenta acompanhada de um refrigerante',
-    description: 'Macarrão ao molho com carne, frango assado e maionese caseira. Acompanha refrigerante à sua escolha. Ou que tal Panqueca (Carne ou Frango) com batatas fritas crocantes e sequinhas. Acompanha refrigerante à sua escolha.',
+    description: 'Nhoque Artesanal ao Sugo com Frango Assado. Acompanha refrigerante à sua escolha. Ou que tal Panqueca (Carne ou Frango) com batatas fritas crocantes e sequinhas. Acompanha refrigerante à sua escolha.',
     price: 0,
     category: 'marmitas-trad',
     image: '/images/combomassas.jpg',
