@@ -147,7 +147,7 @@ export const products: Product[] = [
     description: 'Macarrão ao molho com carne, frango assado e maionese caseira. Acompanha refrigerante à sua escolha. Ou que tal Panqueca (Carne ou Frango) com batatas fritas crocantes e sequinhas. Acompanha refrigerante à sua escolha.',
     price: 0,
     category: 'marmitas-trad',
-    image: '/images/combonana.jpg',
+    image: '/images/combomassas.jpg',
     hasOptions: true,
     options: [
     { name: '🍝 Nhoque Artesanal ao Sugo com Frango Assado', price: 35 },
