@@ -91,9 +91,9 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
       // REGRAS DE FRETE MOLDADAS PARA SUA BASE (07611-035 - Mairiporã)
       if (cidade === 'mairiporã') {
         if (bairro.includes('centro') || bairro.includes('vila')) {
-          valorCalculado = 5.00; // Raio mais próximo
+          valorCalculado = 3.00; // Raio mais próximo
         } else {
-          valorCalculado = 9.00; // Bairros afastados de Mairiporã
+          valorCalculado = 6.00; // Bairros afastados de Mairiporã
         }
       } else if (['são paulo', 'guarulhos', 'franco da rocha'].includes(cidade)) {
         valorCalculado = 18.00; // Municípios limítrofes
