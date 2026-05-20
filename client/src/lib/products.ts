@@ -150,15 +150,25 @@ export const products: Product[] = [
     image: '/images/combonana.jpg',
     hasOptions: true,
     options: [
-    { name: '🍝 Macarrão ao Molho com carne', price: 31.50 },
-    { name: '🌯🍟 Panqueca de Carne', price: 31.50 },
-    { name: '🌯🍟 Panqueca de Frango', price: 31.50 }
+    { name: '🍝 Nhoque Artesanal ao Sugo com Frango Assado', price: 35 },
+    { name: '🌯🍟 Panqueca de Carne', price: 33 },
+    { name: '🌯🍟 Panqueca de Frango', price: 33 }
     ],
     drinkOptions: [
     { name: 'Coca-Cola 600ml', price: 0 },
     { name: 'Guaraná 600ml', price: 0 }
     
   ],
+    availableDays: ['quinta']
+  },
+    {
+    id: 'Nhoque Artesanal ao Sugo com Frango Assado',
+    name: '🍝 Nhoque Artesanal ao Sugo com Frango Assado',
+    description: 'Nhoque de batata leve e artesanal ao molho de tomates frescos, acompanhado por uma suculenta sobrecoxa de frango assada. Para completar, nosso tradicional arroz soltinho e feijão  caprichado. Uma refeição completa e afetiva!',
+    price: 26,
+    category: 'marmitas-trad',
+    image: '/images/nhoque.jpg',
+    hasOptions: false,
     availableDays: ['quinta']
   },
   {
@@ -169,7 +179,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/macarraoaomolho.jpg',
     hasOptions: false,
-    availableDays: ['quinta']
+    availableDays: ['segunda']
   },
    {
     id: 'Panqueca',
@@ -180,8 +190,8 @@ export const products: Product[] = [
     image: '/images/panqueca.jpg',
     hasOptions: true,
     options: [
-      { name: '🌯🍟 Panqueca de Carne', price: 22 },
-      { name: '🌯🍟 Panqueca de Frango', price: 22 }
+      { name: '🌯🍟 Panqueca de Carne', price: 24 },
+      { name: '🌯🍟 Panqueca de Frango', price: 24 }
       ],
     availableDays: ['quinta']
   },
