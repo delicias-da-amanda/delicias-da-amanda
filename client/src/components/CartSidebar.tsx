@@ -1,4 +1,5 @@
-/* Design: Organic Minimalism
+/* 
+Design: Organic Minimalism
 - Slide-in from right with backdrop blur
 - Generous spacing and rounded elements
 - Smooth transitions
@@ -10,7 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
-import { X, Plus, Minus, ShoppingBag, MessageCircle, Printer, MapPin } from 'lucide-react';
+import { X, Plus, Minus, ShoppingBag, MessageCircle, Printer } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { toast } from 'sonner';
 
@@ -23,14 +24,6 @@ interface CartSidebarProps {
   onClose: () => void;
 }
 
-interface ViaCepData {
-  logradouro?: string;
-  bairro?: string;
-  localidade?: string;
-  uf?: string;
-  erro?: boolean;
-}
-
 export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
   const [customerName, setCustomerName] = useState('');
@@ -39,12 +32,6 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const [availableTimes, setAvailableTimes] = useState<string[]>([]);
   const { paymentMethod } = usePayment();
 
-  // NOVOS ESTADOS PARA O FRETE
-  const [cep, setCep] = useState('');
-  const [frete, setFrete] = useState<number | null>(null);
-  const [infoLocalidade, setInfoLocalidade] = useState('');
-  const [carregandoCep, setCarregandoCep] = useState(false);
-
   // Atualiza os horários disponíveis sempre que o carrinho for aberto
   useEffect(() => {
     if (open) {
@@ -52,82 +39,18 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
     }
   }, [open]);
 
-  // Máscara de CEP automatizada
-  const handleCepChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let valor = e.target.value.replace(/\D/g, '');
-    if (valor.length > 5) {
-      valor = `${valor.slice(0, 5)}-${valor.slice(5, 8)}`;
-    }
-    setCep(valor);
-  };
-
-  // Cálculo de frete consultando API com base na sua localização em Mairiporã
-  const calcularFrete = async () => {
-    const cepLimpo = cep.replace(/\D/g, '');
-
-    if (cepLimpo.length !== 8) {
-      return toast.error('Por favor, informe um CEP válido com 8 dígitos!');
-    }
-
-    setCarregandoCep(true);
-    setInfoLocalidade('Buscando endereço...');
-
-    try {
-      const response = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
-      const dados: ViaCepData = await response.json();
-
-      if (dados.erro) {
-        setInfoLocalidade('');
-        setFrete(null);
-        return toast.error('CEP não encontrado. Verifique os números!');
-      }
-
-      setInfoLocalidade(`${dados.logradouro || ''}, ${dados.bairro || ''} - ${dados.localidade}/${dados.uf}`);
-
-      const cidade = dados.localidade?.toLowerCase() || '';
-      const bairro = dados.bairro?.toLowerCase() || '';
-      let valorCalculado = 0;
-
-      // REGRAS DE FRETE MOLDADAS PARA SUA BASE (07611-035 - Mairiporã)
-      if (cidade === 'mairiporã') {
-        if (bairro.includes('centro') || bairro.includes('vila')) {
-          valorCalculado = 3.00; // Raio mais próximo
-        } else {
-          valorCalculado = 6.00; // Bairros afastados de Mairiporã
-        }
-      } else if (['são paulo', 'guarulhos', 'franco da rocha'].includes(cidade)) {
-        valorCalculado = 18.00; // Municípios limítrofes
-      } else if (dados.uf === 'SP') {
-        valorCalculado = 28.00; // Restante do estado de SP
-      } else {
-        valorCalculado = 40.00; // Outros Estados
-      }
-
-      setFrete(valorCalculado);
-      toast.success('Taxa de entrega calculada!');
-    } catch (error) {
-      setInfoLocalidade('');
-      setFrete(null);
-      toast.error('Erro ao calcular o frete. Tente novamente.');
-    } finally {
-      setCarregandoCep(false);
-    }
-  };
-
-  const subtotal = getTotalPrice();
-  const valorFreteEfetivo = frete || 0;
-  const totalGeral = subtotal + valorFreteEfetivo;
-
   const handleWhatsAppOrder = () => {
     if (items.length === 0) return toast.error('Seu carrinho está vazio!');
     if (!customerName.trim()) return toast.error('Por favor, informe seu nome!');
-    if (frete === null) return toast.error('Por favor, calcule o frete informando o CEP!');
     
+    // Validação obrigatória do horário
     if (availableTimes.length > 0 && !deliveryTime) {
       return toast.error('Por favor, selecione o horário que deseja receber seu pedido!');
     }
     
     if (!paymentMethod) return toast.error('Selecione a forma de pagamento!');
+
+    const totalPedido = getTotalPrice();
 
     let message = `*🍲 NOVO PEDIDO - ALQUIMIA DA AMANDA 🥘*\n`;
     message += `------------------------------------------\n\n`;
@@ -142,8 +65,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
     if (paymentMethod === 'pix') {
       message += `🔑 *Chave PIX:* 66.120.230/0001-00\n`;
     }
-    
-    message += `📍 *Endereço de Entrega:* ${infoLocalidade} (CEP: ${cep})\n\n`;
+    message += `\n`;
 
     message += `📦 *ITENS DO PEDIDO:*\n`;
     items.forEach(item => {
@@ -155,9 +77,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
     });
 
     message += `\n------------------------------------------\n`;
-    message += `💵 *Subtotal:* R$ ${subtotal.toFixed(2).replace('.', ',')}\n`;
-    message += `🛵 *Taxa de Entrega:* R$ ${valorFreteEfetivo.toFixed(2).replace('.', ',')}\n`;
-    message += `✅ *TOTAL FINAL: R$ ${totalGeral.toFixed(2).replace('.', ',')}*\n`;
+    message += `✅ *TOTAL FINAL: R$ ${totalPedido.toFixed(2).replace('.', ',')}*\n`;
     message += `------------------------------------------\n`;
 
     if (observations.trim()) {
@@ -172,7 +92,6 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
   const handlePrint = () => {
     if (items.length === 0) return toast.error('Seu carrinho está vazio!');
     if (!customerName.trim()) return toast.error('Por favor, informe seu nome!');
-    if (frete === null) return toast.error('Por favor, calcule o frete informando o CEP!');
     const paymentLabel = paymentMethod ? paymentMethod.toUpperCase() : 'NÃO INFORMADO';
 
     const printHTML = `
@@ -185,7 +104,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
             table { width: 100%; border-collapse: collapse; }
             th, td { text-align: left; padding: 10px; border-bottom: 1px solid #eee; }
             th { background: #8B9474; color: white; }
-            .total-section { text-align: right; margin-top: 20px; line-height: 1.6; }
+            .total-section { text-align: right; margin-top: 20px; }
             .footer { text-align: center; margin-top: 30px; font-style: italic; color: #8B9474; }
           </style>
         </head>
@@ -197,7 +116,6 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
 
           <p><strong>Cliente:</strong> ${customerName}</p>
           ${deliveryTime ? `<p><strong>Horário Desejado:</strong> ${deliveryTime}</p>` : ''}
-          <p><strong>Entrega em:</strong> ${infoLocalidade} (CEP: ${cep})</p>
           <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
 
           ${paymentMethod === 'pix' ? `
@@ -221,9 +139,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
             </tbody>
           </table>
           <div class="total-section">
-            <p>Subtotal: R$ ${subtotal.toFixed(2).replace('.', ',')}</p>
-            <p>Taxa de Entrega: R$ ${valorFreteEfetivo.toFixed(2).replace('.', ',')}</p>
-            <h3>TOTAL FINAL: R$ ${totalGeral.toFixed(2).replace('.', ',')}</h3>
+            <h3>TOTAL: R$ ${getTotalPrice().toFixed(2).replace('.', ',')}</h3>
           </div>
           ${observations ? `<p><strong>Obs:</strong> ${observations}</p>` : ''}
           <div class="footer"><p>🌟 Agradecemos a preferência!</p></div>
@@ -271,7 +187,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
                   <div className="flex-1 min-w-0">
                     <h4 className="font-medium text-foreground text-sm line-clamp-1">{item.product.name}</h4>
                     {item.selectedOption && <p className="text-xs text-muted-foreground mt-1">{item.selectedOption.name}</p>}
-                    <p className="text-sm font-mono text-accent mt-1">R$ {((item.selectedOption?.price || item.product.price) * item.quantity).toFixed(2).replace('.', ',')}</p>
+                    <p className="text-sm font-mono text-accent mt-1">R$ {(item.selectedOption?.price || item.product.price).toFixed(2).replace('.', ',')}</p>
                     <div className="flex items-center gap-2 mt-2">
                       <Button variant="outline" size="icon" className="h-7 w-7 rounded-full" onClick={() => updateQuantity(item.uniqueId, item.quantity - 1)}><Minus className="h-3 w-3" /></Button>
                       <span className="text-sm font-medium w-8 text-center">{item.quantity}</span>
@@ -289,29 +205,6 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
               <div>
                 <label className="text-sm font-medium text-foreground mb-2 block">Seu Nome *</label>
                 <Input placeholder="Digite seu nome" value={customerName} onChange={(e) => setCustomerName(e.target.value)} className="rounded-xl" />
-              </div>
-
-              {/* BLOCO DO CEP INTEGRADO ESTILO IFOOD */}
-              <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">CEP para Entrega *</label>
-                <div className="flex gap-2">
-                  <Input 
-                    placeholder="00000-000" 
-                    value={cep} 
-                    onChange={handleCepChange} 
-                    maxLength={9} 
-                    className="rounded-xl font-mono text-center" 
-                  />
-                  <Button onClick={calcularFrete} disabled={carregandoCep} variant="secondary" className="rounded-xl px-4 shrink-0">
-                    {carregandoCep ? '...' : 'Calcular'}
-                  </Button>
-                </div>
-                {infoLocalidade && (
-                  <div className="mt-2 text-xs bg-muted/40 p-2.5 rounded-xl border border-border flex gap-1.5 items-start text-foreground/80">
-                    <MapPin className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
-                    <span>{infoLocalidade}</span>
-                  </div>
-                )}
               </div>
               
               <div>
@@ -342,7 +235,7 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
                   </div>
                 )}
                 <p className="text-[10px] text-muted-foreground mt-1 px-1 italic">
-                  * Pedidos exigem antecedência mínima de 20 minutes para preparo.
+                  * Pedidos exigem antecedência mínima de 20 minutos para preparo.
                 </p>
               </div>
             </div>
@@ -351,20 +244,10 @@ export default function CartSidebar({ open, onClose }: CartSidebarProps) {
               <PaymentSelector />
             </div>
 
-            {/* PAINEL FINANCEIRO EXIBINDO SUBTOTAL, FRETE E TOTAL FINAL */}
-            <div className="bg-accent/10 rounded-2xl p-4 mb-6 space-y-2">
-              <div className="flex justify-between items-center text-sm text-muted-foreground">
-                <span>Subtotal dos itens</span>
-                <span>R$ {subtotal.toFixed(2).replace('.', ',')}</span>
-              </div>
-              <div className="flex justify-between items-center text-sm text-muted-foreground">
-                <span>Taxa de Entrega</span>
-                <span>{frete !== null ? `R$ ${valorFreteEfetivo.toFixed(2).replace('.', ',')}` : 'Calcule o CEP'}</span>
-              </div>
-              <Separator className="bg-accent/20 my-1" />
+            <div className="bg-accent/10 rounded-2xl p-4 mb-6">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-display font-semibold text-foreground">Total do Pedido</span>
-                <span className="text-2xl font-mono font-bold text-accent">R$ {totalGeral.toFixed(2).replace('.', ',')}</span>
+                <span className="text-2xl font-mono font-bold text-accent">R$ {getTotalPrice().toFixed(2).replace('.', ',')}</span>
               </div>
             </div>
 
