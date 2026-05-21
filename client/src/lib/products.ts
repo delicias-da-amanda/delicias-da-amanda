@@ -208,9 +208,8 @@ export const products: Product[] = [
     { name: '😋🐟 Filé de Tilápia Grelhado', price: 31.50 }
     ],
     drinkOptions: [
-    { name: 'Suco Del Valle de Uva 290ml', price: 0 },
-    { name: 'Suco Del Valle de Manga 290ml', price: 0 },
-    { name: 'Suco Del Valle de Pêssego 290ml', price: 0 }
+    { name: 'Coca-Cola 600ml', price: 0 },
+    { name: 'Guaraná 600ml', price: 0 }
     
   ],
     availableDays: ['sexta']
