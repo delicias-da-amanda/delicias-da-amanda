@@ -265,6 +265,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/bifeacavalo.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['segunda']
   },
   {
