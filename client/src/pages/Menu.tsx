@@ -50,8 +50,11 @@ export default function Menu() {
     setSelectedCategory(categoryId);
   };
 
-  const filteredProducts = useMemo(() => {
+const filteredProducts = useMemo(() => {
     return products.filter((product) => {
+      // 1. Ignora o produto se ele estiver explicitamente desabilitado (active === false)
+      if (product.active === false) return false;
+
       const categoryMatch =
         selectedCategory === "all" ||
         product.category === selectedCategory;

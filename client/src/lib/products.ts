@@ -18,6 +18,7 @@ export interface Product {
   options?: ProductOption[];
   drinkOptions?: ProductOption[]; 
   availableDays: DayOfWeek[]; // Days when this product is available
+  active?: boolean;
 }
 
 export const DAYS_OF_WEEK: DayOfWeek[] = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
@@ -98,6 +99,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/linguiça.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['terca']
   },
 
@@ -179,6 +181,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/macarraoaomolho.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['segunda']
   },
    {
