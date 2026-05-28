@@ -17,8 +17,12 @@ export interface Product {
   hasOptions: boolean;
   options?: ProductOption[];
   drinkOptions?: ProductOption[]; 
-  availableDays: DayOfWeek[]; // Days when this product is available
+  availableDays: DayOfWeek[]; // Dias em que o produto aparece no site
   active?: boolean;
+  
+  // 🚀 NOVOS CAMPOS PARA REGRAS DE ENCOMENDA
+  productionDay?: DayOfWeek;  // Ex: 'sexta'
+  deadlineLabel?: string;     // Ex: 'pedidos até quinta às 16:00'
 }
 
 export const DAYS_OF_WEEK: DayOfWeek[] = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
@@ -348,33 +352,41 @@ export const products: Product[] = [
     
  // Pães Especiais
   {
-    id: 'pao-recheado',
-    name: 'Pão Recheado',
-    description: 'O equilíbrio perfeito entre uma massa macia e um recheio suculento. Qualidade e sabor em cada fatia.',
-    price: 0, // Price varies by option
-    category: 'paes',
-    image: '/images/recheado.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Calabresa', price: 20 },
-      { name: 'Calabresa com Requeijão Cremoso', price: 22 },
-      { name: 'Calabresa com Queijo e Requeijão', price: 24 },
-      { name: 'Frango com Requeijão', price: 24 },
-      { name: 'Presunto e Queijo', price: 22 },
-      { name: '4 Queijos', price: 28 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'pao-caseirinho',
-    name: 'Pão Caseirinho',
-    description: 'O verdadeiro sabor de casa. Massa ultra macia e artesanal, perfeita para aquele café quentinho. Um carinho em forma de pão.',
-    price: 12.00,
-    category: 'paes',
-    image: '/images/pao-caseiro.jpg',
-    hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
+  id: 'pao-recheado',
+  name: 'Pão Recheado',
+  description: 'O equilíbrio perfeito entre uma massa macia e um recheio suculento. Qualidade e sabor em cada fatia.',
+  price: 0, 
+  category: 'paes',
+  image: '/images/recheado.jpg',
+  hasOptions: true,
+  options: [
+    { name: 'Calabresa', price: 20 },
+    { name: 'Calabresa com Requeijão Cremoso', price: 22 },
+    { name: 'Calabresa com Queijo e Requeijão', price: 24 },
+    { name: 'Frango com Requeijão', price: 24 },
+    { name: 'Presunto e Queijo', price: 22 },
+    { name: '4 Queijos', price: 28 }
+  ],
+  availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'],
+  
+  // 🏢 Configuração da Encomenda:
+  productionDay: 'sexta',
+  deadlineLabel: 'Faça seu pedido até quinta-feira às 16:00'
+},
+{
+  id: 'pao-caseirinho',
+  name: 'Pão Caseirinho',
+  description: 'O verdadeiro sabor de casa. Massa ultra macia e artesanal, perfeita para aquele café quentinho. Um carinho em forma de pão.',
+  price: 12.00,
+  category: 'paes',
+  image: '/images/pao-caseiro.jpg',
+  hasOptions: false,
+  availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'],
+  
+  // 🏢 Configuração da Encomenda:
+  productionDay: 'sexta',
+  deadlineLabel: 'Faça seu pedido até quinta-feira às 16:00'
+},
 
    // Biscoitos Amanteigados (Sequilhos)
   {
