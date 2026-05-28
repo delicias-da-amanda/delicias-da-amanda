@@ -82,33 +82,35 @@ const filteredProducts = useMemo(() => {
         ✕
       </button>
 
-      {/* 🖼️ IMAGEM CLICÁVEL */}
-      <img
-      src="/pratododia.png"
-      alt="Prato do dia"
-      className="w-full max-w-full h-auto rounded-xl cursor-pointer object-cover"
-      onClick={() => {
-      const today = getCurrentDay();
+{/* 🖼️ IMAGEM CLICÁVEL */}
+<img
+  src={`/${getCurrentDay()}.png`}
+  alt={`Prato do dia - ${getCurrentDay()}`}
+  className="w-full max-w-full h-auto rounded-xl cursor-pointer object-cover"
+  onClick={() => {
+    const today = getCurrentDay();
 
-  // verifica se existe produto da Marmitas Tradicionais hoje
-  const hasToday = products.some(
-    (p) =>
-      p.category === "marmitas-trad" &&
-      p.availableDays.includes(today)
-  );
+    // verifica se existe produto da Marmitas Tradicionais hoje
+    const hasToday = products.some(
+      (p) =>
+        p.category === "marmitas-trad" &&
+        p.availableDays.includes(today)
+    );
 
     setSelectedCategory("marmitas-trad");
-  setSelectedDay(hasToday ? today : "all");
+    setSelectedDay(hasToday ? today : "all");
 
-  setShowAviso(false);
+    setShowAviso(false);
 
-  setTimeout(() => {
-    document
-      .getElementById("produtos")
-      ?.scrollIntoView({ behavior: "smooth" });
-  }, 100);
-}}
-      />
+    setTimeout(() => {
+  const elementoProdutos = document.getElementById("produtos");
+  
+  if (elementoProdutos) {
+    elementoProdutos.scrollIntoView({ behavior: "smooth" });
+  }
+}, 100);
+  }}
+/>
 
     </div>
   </div>
