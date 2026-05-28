@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Product, ProductOption } from '@/lib/products';
+// 🚀 Adicionado DAYS_LABELS no import abaixo
+import { Product, ProductOption, DAYS_LABELS } from '@/lib/products';
 import { useCart } from '@/contexts/CartContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
@@ -11,7 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { ShoppingCart, Check } from 'lucide-react';
+import { ShoppingCart, Check, Calendar } from 'lucide-react'; // 🚀 Adicionado o ícone Calendar
 import { toast } from 'sonner';
 
 interface ProductCardProps {
@@ -47,26 +48,22 @@ export default function ProductCard({ product }: ProductCardProps) {
   };
 
   const handleOptionSelect = (option: ProductOption) => {
-    // Se estivermos no passo 1 e o produto tiver opções de bebida (como no seu novo products.ts)
     if (step === 1 && product.drinkOptions && product.drinkOptions.length > 0) {
       setTempSelectedSize(option);
       setStep(2);
     } else {
-      // Se não tiver bebida ou já estivermos no passo 2, finaliza
       finalizarCompra(option);
     }
   };
 
   const finalizarCompra = (drinkOption?: ProductOption) => {
     if (tempSelectedSize) {
-      // Monta o nome combinado para a sacola (Ex: Pequena + Coca-Cola)
       const comboOption: ProductOption = {
         name: `${tempSelectedSize.name}${drinkOption ? ' + ' + drinkOption.name : ''}`,
         price: tempSelectedSize.price + (drinkOption?.price || 0)
       };
       addToCart(product, comboOption);
     } else {
-      // Caso simples onde só tem uma opção
       addToCart(product, drinkOption);
     }
 
@@ -95,7 +92,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        <CardContent className="p-6 flex-grow">
+        <CardContent className="p-6 grow">
           <h3 className="text-xl font-display font-semibold text-foreground mb-2 whitespace-normal">
             {product.name}
           </h3>
@@ -107,6 +104,21 @@ export default function ProductCard({ product }: ProductCardProps) {
               {displayPrice}
             </span>
           </div>
+
+          {/* 🚀 BLOCO DE AVISO DE ENCOMENDA ADICIONADO AQUI */}
+          {product.productionDay && (
+            <div className="mt-4 p-3 bg-orange-500/10 border border-orange-500/20 rounded-2xl flex flex-col gap-0.5">
+              <span className="text-xs font-semibold text-orange-600 dark:text-orange-400 flex items-center gap-1.5">
+                <Calendar className="h-3.5 w-3.5" />
+                Produzido apenas às {DAYS_LABELS[product.productionDay]}s
+              </span>
+              {product.deadlineLabel && (
+                <span className="text-[11px] text-orange-500/90 italic">
+                  ⚠️ {product.deadlineLabel}
+                </span>
+              )}
+            </div>
+          )}
         </CardContent>
 
         <CardFooter className="p-6 pt-0 mt-auto">
