@@ -211,8 +211,8 @@ export const products: Product[] = [
     image: '/images/combopescado.jpg',
     hasOptions: true,
     options: [
-    { name: '😋🐟 Filé de Merluza à Milanesa', price: 31.50 },
-    { name: '😋🐟 Filé de Tilápia Grelhado', price: 31.50 }
+    { name: '😋🐟 Filé de Merluza à Milanesa', price: 33.00 },
+    { name: '😋🐟 Filé de Tilápia Grelhado', price: 33.00 }
     ],
     drinkOptions: [
     { name: 'Coca-Cola 600ml', price: 0 },
@@ -474,10 +474,10 @@ export const products: Product[] = [
     image: '/images/coca.jpg',
     hasOptions: true,
     options: [
-      { name: 'Coca-Cola', price: 3.50 },
-      { name: 'Coca-Cola 600ml', price: 9.90 },
-      { name: 'Coca-Cola 1l', price: 11.90 },
-      { name: 'Coca-Cola 2l', price: 16.50 }
+      { name: 'Coca-Cola', price: 3.90 },
+      { name: 'Coca-Cola 600ml', price: 11.00 },
+      { name: 'Coca-Cola 1l', price: 12.90 },
+      { name: 'Coca-Cola 2l', price: 16.90 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
@@ -490,10 +490,10 @@ export const products: Product[] = [
     image: '/images/guarana.jpg',
     hasOptions: true,
     options: [
-      { name: 'Guaraná', price: 3.50 },
-      { name: 'Guaraná 600ml', price: 9.90 },
-      { name: 'Guaraná 1l', price: 11.90 },
-      { name: 'Guaraná 2l', price: 16.50 }
+      { name: 'Guaraná', price: 3.90 },
+      { name: 'Guaraná 600ml', price: 11.00 },
+      { name: 'Guaraná 1l', price: 12.90 },
+      { name: 'Guaraná 2l', price: 16.90 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   }
