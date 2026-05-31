@@ -12,7 +12,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: 'marmitas'|'marmitas-trad'|'paes' | 'biscoitos' | 'lanches' | 'sobremesas' | 'bebidas';
+  category: 'marmitas-trad'|'paes' | 'biscoitos' | 'lanches' | 'sobremesas' | 'bebidas';
   image: string;
   hasOptions: boolean;
   options?: ProductOption[];
@@ -283,48 +283,7 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   
-  // Marmitas Fit
-
-  {
-    id: 'salada-fit',
-    name: '🥗 Salada Fit',
-    description: 'Praticidade e saúde em cada garfada. Nutritiva, saborosa e pronta para o seu dia a dia.',
-    price: 10,
-    category: 'marmitas',
-    image: '/images/salada-fit.jpg',
-    hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'marmita-tradicional',
-    name: '🥗 Marmita Fitness Tradicional - Equilíbrio entre proteínas, carboidratos e legumes.',
-    description: 'Arroz branco. Frango grelhado / ovos. Legumes cozidos ou salteados. 👉 Ideal para quem quer alimentação saudável no dia a dia.',
-    price: 0, // Price varies by option
-    category: 'marmitas',
-    image: '/images/marmita-trad.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Frango Grelhado', price: 18 },
-      { name: 'Ovos cozidos', price: 16 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'marmita-low',
-    name: '🥩 Marmita Low Carb - Pouco ou nenhum carboidrato.',
-    description: 'Carnes (frango ou ovos). Legumes. Gordura boa (azeite). 👉 Indicada para quem busca emagrecimento.',
-    price: 0, // Price varies by option
-    category: 'marmitas',
-    image: '/images/marmita-low.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Frango Grelhado', price: 18 },
-      { name: 'Ovos cozidos', price: 16 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  
-// Lanches
+  // Lanches
   {
     id: 'lanche-natural',
     name: 'Lanche Natural',
@@ -435,51 +394,6 @@ export const products: Product[] = [
   // Bebidas
 
   {
-    id: 'suco-detox-classico-300ml',
-    name: '🥬 Detox Clássicos (limpeza do organismo) 300ml',
-    description: 'Auxiliam na eliminação de toxinas, melhoram a digestão e promovem mais disposição no dia a dia.',
-    price: 0, // Price varies by option
-    category: 'bebidas',
-    image: '/images/suco-detox.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Couve + Limão + Gengibre - 300ml', price: 10 },
-      { name: 'Abacaxi + Hortelã + Gengibre - 300ml', price: 10 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'suco-detox-energetico-300ml',
-    name: '💪 Detox Energético (Combinações nutritivas e naturalmente energéticas) 300ml',
-    description: 'Auxiliam no aumento da disposição, fortalecimento do organismo e recuperação da energia de forma saudável.',
-    price: 0, // Price varies by option
-    category: 'bebidas',
-    image: '/images/suco-detox.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Cenoura + Laranja + Gengibre - 300ml', price: 10 },
-      { name: 'Manga + Gengibre + Limão - 300ml', price: 10 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
-    id: 'suco-natural-300ml',
-    name: '🍹 Sucos Naturais - 300ml',
-    description: 'Preparados com frutas frescas e selecionadas, sem conservantes ou adição de açúcares.',
-    price: 0, // Price varies by option
-    category: 'bebidas',
-    image: '/images/sucos.jpg',
-    hasOptions: true,
-    options: [
-      { name: 'Laranja – Refrescante e rica em vitamina C. - 300ml', price: 10 },
-      { name: 'Abacaxi – Leve, digestivo e tropical. - 300ml', price: 10 },
-      { name: 'Abacaxi com Hortelã – Refrescante e aromático. - 300ml', price: 10 },
-      { name: 'Maracujá – Sabor marcante e suave. - 300ml', price: 10 },
-      { name: 'Limão – Cítrico e revigorante - 300ml', price: 8 }
-    ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-  },
-  {
     id: 'refrigerante-Coca',
     name: 'Refrigerante Coca-Cola',
     description: 'Refrescante, gelado e no tamanho ideal para sua refeição. O acompanhamento clássico que não pode faltar.',
@@ -488,7 +402,7 @@ export const products: Product[] = [
     image: '/images/coca.jpg',
     hasOptions: true,
     options: [
-      { name: 'Coca-Cola', price: 3.90 },
+      { name: 'Coca-Cola lata 310ml', price: 7.50 },
       { name: 'Coca-Cola 600ml', price: 11.00 },
       { name: 'Coca-Cola 1l', price: 12.90 },
       { name: 'Coca-Cola 2l', price: 16.90 }
@@ -504,10 +418,24 @@ export const products: Product[] = [
     image: '/images/guarana.jpg',
     hasOptions: true,
     options: [
-      { name: 'Guaraná', price: 3.90 },
+      { name: 'Guaraná lata 350ml', price: 7.50 },
       { name: 'Guaraná 600ml', price: 11.00 },
       { name: 'Guaraná 1l', price: 12.90 },
       { name: 'Guaraná 2l', price: 16.90 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+    {
+    id: 'suco-natural-300ml',
+    name: '🍹 Sucos Naturais - 300ml',
+    description: 'Preparados com frutas frescas e selecionadas, sem conservantes ou adição de açúcares.',
+    price: 0, // Price varies by option
+    category: 'bebidas',
+    image: '/images/sucos.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Laranja – Refrescante e rica em vitamina C. - 300ml', price: 10 },
+      { name: 'Limão – Cítrico e revigorante - 300ml', price: 8 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   }
@@ -515,7 +443,6 @@ export const products: Product[] = [
 
 export const categories = [
   { id: 'marmitas-trad', name: 'Marmitas Tradicionais', icon: '🍛' },
-  { id: 'marmitas', name: 'Marmitas Fit', icon: '🥗' },
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },
   { id: 'biscoitos', name: 'Biscoitos Amanteigados (Sequilhos)', icon: '🍪' },
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
