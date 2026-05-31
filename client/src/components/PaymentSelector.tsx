@@ -13,11 +13,11 @@ const IS_SATURDAY_OPEN = false;
 export function PaymentSelector() {
   const { paymentMethod, setPaymentMethod } = usePayment();
 
-// Altere temporariamente de:
-const isSaturday = new Date().getDay() === 6;
-
-// Para isto (forçando o sistema a fingir que hoje é sábado):
-const isSaturday = true;
+  // Verifica se hoje é sábado (6)
+  const isSaturday = new Date().getDay() === 6;
+  
+  // Se for sábado E a constante IS_SATURDAY_OPEN estiver como false, bloqueia
+  const isClosedToday = isSaturday && !IS_SATURDAY_OPEN;
 
   if (isClosedToday) {
     return (
