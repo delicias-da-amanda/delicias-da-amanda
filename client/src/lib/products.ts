@@ -12,7 +12,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: 'marmitas'|'marmitas-trad'|'paes' | 'biscoitos' | 'lanches' | 'saudaveis' | 'bebidas';
+  category: 'marmitas'|'marmitas-trad'|'paes' | 'biscoitos' | 'lanches' | 'sobremesas' | 'bebidas';
   image: string;
   hasOptions: boolean;
   options?: ProductOption[];
@@ -405,16 +405,30 @@ export const products: Product[] = [
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
  
-  // Sobremesas Saudáveis
+  // Sobremesas
 
   {
-    id: 'salada-de-frutas-200ml',
-    name: 'Salada de Frutas (Banana, Mamão, Morango, Manga Laranja e Maça)200ml',
-    description: 'Refrescante, leve e cheia de sabor!',
-    price: 10,
-    category: 'saudaveis',
-    image: '/images/salada-frutas.jpg',
+    id: 'mousse-de-limao',
+    name: '🍋 🥄Mousse de Limão',
+    description: 'Deliciosa mousse de limão super cremosa, preparada com ingredientes selecionados para garantir o equilíbrio perfeito entre o doce e o cítrico',
+    price: 7,
+    category: 'sobremesas',
+    image: '/images/mousse.jpg',
     hasOptions: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta']
+  },
+   {
+    id: 'bolo-de-pote-200ml',
+    name: '🍰 Bolo de Pote - Prestígio ou Brigadeiro 300ml',
+    description: 'Deliciosas camadas de massa de chocolate e recheio cremoso. Escolha entre o clássico Prestígio, com creme de coco, ou o irresistível Brigadeiro, para os apaixonados por chocolate. 😋🍫',
+    price: 0, // Price varies by option
+    category: 'sobremesas',
+    image: '/images/bolodepote.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Prestigio - 150ml', price: 10 },
+      { name: 'Brigadeiro - 150ml', price: 10 }
+    ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
 
@@ -505,6 +519,6 @@ export const categories = [
   { id: 'paes', name: 'Pães Especiais', icon: '🥖' },
   { id: 'biscoitos', name: 'Biscoitos Amanteigados (Sequilhos)', icon: '🍪' },
   { id: 'lanches', name: 'Lanches', icon: '🥪' },
-  { id: 'saudaveis', name: 'Sobremesas Saudáveis', icon: '🥥' },
+  { id: 'sobremesas', name: 'Sobremesas', icon: '🍰' },
   { id: 'bebidas', name: 'Bebidas', icon: '🥤' }
 ];
