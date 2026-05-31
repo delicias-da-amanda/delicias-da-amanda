@@ -419,15 +419,15 @@ export const products: Product[] = [
   },
    {
     id: 'bolo-de-pote-200ml',
-    name: '🍰 Bolo de Pote - Prestígio ou Brigadeiro 300ml',
+    name: '🍰 Bolo de Pote - Prestígio ou Brigadeiro 200ml',
     description: 'Deliciosas camadas de massa de chocolate e recheio cremoso. Escolha entre o clássico Prestígio, com creme de coco, ou o irresistível Brigadeiro, para os apaixonados por chocolate. 😋🍫',
     price: 0, // Price varies by option
     category: 'sobremesas',
     image: '/images/bolodepote.jpg',
     hasOptions: true,
     options: [
-      { name: 'Prestigio - 150ml', price: 10 },
-      { name: 'Brigadeiro - 150ml', price: 10 }
+      { name: 'Prestigio - 200ml', price: 10 },
+      { name: 'Brigadeiro - 200ml', price: 10 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
