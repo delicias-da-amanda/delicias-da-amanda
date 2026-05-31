@@ -15,3 +15,11 @@ export const getLoginUrl = () => {
 
   return url.toString();
 };
+
+// ==========================================
+// CONTROLE DE VENDAS (Adicione as linhas abaixo)
+// ==========================================
+
+// Altere para false para bloquear as vendas aos sábados. 
+// Mude para true quando decidir reabrir no futuro.
+export const IS_SATURDAY_OPEN = false;
