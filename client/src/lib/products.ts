@@ -92,7 +92,11 @@ export const products: Product[] = [
     price: 24,
     category: 'marmitas-trad',
     image: '/images/viradoapaulista.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 35 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 33 }
+    ],
     availableDays: ['segunda']
   },
   {
