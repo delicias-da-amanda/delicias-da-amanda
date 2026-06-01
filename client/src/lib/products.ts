@@ -316,7 +316,7 @@ export const products: Product[] = [
     id: 'Calabresa acebolada',
     name: '🍳🍛 Calabresa acebolada com ovos fritos',
     description: 'Calabresa douradinha com bastante cebola refogada, acompanhada de dois ovos fritos no ponto, arroz soltinho e feijão bem temperado.',
-    price: 22,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/calabresa.jpg',
     hasOptions: true,
