@@ -89,13 +89,13 @@ export const products: Product[] = [
     id: 'Virado à Paulista',
     name: '😋🍛 Virado à Paulista',
     description: 'Arroz soltinho, tutu de feijão bem temperado, couve refogada, banana frita, bisteca suculenta e ovo frito no ponto.',
-    price: 24,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/viradoapaulista.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 35 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 33 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
     ],
     availableDays: ['segunda']
   },
@@ -115,40 +115,56 @@ export const products: Product[] = [
     id: 'Parmegiana de Frango',
     name: '🍽️ Parmegiana de Frango',
     description: 'Suculento filé de frango empanado, coberto com molho de tomate e queijo derretido, formando uma parmegiana irresistível. Acompanha batata frita crocante, arroz soltinho e feijão fresquinho, garantindo um prato completo, saboroso e perfeito para matar a fome com muito sabor! 😋',
-    price: 26,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/parmegiana.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 23 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 26 }
+    ],
     availableDays: ['segunda','quarta']
   },
   {
     id: 'Bisteca  com Fritas',
     name: '🥩🍟 Bisteca com Fritas',
     description: 'Deliciosa bisteca frita douradinha e suculenta, servida com arroz branco soltinho, feijão caseiro bem temperado e uma porção de batata frita crocante.',
-    price: 22,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/bisteca.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 20 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 22 }
+    ],
     availableDays: ['segunda']
   },
   {
     id: 'Frango ao Molho',
     name: '😋🍗 Frango ao Molho com batata',
     description: 'Frango macio e suculento ao molho caseiro, acompanhado de batata cozida, arroz soltinho e feijão bem temperado.',
-    price: 20,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/frangoaomolho.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 20 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 22 }
+    ],
     availableDays: ['terca']
   },
    {
     id: 'Picanho',
     name: '😋🥩 Picadinho',
     description: 'Carne macia em cubos, cozida com batata e cenoura no tempero caseiro, acompanhada de arroz soltinho e feijão bem temperado.',
-    price: 24,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/picadinho.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
+    ],
     availableDays: ['terca']
   },
   {
@@ -175,10 +191,14 @@ export const products: Product[] = [
     id: 'Nhoque Artesanal ao Sugo com Frango Assado',
     name: '🍝 Nhoque Artesanal ao Sugo com Frango Assado',
     description: 'Nhoque de batata leve e artesanal ao molho de tomates frescos, acompanhado por uma suculenta sobrecoxa de frango assada. Para completar, nosso tradicional arroz soltinho e feijão  caprichado. Uma refeição completa e afetiva!',
-    price: 26,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/nhoque.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 23 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 26 }
+    ],
     availableDays: ['quinta']
   },
   {
@@ -229,40 +249,56 @@ export const products: Product[] = [
     id: 'Filé de Merluza',
     name: '😋🐟 Filé de Merluza à Milanesa',
     description: 'Filé de merluza crocante por fora e macio por dentro, acompanhado de arroz soltinho, feijão bem temperado e batata frita douradinha para completar.',
-    price: 23,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/merluzaamilanesa.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 23 }
+    ],
     availableDays: ['sexta']
   },
   {
     id: 'Filé de Tilápia',
     name: '😋🐟 Filé de Tilápia Grelhado',
     description: 'Filé de tilápia grelhado no ponto certo, leve e suculento, acompanhado de purê de batata cremoso, arroz soltinho e feijão bem temperado.',
-    price: 23,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/tilapia.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 23 }
+    ],
     availableDays: ['sexta']
   },
   {
     id: 'Strogonoff de Frango',
     name: '😋🍗 Strogonoff de Frango',
     description: 'Frango em cubos ao molho cremoso e bem temperado, acompanhado de arroz soltinho e batata palha crocante.',
-    price: 22,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/strogonoff.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 20 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 22 }
+    ],
     availableDays: ['sexta']
   },
   {
     id: 'Filé de Frango',
     name: '😋🍗 Filé de Frango acompanhado de Farofa crocante',
     description: 'Filé de frango grelhado, macio e suculento, acompanhado de arroz soltinho, feijão bem temperado e farofa crocante.',
-    price: 20,
+    price: 0,
     category: 'marmitas-trad',
     image: '/images/filedefrango.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 18 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 20 }
+    ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
@@ -283,7 +319,11 @@ export const products: Product[] = [
     price: 22,
     category: 'marmitas-trad',
     image: '/images/calabresa.jpg',
-    hasOptions: false,
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 20 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 22 }
+    ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   
