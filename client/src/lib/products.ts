@@ -229,7 +229,7 @@ export const products: Product[] = [
   {
     id: 'Pescado da Casa',
     name: '🍽️ "Pescado da Casa" + Suco Del Valle: O par perfeito! 🍝✨',
-    description: '"Filé suculento com crosta dourada e crocante, preparado com aquele tempero caseiro especial. Acompanha suco Del Valle geladinho para uma refeição completa e saborosa." ou "Filé de tilápia leve e macio, grelhado no ponto certo. A combinação perfeita com suco Del Valle para quem busca leveza e muito sabor."',
+    description: '"Filé de Merluza à Milanesa suculenta com crosta dourada e crocante, preparado com aquele tempero caseiro especial, acompanha um refrigerante 600ml geladinho para uma refeição completa e saborosa." ou "Filé de tilápia leve e macio, grelhado no ponto certo. A combinação perfeita com um refrigerante 600ml para quem busca leveza e muito sabor."',
     price: 0,
     category: 'marmitas-trad',
     image: '/images/combopescado.jpg',
