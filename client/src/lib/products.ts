@@ -432,7 +432,7 @@ export const products: Product[] = [
       { name: 'Prestigio - 200ml', price: 10 },
       { name: 'Brigadeiro - 200ml', price: 10 }
     ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
 
   // Bebidas
