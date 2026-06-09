@@ -427,10 +427,25 @@ export const products: Product[] = [
     price: 0, // Price varies by option
     category: 'sobremesas',
     image: '/images/bolodepote.jpg',
-    hasOptions: true,
+    hasOptions: false,
+    active: false,
     options: [
       { name: 'Prestigio - 200ml', price: 10 },
       { name: 'Brigadeiro - 200ml', price: 10 }
+    ],
+    availableDays: ['terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
+    id: 'bolo-de-pote-200ml',
+    name: '🍰 Bolo de Pote - Chocolate com Maracujá ou Creme Branco com Morango 200ml',
+    description: '"Escolha entre o equilíbrio do Chocolate com Maracujá ou a leveza do Bolo Branco com Morango. Ambos artesanais e preparados para você!" 🟡🍫🍓',
+    price: 0, // Price varies by option
+    category: 'sobremesas',
+    image: '/images/maracujaemorango.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Chocolate com Maracujá - 200ml', price: 10 },
+      { name: 'Massa branca com Creme Branco e Morango - 200ml', price: 10 }
     ],
     availableDays: ['terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
