@@ -418,6 +418,7 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/mousse.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta']
   },
    {
@@ -433,7 +434,7 @@ export const products: Product[] = [
       { name: 'Prestigio - 200ml', price: 10 },
       { name: 'Brigadeiro - 200ml', price: 10 }
     ],
-    availableDays: ['terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
     id: 'bolo-de-pote-200ml',
@@ -443,12 +444,24 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/maracujaemorango.jpg',
     hasOptions: true,
+    active: false,
     options: [
       { name: 'Chocolate com Maracujá - 200ml', price: 10 },
       { name: 'Massa branca com Creme Branco e Morango - 200ml', price: 10 }
     ],
-    availableDays: ['terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
+  {
+    id: 'bolo-de-pote-200ml',
+    name: '🍰 Bolo de Pote - Cenoura com cobertura de brigadeiro',
+    description: '🥕🍫 Bolo de cenoura fofinho com uma deliciosa cobertura cremosa de brigadeiro! Um clássico irresistível, feito com muito carinho para deixar seu dia ainda mais gostoso. 😍✨',
+    price: 10, // Price varies by option
+    category: 'sobremesas',
+    image: '/images/bolocenoura.jpg',
+    hasOptions: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+
 
   // Bebidas
 
