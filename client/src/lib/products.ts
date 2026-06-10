@@ -459,9 +459,19 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/bolocenoura.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
-
+{
+    id: 'bolo-de-pote-200ml',
+    name: '🍰 Bolo de Pote - Massa Branca com Recheio de Pêssego',
+    description: 'Massa branca fofinha com recheio cremoso e deliciosos pedaços de pêssego. Uma combinação leve, suave e irresistível para adoçar o seu dia! 🍰✨',
+    price: 10, // Price varies by option
+    category: 'sobremesas',
+    image: '/images/bolopessego.jpg',
+    hasOptions: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
 
   // Bebidas
 
