@@ -470,6 +470,21 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/bolopessego.jpg',
     hasOptions: false,
+    active: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
+    id: 'bolo-de-pote-200ml',
+    name: '🍰 Bolo de Pote - Massa Branca Creme Branco com Morango ou Massa Branca com Doce de Leite Caseiro e Abacaxi - 200ml',
+    description: '"Escolha entre o equilíbrio do Chocolate com Maracujá ou a leveza do Bolo Branco com Morango. Ambos artesanais e preparados para você!" 🟡🍫🍓',
+    price: 0, // Price varies by option
+    category: 'sobremesas',
+    image: '/images/morangoeabacaxi.jpg',
+    hasOptions: true,
+    options: [
+      { name: 'Massa Branca Creme Branco com Morango - 200ml', price: 10 },
+      { name: 'Massa Branca com Doce de Leite Caseiro e Abacaxi - 200ml', price: 10 }
+    ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
 
