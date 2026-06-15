@@ -423,12 +423,23 @@ export const products: Product[] = [
   },
   {
     id: 'bolo-de-pote-200ml',
+    name: '🥥🍫 Chocolate com Maracujá - 200ml',
+    description: 'Camadas de massa de chocolate e creme de maracujá, combinando o sabor intenso do chocolate com o toque refrescante do maracujá. 🍫💛✨',
+    price: 10, // Price varies by option
+    category: 'sobremesas',
+    image: '/images/maracuja.jpg',
+    hasOptions: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
+    id: 'bolo-de-pote-200ml',
     name: '🥥🍫 Bolo de Pote - Prestígio - 200ml',
     description: 'Deliciosas camadas de massa de chocolate, recheio cremoso de coco e cobertura de chocolate, combinando sabor e cremosidade em cada colherada. 🥥🍫✨',
     price: 10, // Price varies by option
     category: 'sobremesas',
     image: '/images/prestigio.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
    {
