@@ -427,7 +427,7 @@ export const products: Product[] = [
     description: 'Deliciosas camadas de massa de chocolate, recheio cremoso de coco e cobertura de chocolate, combinando sabor e cremosidade em cada colherada. 🥥🍫✨',
     price: 10, // Price varies by option
     category: 'sobremesas',
-    image: '/images/boprestigio.jpg',
+    image: '/images/prestigio.jpg',
     hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
