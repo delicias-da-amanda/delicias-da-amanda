@@ -421,6 +421,16 @@ export const products: Product[] = [
     active: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta']
   },
+  {
+    id: 'bolo-de-pote-200ml',
+    name: '🥥🍫 Bolo de Pote - Prestígio - 200ml',
+    description: 'Deliciosas camadas de massa de chocolate, recheio cremoso de coco e cobertura de chocolate, combinando sabor e cremosidade em cada colherada. 🥥🍫✨',
+    price: 10, // Price varies by option
+    category: 'sobremesas',
+    image: '/images/boprestigio.jpg',
+    hasOptions: false,
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
    {
     id: 'bolo-de-pote-200ml',
     name: '🍰 Bolo de Pote - Prestígio ou Brigadeiro 200ml',
@@ -481,6 +491,7 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/morangoeabacaxi.jpg',
     hasOptions: true,
+    active: false,
     options: [
       { name: 'Massa Branca Creme Branco com Morango - 200ml', price: 10 },
       { name: 'Massa Branca com Doce de Leite Caseiro e Abacaxi - 200ml', price: 10 }
