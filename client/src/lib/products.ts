@@ -429,6 +429,7 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/maracuja.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   {
