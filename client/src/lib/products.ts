@@ -228,7 +228,7 @@ export const products: Product[] = [
   },
   {
     id: 'Pescado da Casa',
-    name: '🍽️ "Pescado da Casa" + Refrigerante: O par perfeito! 🍝✨',
+    name: '🐟🍽️ "Pescado da Casa" + Refrigerante: O par perfeito! 🐟🍽️',
     description: '"Filé de Merluza à Milanesa suculenta com crosta dourada e crocante, preparado com aquele tempero caseiro especial, acompanha um refrigerante geladinho para uma refeição completa e saborosa." ou "Filé de tilápia leve e macio, grelhado no ponto certo. A combinação perfeita com um refrigerante para quem busca leveza e muito sabor."',
     price: 0,
     category: 'marmitas-trad',
