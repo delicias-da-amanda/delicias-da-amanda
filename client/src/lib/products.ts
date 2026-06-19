@@ -228,19 +228,19 @@ export const products: Product[] = [
   },
   {
     id: 'Pescado da Casa',
-    name: '🍽️ "Pescado da Casa" + Suco Del Valle: O par perfeito! 🍝✨',
-    description: '"Filé de Merluza à Milanesa suculenta com crosta dourada e crocante, preparado com aquele tempero caseiro especial, acompanha um refrigerante 600ml geladinho para uma refeição completa e saborosa." ou "Filé de tilápia leve e macio, grelhado no ponto certo. A combinação perfeita com um refrigerante 600ml para quem busca leveza e muito sabor."',
+    name: '🍽️ "Pescado da Casa" + Refrigerante: O par perfeito! 🍝✨',
+    description: '"Filé de Merluza à Milanesa suculenta com crosta dourada e crocante, preparado com aquele tempero caseiro especial, acompanha um refrigerante geladinho para uma refeição completa e saborosa." ou "Filé de tilápia leve e macio, grelhado no ponto certo. A combinação perfeita com um refrigerante para quem busca leveza e muito sabor."',
     price: 0,
     category: 'marmitas-trad',
     image: '/images/combopescado.jpg',
     hasOptions: true,
     options: [
-    { name: '😋🐟 Filé de Merluza à Milanesa', price: 33.00 },
-    { name: '😋🐟 Filé de Tilápia Grelhado', price: 33.00 }
+    { name: '😋🐟 Filé de Merluza à Milanesa', price: 31.50 },
+    { name: '😋🐟 Filé de Tilápia Grelhado', price: 31.50 }
     ],
     drinkOptions: [
-    { name: 'Coca-Cola 600ml', price: 0 },
-    { name: 'Guaraná 600ml', price: 0 }
+    { name: 'Coca-Cola lata', price: 0 },
+    { name: 'Guaraná lata', price: 0 }
     
   ],
     availableDays: ['sexta']
