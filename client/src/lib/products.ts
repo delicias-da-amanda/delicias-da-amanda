@@ -418,7 +418,6 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/mousse.jpg',
     hasOptions: false,
-    active: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta']
   },
   {
@@ -508,6 +507,16 @@ export const products: Product[] = [
       { name: 'Massa Branca Creme Branco com Morango - 200ml', price: 10 },
       { name: 'Massa Branca com Doce de Leite Caseiro e Abacaxi - 200ml', price: 10 }
     ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
+    id: 'bolo-de-pote-200ml',
+    name: '🍰 Bolo de Pote - Massa Branca Creme Branco com Morango - 200ml',
+    description: '🍓 Massa branca fofinha, creme branco super cremoso e deliciosos pedaços de morango. Uma combinação leve, refrescante e irresistível para adoçar o seu dia!',
+    price: 10, // Price varies by option
+    category: 'sobremesas',
+    image: '/images/morango.jpg',
+    hasOptions: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
 
