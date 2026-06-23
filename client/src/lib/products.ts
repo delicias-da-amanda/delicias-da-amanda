@@ -405,7 +405,7 @@ export const products: Product[] = [
       { name: 'Com chocolate', price: 7.00 },
       { name: 'Com Goiabada', price: 7.00 }
     ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta']
   },
  
   // Sobremesas
@@ -418,7 +418,7 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/mousse.jpg',
     hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta']
+    availableDays: ['segunda', 'quarta', 'sexta']
   },
   {
     id: 'bolo-de-pote-200ml',
@@ -517,7 +517,7 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/morango.jpg',
     hasOptions: false,
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['segunda', 'quarta', 'sexta']
   },
 
   // Bebidas

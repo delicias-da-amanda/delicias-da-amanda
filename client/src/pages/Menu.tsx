@@ -44,7 +44,7 @@ export default function Menu() {
   const handleCategoryClick = (categoryId: string) => {
     if (categoryId === "paes-especiais" || categoryId === "paes") {
       alert(
-        "🥖 Atenção: Os produtos desta categoria são feitos sob medida para você. Não esqueça de realizar sua encomenda com antecedência!"
+        "🥖 Atenção: Os produtos desta categoria são feitos sob medida para você. Por isso, as encomendas devem ser realizadas com antecedência, até quinta-feira às 16h, para garantir a produção e a entrega do seu pedido. Não deixe para a última hora! 😊"
       );
     }
     setSelectedCategory(categoryId);
