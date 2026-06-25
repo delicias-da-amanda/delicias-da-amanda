@@ -176,9 +176,9 @@ export const products: Product[] = [
     image: '/images/combomassas.jpg',
     hasOptions: true,
     options: [
-    { name: '🍝 Nhoque Artesanal ao Sugo com Frango Assado', price: 35 },
-    { name: '🌯🍟 Panqueca de Carne', price: 33 },
-    { name: '🌯🍟 Panqueca de Frango', price: 33 }
+    { name: '🍝 Nhoque Artesanal ao Sugo com Frango Assado', price: 34 },
+    { name: '🌯🍟 Panqueca de Carne', price: 32 },
+    { name: '🌯🍟 Panqueca de Frango', price: 32 }
     ],
     drinkOptions: [
     { name: 'Coca-Cola 600ml', price: 0 },
