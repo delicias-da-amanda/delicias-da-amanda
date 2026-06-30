@@ -418,6 +418,7 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/mousse.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['segunda', 'quarta', 'sexta']
   },
   {
@@ -511,12 +512,23 @@ export const products: Product[] = [
   },
   {
     id: 'bolo-de-pote-200ml',
+    name: '🍫🤎🍮Alquimia Tripla - Bolo de Chcolate, recheio de doce de leite com cobertura de brigadeiro  - 200ml',
+    description: ' Camadas de bolo de chocolate fofinho com recheio cremoso de doce de leite artesanal e cobertura de brigadeiro. O equilíbrio perfeito de sabores a cada colherada!',
+    price: 10, // Price varies by option
+    category: 'sobremesas',
+    image: '/images/tripla.jpg',
+    hasOptions: false,
+    availableDays: ['segunda', 'quarta', 'sexta']
+  },
+  {
+    id: 'bolo-de-pote-200ml',
     name: '🍰 Bolo de Pote - Massa Branca Creme Branco com Morango - 200ml',
     description: '🍓 Massa branca fofinha, creme branco super cremoso e deliciosos pedaços de morango. Uma combinação leve, refrescante e irresistível para adoçar o seu dia!',
     price: 10, // Price varies by option
     category: 'sobremesas',
     image: '/images/morango.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['segunda', 'quarta', 'sexta']
   },
 
