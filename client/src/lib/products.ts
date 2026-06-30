@@ -512,7 +512,7 @@ export const products: Product[] = [
   },
   {
     id: 'bolo-de-pote-200ml',
-    name: '🍫🤎🍮Alquimia Tripla - Bolo de Chcolate, recheio de doce de leite com cobertura de brigadeiro  - 200ml',
+    name: '🍫🤎🍮Alquimia Tripla - Bolo de Chocolate, recheio de doce de leite com cobertura de brigadeiro  - 200ml',
     description: ' Camadas de bolo de chocolate fofinho com recheio cremoso de doce de leite artesanal e cobertura de brigadeiro. O equilíbrio perfeito de sabores a cada colherada!',
     price: 10, // Price varies by option
     category: 'sobremesas',
