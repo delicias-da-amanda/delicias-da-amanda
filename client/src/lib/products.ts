@@ -440,7 +440,6 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/prestigio.jpg',
     hasOptions: false,
-    active: false,
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
    {
