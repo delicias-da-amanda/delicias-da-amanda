@@ -418,6 +418,7 @@ export const products: Product[] = [
     category: 'sobremesas',
     image: '/images/mousse.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['segunda', 'quarta', 'sexta']
   },
   {
