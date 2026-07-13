@@ -139,6 +139,20 @@ export const products: Product[] = [
     ],
     availableDays: ['segunda']
   },
+   {
+    id: 'Filé de Frango a Milanesa',
+    name: '🤤🍗 Filé de Frango à Milanesa com Creme de Milho! 🌽✨',
+    description: 'Crosta douradinha e super crocante por fora, frango suculento por dentro e um delicioso creme de milho bem cremoso para completar essa combinação irresistível! 😍.',
+    price: 0,
+    category: 'marmitas-trad',
+    image: '/images/frangoamilanesa.jpg',
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 22 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
+    ],
+    availableDays: ['terca']
+  },
   {
     id: 'Frango ao Molho',
     name: '😋🍗 Frango ao Molho com batata',
