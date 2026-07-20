@@ -589,6 +589,7 @@ export const products: Product[] = [
     category: 'bebidas',
     image: '/images/sucos.jpg',
     hasOptions: true,
+    active: false,
     options: [
       { name: 'Laranja – Refrescante e rica em vitamina C. - 300ml', price: 10 },
       { name: 'Limão – Cítrico e revigorante - 300ml', price: 8 }
