@@ -189,6 +189,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/combomassas.jpg',
     hasOptions: true,
+    active: false,
     options: [
     { name: '🍝 Nhoque Artesanal ao Sugo com Frango Assado', price: 34 },
     { name: '🌯🍟 Panqueca de Carne', price: 32 },
