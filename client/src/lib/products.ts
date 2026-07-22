@@ -200,6 +200,7 @@ export const products: Product[] = [
     
   ],
     availableDays: ['quinta']
+  
   },
     {
     id: 'Nhoque Artesanal ao Sugo com Frango Assado',
@@ -209,6 +210,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/nhoque.jpg',
     hasOptions: true,
+    active: false,
     options: [
     { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 23 },
     { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 26 }
@@ -216,15 +218,18 @@ export const products: Product[] = [
     availableDays: ['quinta']
   },
   {
-    id: 'Macarrão ao molho',
-    name: '🍝 Macarrão ao Molho com carne',
-    description: 'Macarrão ao molho caseiro com carne bem temperada, acompanhado de frango assado suculento e salada de maionese caseira.',
-    price: 22,
+    id: '🍽️ Almôndegas ao Molho com Purê de Batata',
+    name: '🍽️ Almôndegas ao Molho com Purê de Batata',
+    description: 'Almôndegas caseiras ao molho de tomate, acompanhadas de um purê de batata cremoso. Um clássico cheio de sabor e conforto!',
+    price: 0,
     category: 'marmitas-trad',
-    image: '/images/macarraoaomolho.jpg',
-    hasOptions: false,
-    active: false,
-    availableDays: ['segunda']
+    image: '/images/almondegas.jpg',
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 24 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 27 }
+    ],
+    availableDays: ['quinta']
   },
    {
     id: 'Panqueca',
