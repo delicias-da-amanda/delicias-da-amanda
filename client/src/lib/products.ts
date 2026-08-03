@@ -310,6 +310,20 @@ export const products: Product[] = [
     availableDays: ['sexta']
   },
   {
+    id: 'Omelete de Presunto e Queijo',
+    name: '🍳🥓🧀 Omelete de Presunto e Queijo',
+    description: 'Omelete fofinha preparada com ovos, cebola e cheiro-verde, recheada com queijo derretido e presunto. Acompanha arroz soltinho, feijão bem temperado e uma porção de batata frita crocante, formando uma refeição completa, saborosa e feita para matar a fome.',
+    price: 0,
+    category: 'marmitas-trad',
+    image: '/images/omelete.jpg',
+    hasOptions: true,
+    options: [
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 210 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
+    ],
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+  },
+  {
     id: 'Filé de Frango',
     name: '😋🍗 Filé de Frango acompanhado de Farofa crocante',
     description: 'Filé de frango grelhado, macio e suculento, acompanhado de arroz soltinho, feijão bem temperado e farofa crocante.',
