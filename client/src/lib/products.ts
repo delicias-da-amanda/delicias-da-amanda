@@ -94,8 +94,8 @@ export const products: Product[] = [
     image: '/images/viradoapaulista.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 22 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 25 }
     ],
     availableDays: ['segunda']
   },
@@ -120,8 +120,8 @@ export const products: Product[] = [
     image: '/images/parmegiana.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 23 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 26 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 24 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 27 }
     ],
     availableDays: ['segunda','quarta']
   },
@@ -148,8 +148,8 @@ export const products: Product[] = [
     image: '/images/frangoamilanesa.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 22 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 23 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 25 }
     ],
     availableDays: ['terca']
   },
@@ -162,8 +162,8 @@ export const products: Product[] = [
     image: '/images/frangoaomolho.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 20 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 22 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 23 }
     ],
     availableDays: ['terca']
   },
@@ -176,8 +176,8 @@ export const products: Product[] = [
     image: '/images/picadinho.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 22 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 25 }
     ],
     availableDays: ['terca']
   },
@@ -241,8 +241,8 @@ export const products: Product[] = [
     image: '/images/panqueca.jpg',
     hasOptions: true,
     options: [
-      { name: '🌯🍟 Panqueca de Carne', price: 24 },
-      { name: '🌯🍟 Panqueca de Frango', price: 24 }
+      { name: '🌯🍟 Panqueca de Carne', price: 25 },
+      { name: '🌯🍟 Panqueca de Frango', price: 25 }
       ],
     availableDays: ['quinta']
   },
@@ -255,8 +255,8 @@ export const products: Product[] = [
     image: '/images/combopescado.jpg',
     hasOptions: true,
     options: [
-    { name: '😋🐟 Filé de Merluza à Milanesa', price: 31.50 },
-    { name: '😋🐟 Filé de Tilápia Grelhado', price: 31.50 }
+    { name: '😋🐟 Filé de Merluza à Milanesa', price: 32.50 },
+    { name: '😋🐟 Filé de Tilápia Grelhado', price: 32.50 }
     ],
     drinkOptions: [
     { name: 'Coca-Cola lata', price: 0 },
@@ -274,8 +274,8 @@ export const products: Product[] = [
     image: '/images/merluzaamilanesa.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 23 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 22 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
     ],
     availableDays: ['sexta']
   },
@@ -288,8 +288,8 @@ export const products: Product[] = [
     image: '/images/tilapia.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 23 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 22 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
     ],
     availableDays: ['sexta']
   },
@@ -302,8 +302,8 @@ export const products: Product[] = [
     image: '/images/strogonoff.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 20 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 22 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 23 }
     ],
     availableDays: ['sexta']
   },
@@ -316,8 +316,8 @@ export const products: Product[] = [
     image: '/images/filedefrango.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 18 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 20 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 19 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 22 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
@@ -341,8 +341,8 @@ export const products: Product[] = [
     image: '/images/calabresa.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 20 },
-    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 22 }
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
+    { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 23 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
   },
@@ -356,6 +356,7 @@ export const products: Product[] = [
     category: 'lanches',
     image: '/images/lanche-natural.jpg',
     hasOptions: true,
+    active: false,
     options: [
       { name: 'Atum', price: 9.00 },
       { name: 'Frango', price: 9.00 }
@@ -370,6 +371,7 @@ export const products: Product[] = [
     category: 'lanches',
     image: '/images/lanches-hero.jpg',
     hasOptions: false,
+    active: false,
     availableDays: ['terca', 'quinta']
   },
     
@@ -383,12 +385,12 @@ export const products: Product[] = [
   image: '/images/recheado.jpg',
   hasOptions: true,
   options: [
-    { name: 'Calabresa', price: 20 },
-    { name: 'Calabresa com Requeijão Cremoso', price: 22 },
-    { name: 'Calabresa com Queijo e Requeijão', price: 24 },
-    { name: 'Frango com Requeijão', price: 24 },
-    { name: 'Presunto e Queijo', price: 22 },
-    { name: '4 Queijos', price: 28 }
+    { name: 'Calabresa', price: 22 },
+    { name: 'Calabresa com Requeijão Cremoso', price: 23 },
+    { name: 'Calabresa com Queijo e Requeijão', price: 25 },
+    { name: 'Frango com Requeijão', price: 25 },
+    { name: 'Presunto e Queijo', price: 23 },
+    { name: '4 Queijos', price: 30 }
   ],
   availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'],
   
@@ -400,7 +402,7 @@ export const products: Product[] = [
   id: 'pao-caseirinho',
   name: 'Pão Caseirinho',
   description: 'O verdadeiro sabor de casa. Massa ultra macia e artesanal, perfeita para aquele café quentinho. Um carinho em forma de pão.',
-  price: 12.00,
+  price: 14.00,
   category: 'paes',
   image: '/images/pao-caseiro.jpg',
   hasOptions: false,
@@ -420,6 +422,7 @@ export const products: Product[] = [
     category: 'biscoitos',
     image: '/images/biscoito-amanteigado.jpg',
     hasOptions: true,
+    active: false,
     options: [
       { name: 'Tradicional', price: 6.00 },
       { name: 'Com chocolate', price: 7.00 },
