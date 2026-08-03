@@ -318,7 +318,7 @@ export const products: Product[] = [
     image: '/images/omelete.jpg',
     hasOptions: true,
     options: [
-    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 210 },
+    { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
     { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
     ],
     availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
