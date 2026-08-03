@@ -242,7 +242,9 @@ export const products: Product[] = [
     hasOptions: true,
     options: [
       { name: '🌯🍟 Panqueca de Carne', price: 25 },
-      { name: '🌯🍟 Panqueca de Frango', price: 25 }
+      { name: '🌯🍟 Panqueca de Carne - Pequena Magia (Brotinho)', price: 22 },
+      { name: '🌯🍟 Panqueca de Frango', price: 25 },
+      { name: '🌯🍟 Panqueca de Frango- Pequena Magia (Brotinho)', price: 22 },
       ],
     availableDays: ['quinta']
   },
