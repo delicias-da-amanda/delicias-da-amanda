@@ -203,7 +203,17 @@ export const products: Product[] = [
     availableDays: ['quinta']
   
   },
-    {
+   {
+    id: 'Lasanha à Bolonhesa',
+    name: '🍝🧀 Lasanha à Bolonhesa',
+    description: 'Lasanha à bolonhesa recheada com presunto, queijo e molho de tomate, coberta com molho bechamel, acompanhada de arroz soltinho.',
+    price: 25,
+    category: 'marmitas-trad',
+    image: '/images/lasanha.jpg',
+    hasOptions: false,
+    availableDays: ['quinta']
+  }, 
+   {
     id: 'Nhoque Artesanal ao Sugo com Frango Assado',
     name: '🍝 Nhoque Artesanal ao Sugo com Frango Assado',
     description: 'Nhoque de batata leve e artesanal ao molho de tomates frescos, acompanhado por uma suculenta sobrecoxa de frango assada. Para completar, nosso tradicional arroz soltinho e feijão  caprichado. Uma refeição completa e afetiva!',
