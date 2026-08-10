@@ -69,13 +69,13 @@ export default function Footer() {
                 <span>WhatsApp</span>
               </a>
               <a 
-                href="https://instagram.com/deliciasdaamanda" 
+                href="https://www.instagram.com/alquimiadaamanda/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm hover:opacity-70 transition-opacity duration-300"
               >
                 <Instagram className="h-5 w-5" />
-                <span>@deliciasdaamanda</span>
+                <span>@alquimiadaamanda</span>
               </a>
               <a 
                 href="https://g.page/deliciasdaamanda" 
