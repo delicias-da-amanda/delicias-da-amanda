@@ -267,8 +267,8 @@ export const products: Product[] = [
     image: '/images/combopescado.jpg',
     hasOptions: true,
     options: [
-    { name: '😋🐟 Filé de Merluza à Milanesa', price: 32.50 },
-    { name: '😋🐟 Filé de Tilápia Grelhado', price: 32.50 }
+    { name: '😋🐟 Filé de Merluza à Milanesa', price: 30.50 },
+    { name: '😋🐟 Filé de Tilápia Grelhado', price: 30.50 }
     ],
     drinkOptions: [
     { name: 'Coca-Cola lata', price: 0 },
@@ -331,7 +331,7 @@ export const products: Product[] = [
     { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
     { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
     ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sabado']
   },
   {
     id: 'Filé de Frango',
