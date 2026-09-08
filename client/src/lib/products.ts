@@ -137,7 +137,7 @@ export const products: Product[] = [
     { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 20 },
     { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 22 }
     ],
-    availableDays: ['segunda']
+    availableDays: ['segunda','terca']
   },
    {
     id: 'Filé de Frango a Milanesa',
