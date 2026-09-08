@@ -155,7 +155,7 @@ export const products: Product[] = [
   },
   {
     id: 'Frango ao Molho',
-    name: '😋🍗 Frango ao Molho com batata',
+    name: '😋🍗 Frango ao Molho com polenta',
     description: 'Frango macio e suculento ao molho caseiro, acompanhado de batata cozida, arroz soltinho e feijão bem temperado.',
     price: 0,
     category: 'marmitas-trad',
@@ -175,6 +175,7 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/picadinho.jpg',
     hasOptions: true,
+    active: false,
     options: [
     { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 22 },
     { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 25 }
@@ -331,7 +332,7 @@ export const products: Product[] = [
     { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
     { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 24 }
     ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sabado']
+    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta']
   },
   {
     id: 'Filé de Frango',
@@ -370,7 +371,7 @@ export const products: Product[] = [
     { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 21 },
     { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 23 }
     ],
-    availableDays: ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
+    availableDays: ['segunda', 'quarta', 'quinta', 'sexta', 'sabado']
   },
   
   // Lanches
