@@ -175,7 +175,6 @@ export const products: Product[] = [
     category: 'marmitas-trad',
     image: '/images/picadinho.jpg',
     hasOptions: true,
-    active: false,
     options: [
     { name: 'Pequena Magia (Brotinho) - "A magia do nosso sabor concentrada na medida exata" (Aprox. 500g)', price: 22 },
     { name: 'Grande Alquimia (Tradicional) - "A nossa alquimia completa para quem precisa de energia total no almoço" (Aprox. 700g)', price: 25 }
